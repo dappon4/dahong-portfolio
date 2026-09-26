@@ -862,31 +862,39 @@
           <svg class="education-art" viewBox="0 0 1200 280" aria-hidden="true" focusable="false">
             <defs>
               <linearGradient id="education-ribbon" x1="0" y1="1" x2="1" y2="0">
-                <stop stop-color="#fcd1a9"/><stop offset=".4" stop-color="#d93c34"/><stop offset=".7" stop-color="#9968d8"/><stop offset="1" stop-color="#28215a"/>
+                <stop stop-color="#fcd1a9"/><stop offset=".4" stop-color="#f65933"/><stop offset=".7" stop-color="#5f3bb7"/><stop offset="1" stop-color="#28215a"/>
               </linearGradient>
               <linearGradient id="education-fold" x1="0" y1="1" x2="1" y2="0">
-                <stop stop-color="#28215a"/><stop offset=".6" stop-color="#9968d8"/><stop offset="1" stop-color="#cda1c9"/>
+                <stop stop-color="#28215a"/><stop offset=".55" stop-color="#5f3bb7"/><stop offset="1" stop-color="#cda1c9"/>
+              </linearGradient>
+              <linearGradient id="education-warm" x1="15%" y1="95%" x2="85%" y2="5%">
+                <stop stop-color="#fcd1a9"/><stop offset=".52" stop-color="#f65933"/><stop offset="1" stop-color="#d93c34"/>
               </linearGradient>
               <pattern id="education-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
-                <path d="M0 0v8" stroke="#f5f2e8" stroke-width="2" opacity=".5"/>
+                <path d="M0 0v8" stroke="#f5f2e8" stroke-width="2" opacity=".25"/>
               </pattern>
-              <filter id="education-grain" x="0" y="0" width="100%" height="100%">
+              <filter id="education-grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
                 <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="3" seed="11" result="noise"/>
                 <feColorMatrix in="noise" type="saturate" values="0"/>
+                <feComponentTransfer>
+                  <feFuncR type="linear" slope=".3" intercept=".7"/>
+                  <feFuncG type="linear" slope=".3" intercept=".7"/>
+                  <feFuncB type="linear" slope=".3" intercept=".7"/>
+                </feComponentTransfer>
                 <feComposite in2="SourceGraphic" operator="in" result="grain"/>
-                <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+                <feBlend in="SourceGraphic" in2="grain" mode="multiply"/>
               </filter>
             </defs>
             <g filter="url(#education-grain)">
               <!-- A continuous folded ribbon grows from a seed into an open passage. -->
-              <path d="M135 169C300 76 417 252 592 169S891 204 1074 80l-10 57C882 262 765 124 601 219S307 128 156 210Z" fill="url(#education-ribbon)" opacity=".65"/>
+              <path d="M135 169C300 76 417 252 592 169S891 204 1074 80l-10 57C882 262 765 124 601 219S307 128 156 210Z" fill="url(#education-ribbon)"/>
               <path d="m100 166 107-112 88 146-96 50Z" fill="#f65933"/>
-              <path d="m100 166 107-112-8 196Z" fill="#fcd1a9"/>
+              <path d="m100 166 107-112-8 196Z" fill="url(#education-warm)"/>
               <path d="m207 54 88 146-96 50Z" fill="url(#education-fold)"/>
               <path d="m100 166 107-112-8 196Z" fill="url(#education-hatch)"/>
               <path d="m470 160 96-106 34 181-70 23Z" fill="#28215a"/>
               <path d="m566 54 79 41-45 140Z" fill="url(#education-fold)"/>
-              <path d="m600 235 45-140 96 72-71 78Z" fill="#fcd1a9"/>
+              <path d="m600 235 45-140 96 72-71 78Z" fill="url(#education-warm)"/>
               <path d="m645 95 96 72-71 78Z" fill="url(#education-hatch)"/>
               <path d="m909 223 18-157 155-33-19 157-48 22 12-124-58 13-13 135Z" fill="url(#education-fold)"/>
               <path d="m927 66 34-25 154-33-33 25Z" fill="#fcd1a9"/>
