@@ -414,8 +414,11 @@ summary:focus-visible,
   padding-inline: var(--gutter);
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scrollbar-color: var(--ink) var(--paper-deep);
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.project-row::-webkit-scrollbar {
+  display: none;
 }
 
 .project-row:focus-visible {

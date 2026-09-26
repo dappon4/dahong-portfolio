@@ -4,8 +4,7 @@
   "use strict";
 
   /*
-   * Each artwork is assembled from broad silhouettes, faceted planes,
-   * gradients, dotted surfaces, and mesh.
+   * Each artwork combines a subject-specific silhouette with textured planes.
    *
    * All SVG markup below is trusted, local application content.
    * No external images, libraries, or network requests are used.
@@ -13,553 +12,282 @@
 
   const artwork = {
     cat: `
-      <circle cx="414" cy="241" r="190" fill="url(#warm)" />
-      <path
-        d="M83 180 L373 70 L620 369 L330 481 Z"
-        fill="url(#dots)"
-      />
-      <path
-        d="M430 358 L560 317 L591 226 L625 249
-           L605 365 L503 420 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M266 299 L440 283 L502 438 L231 438 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M205 189 L210 84 L304 154 L416 151
-           L512 88 L503 278 L450 352 L284 343 L199 270 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M210 84 L304 154 L205 189 Z"
-        fill="#111528"
-      />
-      <path
-        d="M416 151 L512 88 L503 278 L367 291 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M199 270 L304 154 L367 291 L284 343 Z"
-        fill="#fcd1a9"
-      />
-      <path
-        d="M367 291 L503 278 L450 352 L284 343 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M343 274 L383 274 L364 296 Z"
-        fill="#111528"
-      />
+      <path d="m194 312 12-207 102 68h118l104-68 11 208-77 95-102 36-103-38Z" fill="url(#light)" />
+      <path d="m206 105 102 68-83 58Z" fill="url(#violet)" />
+      <path d="m426 173 104-68-14 128Z" fill="url(#warm)" />
+      <path d="m363 173 63 0 90 60 25 80-77 95-102 36Z" fill="url(#warm)" />
+      <path d="m194 312 12-207 102 68h55l-1 271-103-38Z" fill="url(#stipple)" />
+      <path d="m249 252 60 11-24 18Zm165 11 61-11-36 29Z" fill="#111528" />
+      <path d="m303 309 59-21 58 21-58 82Z" fill="url(#light)" />
+      <path d="m345 315 34 0-17 19Z" fill="#28215a" />
+      <path d="M362 334v18l-20 13m20-13 20 13M292 320l-84-15m84 34-89 11m229-30 82-15m-82 34 87 11" fill="none" stroke="#28215a" stroke-width="5" />
+      <g fill="#5f3bb7"><circle cx="142" cy="190" r="8"/><circle cx="165" cy="256" r="5"/><circle cx="118" cy="309" r="6"/><circle cx="170" cy="363" r="10"/><circle cx="209" cy="416" r="6"/></g>
+      <path d="m102 220 14-3 4 14-14 4Zm42 202 10-3 3 10-10 4Z" fill="#f65933" />
     `,
 
     quantum: `
-      <path
-        d="M114 353 L406 438 L625 317 L325 250 Z"
-        fill="url(#dots)"
-      />
-      <ellipse
-        cx="362"
-        cy="269"
-        rx="245"
-        ry="94"
-        fill="none"
-        stroke="#28215a"
-        stroke-width="2"
-        transform="rotate(-29 362 269)"
-      />
-      <path
-        d="M357 53 L532 268 L355 449 L196 266 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M357 53 L355 286 L196 266 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M355 286 L532 268 L355 449 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M357 53 L532 268 L355 286 Z"
-        fill="url(#mesh)"
-      />
-      <ellipse
-        cx="362"
-        cy="269"
-        rx="240"
-        ry="91"
-        fill="none"
-        stroke="#28215a"
-        stroke-width="2"
-        transform="rotate(32 362 269)"
-      />
-      <circle cx="159" cy="151" r="23" fill="url(#dark)" />
-      <circle cx="557" cy="371" r="27" fill="url(#light)" />
-      <circle cx="561" cy="162" r="14" fill="#f65933" />
+      <circle cx="360" cy="208" r="135" fill="url(#violet)" />
+      <ellipse cx="360" cy="208" rx="135" ry="43" fill="none" stroke="#fcd1a9" stroke-width="5" />
+      <ellipse cx="360" cy="208" rx="43" ry="135" fill="none" stroke="#111528" stroke-width="4" />
+      <path d="M360 73 V343 M225 208 H495" fill="none" stroke="#f5f2e8" stroke-width="2" opacity=".7" />
+      <path d="M360 208 L443 121" stroke="#f65933" stroke-width="8" stroke-linecap="round" />
+      <circle cx="443" cy="121" r="13" fill="#fcd1a9" />
+      <circle cx="360" cy="208" r="17" fill="#111528" />
+      <path d="M179 389H541M179 443H541" stroke="#28215a" stroke-width="4" />
+      <g fill="url(#light)" stroke="#5f3bb7" stroke-width="4"><rect x="223" y="369" width="45" height="40"/><rect x="412" y="423" width="45" height="40"/></g>
+      <path d="M342 389v54" stroke="#d93c34" stroke-width="5" />
+      <circle cx="342" cy="389" r="9" fill="#d93c34"/><circle cx="342" cy="443" r="16" fill="none" stroke="#5f3bb7" stroke-width="4"/>
+      <path d="M188 359 H257 M463 359 H532" stroke="#9968d8" stroke-width="4" stroke-dasharray="2 11" />
     `,
 
     segmentation: `
-      <path
-        d="M99 153 L421 53 L613 336 L283 455 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M155 188 L426 105 L566 318 L295 411 Z"
-        fill="url(#mesh)"
-        stroke="#fcd1a9"
-        stroke-width="1"
-      />
-      <path
-        d="M250 152 L406 129 L507 255 L416 382
-           L278 347 L208 247 Z"
-        fill="url(#warm)"
-        transform="translate(27 -24)"
-      />
-      <path
-        d="M250 152 L406 129 L366 264 L278 347 L208 247 Z"
-        fill="url(#light)"
-        transform="translate(27 -24)"
-      />
-      <path
-        d="M366 264 L507 255 L416 382 L278 347 Z"
-        fill="url(#dots)"
-        transform="translate(27 -24)"
-      />
-      <path
-        d="M185 145 V99 H245 M480 83 H542 V144
-           M580 339 V396 H520 M222 429 H164 V371"
-        fill="none"
-        stroke="#d93c34"
-        stroke-width="5"
-      />
+      <path d="m103 133 433-53 72 317-433 53Z" fill="url(#dark)" />
+      <path d="m129 155 387-47 62 267-387 47Z" fill="url(#light)" />
+      <path d="m129 155 387-47 62 267-387 47Z" fill="url(#mesh)" opacity=".65" />
+      <path d="M264 349C181 209 341 153 424 157c28 121-15 208-160 192Z" fill="url(#violet)" />
+      <path d="M300 325C217 185 377 129 460 133c28 121-15 208-160 192Z" fill="url(#warm)" opacity=".86" />
+      <path d="M300 325C217 185 377 129 460 133c28 121-15 208-160 192Z" fill="url(#contours)" />
+      <path d="m278 374 166-222m-123 164-46-55m71 22 61-8m-30-50-15-46" fill="none" stroke="#f5f2e8" stroke-width="5" />
+      <path d="M233 144v-35h43m192 0h33v44M501 330v34h-36m-188 0h-44v-34" fill="none" stroke="#d93c34" stroke-width="5" />
+      <g fill="#111528"><circle cx="300" cy="325" r="7"/><circle cx="263" cy="223" r="7"/><circle cx="348" cy="155" r="7"/><circle cx="460" cy="133" r="7"/><circle cx="449" cy="266" r="7"/></g>
     `,
 
     math: `
-      <circle cx="459" cy="169" r="113" fill="url(#warm)" />
-      <path
-        d="M136 122 L465 84 L575 391 L246 453 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M114 98 L443 60 L553 367 L224 429 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M153 127 L423 97 L512 348 L242 392 Z"
-        fill="url(#mesh)"
-        opacity="0.6"
-      />
-      <path
-        d="M224 330 L391 162 L446 330 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M224 330 L391 162 L347 330 Z"
-        fill="#111528"
-      />
-      <path
-        d="M175 271 C250 83 387 437 486 232"
-        fill="none"
-        stroke="#d93c34"
-        stroke-width="4"
-      />
-      <text
-        x="503"
-        y="412"
-        fill="#111528"
-        font-family="Georgia, serif"
-        font-size="122"
-      >∑</text>
+      <path d="M83 389 L143 101 L398 72 L450 333 L330 469 Z" fill="url(#dark)" />
+      <path d="M120 353 L168 129 L365 105 L407 320 L316 426 Z" fill="url(#light)" />
+      <path d="M172 177 L350 155 L377 293 L200 317 Z" fill="url(#weave)" opacity=".7" />
+      <path d="M193 292 L288 170 L383 294 Z" fill="url(#violet)" /><path d="M193 292 L288 170 L288 292 Z" fill="#111528" />
+      <path d="M150 362 C205 217 248 434 303 315 C338 238 367 265 408 169" fill="none" stroke="#d93c34" stroke-width="5" />
+      <path d="M471 133 L604 113 L628 335 L495 355 Z" fill="#f5f2e8" />
+      <path d="M471 133 L604 113 L628 335 L495 355 Z" fill="url(#hatch)" opacity=".55" />
+      <path d="M500 174 H581 M500 198 H555 M500 246 H595 M500 270 H570" stroke="#28215a" stroke-width="6" />
+      <text x="524" y="324" fill="#d93c34" font-family="Georgia, serif" font-size="74">∑=</text>
+      <path d="M424 220 L471 213 M424 238 L471 231" stroke="#9968d8" stroke-width="4" stroke-dasharray="3 7" />
     `,
 
     gan: `
-      <circle cx="356" cy="264" r="187" fill="url(#dots)" />
-      <path
-        d="M97 157 L244 81 L343 258 L235 425 L91 337 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M244 81 L343 258 L235 425 L239 252 Z"
-        fill="#563d5a"
-      />
-      <path
-        d="M623 157 L476 81 L377 258 L485 425 L629 337 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M476 81 L377 258 L485 425 L481 252 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M170 256 H550"
-        fill="none"
-        stroke="#fcd1a9"
-        stroke-width="3"
-        stroke-dasharray="3 10"
-      />
-      <circle cx="294" cy="257" r="59" fill="url(#light)" />
-      <path
-        d="M425 189 L483 224 L473 294 L411 322 L365 264 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M425 189 L411 322 L365 264 Z"
-        fill="#fcd1a9"
-      />
+      <path d="M94 360 L174 133 L326 88 L360 425 L167 448 Z" fill="url(#dark)" />
+      <path d="M394 416 L431 91 L586 132 L635 362 L536 449 Z" fill="url(#warm)" />
+      <circle cx="142" cy="256" r="30" fill="url(#stipple)" /><circle cx="142" cy="256" r="7" fill="#fcd1a9" />
+      <path d="M172 256 H244" stroke="#fcd1a9" stroke-width="5" stroke-dasharray="3 8" />
+      <path d="m232 193 62 63-62 64-62-64Z" fill="url(#violet)" />
+      <path d="M211 242h42m-42 14h31m-31 14h42" stroke="#fcd1a9" stroke-width="5" />
+      <path d="M285 255 C323 231 353 241 389 257" fill="none" stroke="#111528" stroke-width="6" />
+      <path d="M393 303 L425 231 L505 210 L567 254 L548 330 L462 357 Z" fill="url(#light)" />
+      <path d="M393 303 L425 231 L505 210 L567 254 L548 330 L462 357 Z" fill="url(#dots)" opacity=".7" />
+      <path d="M425 302 L454 277 L481 294 L516 263 L548 290" fill="none" stroke="#d93c34" stroke-width="7" />
+      <path d="M432 331 L466 291 L493 310 L529 281 L547 314" fill="none" stroke="#28215a" stroke-width="6" />
+      <path d="M449 370 H572 V421 H449 Z" fill="#111528" />
+      <path d="M462 382 H478 V398 H462 Z M488 382 H504 V398 H488 Z M514 382 H530 V398 H514 Z M540 382 H556 V398 H540 Z" fill="#f5f2e8" />
+      <path d="M117 402 H196" stroke="#9968d8" stroke-width="5" stroke-dasharray="2 9" />
     `,
 
     network: `
-      <path
-        d="M93 318 L369 110 L635 319 L346 467 Z"
-        fill="url(#warm)"
-        opacity="0.5"
-      />
-      <path
-        d="M94 317 L369 110 L635 319 L346 467 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M169 175 L345 120 L536 174
-           M169 175 L347 269 L536 174
-           M167 349 L347 269 L538 348
-           M167 349 L347 412 L538 348
-           M345 120 L538 348
-           M347 412 L536 174"
-        fill="none"
-        stroke="#28215a"
-        stroke-width="2"
-        opacity="0.65"
-      />
-      <path
-        d="M117 145 L175 112 L228 145 L173 179 Z
-           M117 145 V208 L173 239 L173 179 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M173 179 L228 145 V207 L173 239 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M291 241 L347 208 L402 240 L348 274 Z
-           M291 241 V304 L348 338 L348 274 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M348 274 L402 240 V303 L348 338 Z"
-        fill="url(#warm)"
-      />
-      <circle cx="345" cy="120" r="24" fill="url(#light)" />
-      <circle cx="347" cy="412" r="24" fill="url(#dark)" />
-      <circle cx="536" cy="174" r="40" fill="url(#warm)" />
-      <circle cx="538" cy="348" r="40" fill="url(#light)" />
-      <circle cx="167" cy="349" r="32" fill="url(#dark)" />
+      <path d="M86 369 L166 112 L620 96 L653 382 L352 466 Z" fill="url(#light)" />
+      <path d="M183 144 L352 98 L531 144 M183 253 L352 207 L531 253 M183 362 L352 316 L531 253" fill="none" stroke="#28215a" stroke-width="3" />
+      <path d="M183 144 L183 362 M352 98 L352 316 M531 144 L531 253" stroke="#fcd1a9" stroke-width="3" opacity=".7" />
+      <g stroke="#9968d8" stroke-width="3" opacity=".8"><path d="M183 144 L352 98 M183 144 L352 207 M183 144 L352 316 M183 253 L352 98 M183 253 L352 207 M183 253 L352 316 M183 362 L352 98 M183 362 L352 207 M183 362 L352 316" /><path d="M352 98 L531 144 M352 207 L531 144 M352 207 L531 253 M352 316 L531 144 M352 316 L531 253" /></g>
+      <g fill="url(#violet)"><circle cx="183" cy="144" r="19"/><circle cx="183" cy="253" r="19"/><circle cx="183" cy="362" r="19"/></g>
+      <g fill="url(#warm)"><circle cx="352" cy="98" r="20"/><circle cx="352" cy="207" r="20"/><circle cx="352" cy="316" r="20"/></g>
+      <g fill="url(#dark)"><circle cx="531" cy="144" r="19"/><circle cx="531" cy="253" r="19"/></g>
+      <path d="M574 192 H625 V252 H574 Z M574 271 H625 V331 H574 Z" fill="url(#hatch)" /><path d="M582 202 H617 M582 218 H617 M582 234 H617 M582 281 H617 M582 297 H617 M582 313 H617" stroke="#f5f2e8" stroke-width="4" />
     `,
 
     review: `
-      <path
-        d="M194 182 L591 125 L625 352 L540 367
-           L544 438 L452 379 L219 411 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M89 121 L485 68 L521 307 L286 340
-           L205 418 L199 351 L123 362 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M89 121 L485 68 L521 307 L286 340
-           L205 418 L199 351 L123 362 Z"
-        fill="url(#dots)"
-        opacity="0.7"
-      />
-      <path
-        d="M164 268 L192 264 L185 188 L157 192 Z"
-        fill="#f5f2e8"
-      />
-      <path
-        d="M223 260 L252 256 L241 145 L212 149 Z"
-        fill="#f5f2e8"
-      />
-      <path
-        d="M284 253 L313 249 L305 177 L276 181 Z"
-        fill="#f5f2e8"
-      />
-      <path
-        d="M345 245 L374 241 L361 122 L332 126 Z"
-        fill="#111528"
-      />
-      <path
-        d="M405 237 L434 233 L425 151 L396 155 Z"
-        fill="#f5f2e8"
-      />
+      <path d="M92 132 L414 74 L446 289 L161 340 Z" fill="url(#warm)" />
+      <path d="M92 132 L414 74 L446 289 L161 340 Z" fill="url(#stipple)" opacity=".7" />
+      <path d="M149 177 H389 M155 205 H349" stroke="#f5f2e8" stroke-width="7" />
+      <path d="M162 247 C205 214 244 286 285 250 C320 220 352 270 402 232" fill="none" stroke="#9968d8" stroke-width="7" />
+      <path d="M442 188 C474 157 534 161 560 197 L605 259 C626 290 608 332 571 342 L504 359 C469 368 436 348 430 313 L419 244 C416 222 424 202 442 188 Z" fill="url(#dark)" />
+      <path d="M462 244 H489 V271 H516 V298 H489 V325 H462 V298 H435 V271 H462 Z" fill="#fcd1a9" />
+      <circle cx="548" cy="247" r="13" fill="#f65933" /><circle cx="578" cy="276" r="13" fill="#9968d8" />
+      <path d="M507 215 C532 198 560 204 574 224" fill="none" stroke="#f5f2e8" stroke-width="5" />
+      <path d="M505 374 C541 347 568 390 600 367" fill="none" stroke="#d93c34" stroke-width="6" />
+      <path d="M111 385 H396" stroke="#28215a" stroke-width="5" stroke-dasharray="2 11" />
     `,
 
     pacman: `
-      <path
-        d="M108 115 H570 V396 H168 V180 H503 V333 H235"
-        fill="none"
-        stroke="#28215a"
-        stroke-width="25"
-        stroke-linejoin="miter"
-        opacity="0.18"
-      />
-      <path
-        d="M86 365 L395 460 L637 279 L328 190 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M345 258 L500 147
-           A190 190 0 1 0 500 369 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M345 258 L500 147
-           A190 190 0 0 0 178 165 Z"
-        fill="url(#light)"
-      />
-      <circle cx="471" cy="258" r="16" fill="#111528" />
-      <circle cx="536" cy="258" r="16" fill="#111528" />
-      <circle cx="601" cy="258" r="16" fill="#111528" />
+      <path d="M105 118 H603 V398 H145 V174 H514 V337 H254 V225 H424" fill="none" stroke="#111528" stroke-width="34" stroke-linejoin="round" opacity=".88" />
+      <path d="M92 371 L360 455 L640 301 L372 218 Z" fill="url(#light)" />
+      <path d="M352 267 L503 151 A184 184 0 1 0 503 383 Z" fill="url(#warm)" />
+      <path d="M352 267 L503 151 A184 184 0 0 0 183 175 Z" fill="#f5f2e8" />
+      <path d="M352 267 L503 151 M352 267 L503 383" stroke="#111528" stroke-width="8" />
+      <path d="M111 331 L438 125 L616 292 L378 470 Z" fill="url(#hatch)" opacity=".2" />
+      <path d="M126 130 H235 M126 130 V208 M235 130 V208 M514 130 H585 V208" fill="none" stroke="#9968d8" stroke-width="5" />
+      <path d="M163 368 C220 337 277 398 331 365 S440 334 505 365" fill="none" stroke="#9968d8" stroke-width="5" stroke-dasharray="4 12" />
+      <circle cx="155" cy="130" r="11" fill="#fcd1a9" /><circle cx="268" cy="130" r="11" fill="#fcd1a9" /><circle cx="579" cy="130" r="11" fill="#fcd1a9" />
+      <circle cx="190" cy="368" r="9" fill="#111528" /><circle cx="253" cy="377" r="9" fill="#111528" /><circle cx="317" cy="376" r="9" fill="#111528" /><circle cx="448" cy="353" r="9" fill="#111528" /><circle cx="512" cy="365" r="9" fill="#111528" /><circle cx="566" cy="337" r="9" fill="#111528" />
+      <path d="M515 256 C548 222 585 244 574 277 C565 304 532 303 515 280 Z" fill="url(#violet)" />
+      <circle cx="544" cy="256" r="5" fill="#f5f2e8" /><circle cx="565" cy="258" r="5" fill="#f5f2e8" />
     `,
 
     mapping: `
-      <path
-        d="M69 316 L357 160 L650 319 L363 479 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M69 316 L357 160 L650 319 L363 479 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M158 262 L254 210 L350 264 L252 319 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M158 262 V348 L252 402 V319 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M252 319 L350 264 V350 L252 402 Z"
-        fill="#f9843e"
-      />
-      <path
-        d="M332 150 L423 99 L512 149 L423 201 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M332 150 V299 L423 351 V201 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M423 201 L512 149 V297 L423 351 Z"
-        fill="url(#dark)"
-      />
-      <ellipse
-        cx="361"
-        cy="301"
-        rx="276"
-        ry="124"
-        fill="none"
-        stroke="#d93c34"
-        stroke-width="2"
-        stroke-dasharray="6 9"
-      />
-      <path
-        d="M109 302 L423 99 L607 332 M109 302 L607 332"
-        fill="none"
-        stroke="#28215a"
-        stroke-width="1.5"
-      />
-      <circle cx="109" cy="302" r="12" fill="#111528" />
-      <circle cx="607" cy="332" r="12" fill="#111528" />
-      <circle cx="423" cy="99" r="12" fill="#f65933" />
+      <path d="M77 350 L344 178 L646 295 L378 470 Z" fill="url(#dark)" />
+      <path d="M77 350 L344 178 L646 295 L378 470 Z" fill="url(#mesh)" opacity=".65" />
+      <path d="M172 302 L258 251 L346 285 L258 337 Z" fill="url(#warm)" />
+      <path d="M172 302 V384 L258 432 V337 Z M258 337 L346 285 V367 L258 432 Z" fill="url(#violet)" />
+      <path d="M353 174 L438 125 L526 159 L440 211 Z" fill="url(#light)" />
+      <path d="M353 174 V316 L440 366 V211 Z" fill="url(#warm)" />
+      <path d="M440 211 L526 159 V303 L440 366 Z" fill="url(#dark)" />
+      <path d="M111 331 L438 125 L616 292 M111 331 L616 292" fill="none" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="5 9" />
+      <path d="M435 127 L587 214 L616 292" fill="none" stroke="#d93c34" stroke-width="3" />
+      <path d="M438 125 L438 43 L548 101 L548 159" fill="none" stroke="#111528" stroke-width="5" />
+      <path d="M438 43 L548 101 L526 159" fill="none" stroke="#9968d8" stroke-width="2" />
+      <path d="M394 72 L447 46 L493 69 L440 97 Z" fill="url(#dark)" />
+      <path d="M394 72 V105 L440 130 V97 Z" fill="#28215a" />
+      <path d="M440 97 L493 69 V102 L440 130 Z" fill="url(#violet)" />
+      <circle cx="449" cy="86" r="17" fill="#111528" /><circle cx="449" cy="86" r="8" fill="#9968d8" />
+      <path d="M449 103 L526 159 L440 211 Z" fill="#9968d8" opacity=".22" />
+      <circle cx="111" cy="331" r="12" fill="#fcd1a9" /><circle cx="616" cy="292" r="12" fill="#fcd1a9" /><circle cx="438" cy="125" r="14" fill="#d93c34" /><circle cx="548" cy="101" r="11" fill="#9968d8" /><circle cx="526" cy="159" r="11" fill="#fcd1a9" />
     `,
 
     copilot: `
-      <circle cx="364" cy="242" r="190" fill="url(#dots)" />
-      <path
-        d="M119 168 L347 235 L583 161 L573 382
-           L350 447 L129 381 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M110 122 L347 195 L350 413 L126 342 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M347 195 L587 118 L571 339 L350 413 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M347 195 L587 118 L571 339 L350 413 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M161 186 L290 228 M164 223 L295 265
-           M168 260 L297 302"
-        fill="none"
-        stroke="#5f3bb7"
-        stroke-width="5"
-      />
-      <path
-        d="M255 86 L365 49 L473 89"
-        fill="none"
-        stroke="#111528"
-        stroke-width="2"
-      />
-      <circle cx="255" cy="86" r="20" fill="url(#warm)" />
-      <circle cx="365" cy="49" r="25" fill="url(#dark)" />
-      <circle cx="473" cy="89" r="20" fill="url(#light)" />
+      <circle cx="364" cy="242" r="190" fill="url(#dots)" opacity=".7" />
+      <path d="M112 171 L347 237 L588 158 L575 384 L350 448 L124 382 Z" fill="url(#dark)" />
+      <path d="M110 122 L347 195 L350 413 L126 342 Z" fill="url(#light)" />
+      <path d="M110 122 L347 195 L350 413 L126 342 Z" fill="url(#hatch)" opacity=".32" />
+      <path d="M347 195 L588 118 L575 339 L350 413 Z" fill="url(#warm)" />
+      <path d="M347 195 L588 118 L575 339 L350 413 Z" fill="url(#mesh)" opacity=".7" />
+      <path d="M171 187 L291 226 L291 334 L174 298 Z" fill="#111528" opacity=".78" />
+      <path d="M190 214 L270 239 M190 249 L270 274 M190 284 L270 309" fill="none" stroke="#fcd1a9" stroke-width="6" />
+      <path d="M255 86 L365 49 L473 89 M365 49 V195" fill="none" stroke="#111528" stroke-width="3" />
+      <circle cx="255" cy="86" r="20" fill="url(#violet)" /><circle cx="365" cy="49" r="25" fill="url(#dark)" /><circle cx="473" cy="89" r="20" fill="url(#light)" />
+      <path d="M430 242 H529 V308 H430 Z" fill="#f5f2e8" opacity=".9" />
+      <path d="M448 262 H510 M448 284 H493" stroke="#28215a" stroke-width="5" />
+      <path d="M444 262 L450 268 L461 255 M444 284 L450 290 L461 277" fill="none" stroke="#5f3bb7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="420" cy="275" r="12" fill="#9968d8" />
+      <path d="M365 195 C401 191 416 224 430 242 M365 195 C396 206 412 233 420 275" fill="none" stroke="#9968d8" stroke-width="4" />
     `,
 
     medical: `
-      <path
-        d="M157 162 L468 84 L595 369 L284 451 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M122 129 L433 51 L560 336 L249 418 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M175 130 L414 71 L520 312 L281 375 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M175 130 L414 71 L520 312 L281 375 Z"
-        fill="url(#dots)"
-      />
-      <path
-        d="M298 147 H352 V205 H410 V259 H352
-           V317 H298 V259 H240 V205 H298 Z"
-        fill="#111528"
-        transform="rotate(-15 325 232)"
-      />
-      <path
-        d="M153 394 L342 449 L582 400"
-        fill="none"
-        stroke="#f65933"
-        stroke-width="3"
-      />
-      <circle cx="153" cy="394" r="12" fill="#111528" />
-      <circle cx="342" cy="449" r="12" fill="#111528" />
-      <circle cx="582" cy="400" r="12" fill="#111528" />
+      <path d="M82 306 L284 126 L511 187 L309 389 Z" fill="url(#light)" />
+      <path d="M82 306 L284 126 L511 187 L309 389 Z" fill="url(#dots)" opacity=".6" />
+      <path d="M116 324 L318 144 L545 205 L343 407 Z" fill="url(#dark)" />
+      <path d="M152 311 L321 162 L488 208 L319 357 Z" fill="#f5f2e8" opacity=".92" />
+      <path d="M190 278 L307 176 L425 207 L309 309 Z" fill="url(#warm)" />
+      <path d="M342 188 C403 178 442 204 472 239 L561 282" fill="none" stroke="#9968d8" stroke-width="8" />
+      <path d="M342 188 C399 226 438 253 472 239 L561 282" fill="none" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="5 8" />
+      <path d="M289 193 H329 V233 H369 V273 H329 V313 H289 V273 H249 V233 H289 Z" fill="#d93c34" transform="rotate(-15 309 253)" />
+      <path d="M493 241 V321 C493 339 531 350 568 334 V254 C531 270 493 259 493 241 Z" fill="url(#violet)" />
+      <ellipse cx="530" cy="247" rx="37" ry="13" fill="#f5f2e8" />
+      <path d="M493 283 C493 301 568 315 568 296 M493 307 C493 325 568 339 568 320" fill="none" stroke="#9968d8" stroke-width="3" />
+      <circle cx="116" cy="324" r="11" fill="#fcd1a9" /><circle cx="561" cy="282" r="12" fill="#d93c34" /><circle cx="568" cy="347" r="11" fill="#9968d8" />
     `,
 
     forensics: `
-      <circle cx="442" cy="192" r="133" fill="url(#light)" />
-      <path
-        d="M76 304 L408 142 L636 320 L298 475 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M76 304 L408 142 L636 320 L298 475 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M94 289 L179 289 L211 224 L247 340
-           L284 98 L324 382 L365 179 L402 334
-           L442 237 L477 294 L621 294
-           L621 343 L479 343 L446 303 L404 398
-           L366 247 L327 448 L285 166 L249 407
-           L211 291 L185 342 L94 342 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M283 84 V453"
-        fill="none"
-        stroke="#fcd1a9"
-        stroke-width="2"
-        stroke-dasharray="5 8"
-      />
-      <circle cx="283" cy="84" r="11" fill="#d93c34" />
+      <path d="M80 119 H626 V370 H80 Z" fill="url(#dark)" />
+      <path d="M103 143 H603 V345 H103 Z" fill="url(#warm)" />
+      <path d="M103 143 H603 V345 H103 Z" fill="url(#scanlines)" opacity=".5" />
+      <path d="M126 289 H176 L199 236 L225 319 L251 192 L279 319 L309 246 L337 291 L370 213 L399 319 L432 259 L460 291 H579" fill="none" stroke="#f5f2e8" stroke-width="10" stroke-linejoin="round" />
+      <path d="M126 289 H579" stroke="#9968d8" stroke-width="3" stroke-dasharray="4 10" />
+      <path d="M126 289 H176 L199 236 L225 319 L251 192" fill="none" stroke="#111528" stroke-width="15" />
+      <circle cx="251" cy="192" r="15" fill="#d93c34" />
+      <path d="M104 401 H603" stroke="#fcd1a9" stroke-width="8" />
+      <path d="M140 401 V424 M213 401 V424 M286 401 V424 M359 401 V424 M432 401 V424 M505 401 V424 M578 401 V424" stroke="#111528" stroke-width="4" />
+      <path d="M251 391 V436" stroke="#d93c34" stroke-width="5" />
+      <circle cx="449" cy="278" r="73" fill="url(#light)" opacity=".86" />
+      <circle cx="449" cy="278" r="52" fill="#111528" opacity=".84" />
+      <path d="M416 279 L429 263 L438 287 L449 252 L458 294 L471 270 L482 279" fill="none" stroke="#fcd1a9" stroke-width="5" stroke-linejoin="round" />
+      <path d="M486 315 L550 379" stroke="#111528" stroke-width="18" stroke-linecap="round" />
+      <circle cx="449" cy="278" r="25" fill="none" stroke="#9968d8" stroke-width="5" />
+      <path d="M126 166 L151 181 L126 196 Z" fill="#f5f2e8" />
     `,
 
     codec: `
-      <path d="M92 370 L362 104 L628 237 L356 468 Z" fill="url(#dark)" />
-      <path d="M128 342 L362 126 L586 240 L353 440 Z" fill="url(#mesh)" />
-      <path d="M166 307 L362 151 L546 244 L351 407 Z" fill="url(#light)" opacity=".8" />
-      <path d="M190 318 C249 269 277 352 330 307 S423 244 493 286" fill="none" stroke="#5f3bb7" stroke-width="14" />
-      <path d="M210 209 L210 391 M274 165 L274 353 M338 139 L338 318 M402 171 L402 349 M466 203 L466 377" stroke="#d93c34" stroke-width="7" opacity=".8" />
-      <circle cx="362" cy="126" r="19" fill="#9968d8" /><circle cx="353" cy="440" r="15" fill="#fcd1a9" />
+      <ellipse cx="357" cy="277" rx="240" ry="181" fill="url(#dots)" />
+      <path d="M65 265h24l17-48 21 99 23-156 23 190 24-94h39 M485 265h25l17-48 21 99 23-156 23 190 24-94h40" fill="none" stroke="#d93c34" stroke-width="10" stroke-linejoin="round" />
+      <g transform="rotate(-9 360 259)">
+        <path d="M274 158v-34m43 34v-34m43 34v-34m43 34v-34m43 34v-34 M274 366v34m43-34v34m43-34v34m43-34v34m43-34v34 M253 195h-34m34 43h-34m34 43h-34m34 43h-34 M467 195h34m-34 43h34m-34 43h34m-34 43h34" stroke="#28215a" stroke-width="13" />
+        <rect x="248" y="154" width="224" height="215" rx="20" fill="url(#dark)" />
+        <rect x="272" y="179" width="176" height="163" rx="9" fill="url(#violet)" />
+        <rect x="272" y="179" width="176" height="163" rx="9" fill="url(#scanlines)" />
+        <path d="M302 263h23l13-34 23 69 17-52h35" fill="none" stroke="#fcd1a9" stroke-width="10" />
+        <circle cx="285" cy="167" r="5" fill="#fcd1a9" />
+      </g>
+      <path d="M304 433h24m18 0h24m18 0h24" stroke="#f65933" stroke-width="17" />
+      <path d="m455 389-12 24h19l-11 24" fill="none" stroke="#5f3bb7" stroke-width="6" stroke-linejoin="round" />
     `,
 
     psychoacoustic: `
-      <circle cx="363" cy="261" r="184" fill="url(#warm)" opacity=".8" />
-      <path d="M91 274 C188 95 245 444 344 260 S507 112 629 274" fill="none" stroke="#111528" stroke-width="18" />
-      <path d="M91 274 C188 444 245 95 344 260 S507 444 629 274" fill="none" stroke="#5f3bb7" stroke-width="9" />
-      <path d="M113 274 H613" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="8 14" />
-      <circle cx="344" cy="260" r="32" fill="#9968d8" /><circle cx="344" cy="260" r="12" fill="#111528" />
-      <path d="M172 169 L251 130 M475 392 L554 353" stroke="#d93c34" stroke-width="12" stroke-linecap="round" />
+      <path d="M306 81C208 43 121 108 121 214c0 81 65 111 86 171 19 55 74 61 104 16 20-31 18-56 52-101 67-87 47-178-57-219Z" fill="url(#warm)" />
+      <path d="M306 81C208 43 121 108 121 214c0 81 65 111 86 171 19 55 74 61 104 16 20-31 18-56 52-101 67-87 47-178-57-219Z" fill="url(#contours)" />
+      <path d="M262 360c-3-52 65-79 69-137 4-63-29-101-78-98-52 3-85 48-78 97 4 27 20 48 40 62" fill="none" stroke="#111528" stroke-width="17" stroke-linecap="round" />
+      <path d="M234 292c-28-41-25-74 5-88 21-10 39-2 48 16" fill="none" stroke="#fcd1a9" stroke-width="13" stroke-linecap="round" />
+      <path d="M341 261h52l48-113h35 M393 261h83 M393 261l48 112h35" fill="none" stroke="#28215a" stroke-width="4" />
+      <circle cx="393" cy="261" r="13" fill="#5f3bb7" />
+      <path d="M476 148c26-65 51 65 77 0s51-65 77 0" fill="none" stroke="#f65933" stroke-width="12" />
+      <path d="M476 261c18-47 36 47 54 0s36-47 54 0 36 47 54 0" fill="none" stroke="#5f3bb7" stroke-width="10" />
+      <path d="M476 373c38-91 76 91 114 0h42" fill="none" stroke="#111528" stroke-width="13" />
+      <path d="M480 182h150M480 297h150M480 408h150" stroke="#9968d8" stroke-width="3" stroke-dasharray="3 9" />
     `,
 
     reconstruction: `
-      <path d="M116 384 L361 106 L603 384 L359 467 Z" fill="url(#dots)" />
-      <path d="M360 90 L455 188 L422 328 L359 408 L295 328 L265 188 Z" fill="url(#light)" />
-      <path d="M360 90 L455 188 L360 216 Z M360 216 L422 328 L359 408 Z" fill="url(#dark)" />
-      <path d="M265 188 L360 216 L295 328 Z" fill="#5f3bb7" opacity=".8" />
-      <path d="M239 190 L360 90 L481 190 M239 190 L295 328 L359 408 L422 328 L481 190" fill="none" stroke="#9968d8" stroke-width="4" stroke-dasharray="5 9" />
-      <circle cx="360" cy="90" r="12" fill="#d93c34" /><circle cx="295" cy="328" r="12" fill="#fcd1a9" /><circle cx="422" cy="328" r="12" fill="#fcd1a9" />
+      <path d="M160 158V90h78m247 0h75v68M160 369v69h78m247 0h75v-69" fill="none" stroke="#9968d8" stroke-width="5" />
+      <ellipse cx="358" cy="372" rx="228" ry="67" fill="url(#dots)" />
+      <path d="m329 183 53 5 14 66-73 1Z" fill="url(#dark)" />
+      <path d="m303 96 52-31 50 34 5 62-34 43-48-11-33-43Z" fill="url(#light)" />
+      <path d="m355 65 50 34 5 62-34 43-20-61Z" fill="url(#violet)" />
+      <path d="m323 230-91 53-28 147 146 32 155-32-31-146-78-54-42 51Z" fill="url(#warm)" />
+      <path d="m323 230 31 51-4 181-146-32 28-147Z" fill="url(#dark)" />
+      <path d="m354 281 120 3 31 146-155 32Z" fill="url(#stipple)" />
+      <path d="m303 96 53 47 49-44m-110 51 61-7 20 61M232 283l122-2 120 3M204 430l150-149 151 149M232 283l118 179 124-178" fill="none" stroke="#fcd1a9" stroke-width="2" opacity=".75" />
+      <path d="m408 159 96 30 53 98-52 143m-31-146 83 3 47 75" fill="none" stroke="#5f3bb7" stroke-width="3" stroke-dasharray="3 9" />
+      <g fill="#5f3bb7"><circle cx="504" cy="189" r="10"/><circle cx="557" cy="287" r="12"/><circle cx="604" cy="362" r="8"/><circle cx="544" cy="406" r="7"/><circle cx="572" cy="221" r="6"/></g>
+      <ellipse cx="358" cy="326" rx="228" ry="74" fill="none" stroke="#d93c34" stroke-width="4" stroke-dasharray="12 8" />
     `,
 
     "rag-writing": `
-      <path d="M107 362 L365 106 L615 247 L357 458 Z" fill="url(#light)" />
-      <path d="M144 340 L365 126 L575 246 L355 425 Z" fill="url(#mesh)" />
-      <path d="M202 318 L366 166 L514 249 L351 384 Z" fill="#111528" />
-      <path d="M228 282 H406 M228 310 H467 M228 338 H386" stroke="#fcd1a9" stroke-width="8" stroke-linecap="round" />
-      <path d="M494 141 L553 174 L514 210 L455 177 Z" fill="#5f3bb7" />
-      <path d="M494 141 L455 177 L443 231 L482 195 Z" fill="#9968d8" />
-      <circle cx="178" cy="191" r="22" fill="#d93c34" /><circle cx="565" cy="351" r="28" fill="#9968d8" />
+      <path d="m112 117 159-35 40 218-159 35Z" fill="url(#dark)" />
+      <path d="m139 129 130-28 33 177-130 28Z" fill="url(#light)" />
+      <path d="m164 170 75-16m-69 46 75-16m-69 46 50-11" stroke="#5f3bb7" stroke-width="8" />
+      <path d="m291 85 128 31-39 170-128-31Z" fill="url(#warm)" />
+      <path d="m291 85 128 31-39 170-128-31Z" fill="url(#hatch)" />
+      <path d="m284 157 84 19m-91 12 59 14" stroke="#f5f2e8" stroke-width="8" />
+      <path d="m174 362 174-58 88 69m-88-69-13-73m13 73-34 123" fill="none" stroke="#5f3bb7" stroke-width="5" />
+      <g fill="#f65933"><circle cx="174" cy="362" r="17"/><circle cx="335" cy="231" r="14"/><circle cx="314" cy="427" r="13"/></g>
+      <path d="m348 270 35 34-35 36-36-36Z" fill="url(#violet)" />
+      <path d="m442 196 157 23-35 235-157-23Z" fill="url(#dark)" />
+      <path d="m429 182 157 23-35 235-157-23Z" fill="url(#light)" />
+      <path d="m429 182 157 23-35 235-157-23Z" fill="url(#weave)" opacity=".5" />
+      <path d="m444 242 102 15m-109 30 81 12m-87 29 102 15m-108 28 65 10" stroke="#28215a" stroke-width="7" />
+      <path d="m583 117 30 18-86 148-38 17 8-43Z" fill="url(#violet)" />
+      <path d="m527 283-38 17 8-43Z" fill="#f65933" />
     `,
 
     "sound-detection": `
-      <circle cx="358" cy="256" r="190" fill="url(#warm)" opacity=".7" />
-      <path d="M78 286 H139 L170 208 L205 342 L242 154 L282 382 L323 112 L366 400 L408 174 L447 338 L482 227 L517 286 H638" fill="none" stroke="#111528" stroke-width="16" stroke-linejoin="round" />
-      <path d="M102 286 H618" stroke="#9968d8" stroke-width="4" stroke-dasharray="4 12" />
-      <path d="M323 96 V421" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="7 10" />
-      <circle cx="323" cy="112" r="17" fill="#d93c34" /><circle cx="447" cy="338" r="13" fill="#5f3bb7" />
+      <rect x="111" y="101" width="493" height="261" rx="18" fill="url(#dark)" />
+      <path d="M149 290v-90m36 122V171m36 152V152m36 162V204m36 124V167m36 161V135m36 193V180m36 145V132m36 196V198m36 124V161m36 159V190m36 122v-81" stroke="#9968d8" stroke-width="16" opacity=".65" />
+      <rect x="345" y="117" width="84" height="229" fill="url(#warm)" opacity=".7" />
+      <rect x="126" y="116" width="463" height="230" fill="url(#scanlines)" />
+      <path d="M70 247h77l20-23 22 48 28-81 25 113 29-66h41l29-35 25 74 24-137 27 175 30-77h43l24-35 22 47h80" fill="none" stroke="#fcd1a9" stroke-width="8" stroke-linejoin="round" />
+      <path d="M402 80v297" stroke="#f65933" stroke-width="4" />
+      <path d="m387 78 15 21 15-21Z" fill="#f65933" />
+      <path d="M176 417h327m-15-10 15 10-15 10" fill="none" stroke="#28215a" stroke-width="5" />
+      <rect x="199" y="391" width="53" height="52" rx="8" fill="url(#violet)" />
+      <rect x="303" y="391" width="53" height="52" rx="8" fill="url(#violet)" />
+      <rect x="407" y="391" width="53" height="52" rx="8" fill="url(#warm)" />
+      <path d="M221 362v29m105-29v29m105-29v29" stroke="#9968d8" stroke-width="3" stroke-dasharray="4 6" />
+      <circle cx="565" cy="417" r="30" fill="url(#light)" />
+      <path d="m551 418 10 10 19-24" fill="none" stroke="#5f3bb7" stroke-width="6" />
     `,
 
     gesture: `
-      <path
-        d="M88 243 L346 62 L620 283 L365 457 Z"
-        fill="url(#warm)"
-        opacity="0.75"
-      />
-      <path
-        d="M88 243 L346 62 L620 283 L365 457 Z"
-        fill="url(#dots)"
-      />
-      <path
-        d="M280 403 L230 337 L176 274 L200 243
-           L265 292 L253 133 L285 119 L318 270
-           L327 78 L361 79 L370 269 L401 103
-           L434 113 L418 288 L462 176 L493 192
-           L461 333 L408 399 L387 455 L291 447 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M280 403 L318 270 L370 269 L408 399
-           L387 455 L291 447 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M370 269 L418 288 L461 333 L408 399 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M195 244 L318 270 L370 269 L418 288 L480 190
-           M318 270 L280 403 L408 399 L370 269"
-        fill="none"
-        stroke="#f65933"
-        stroke-width="3"
-      />
-      <circle cx="318" cy="270" r="9" fill="#d93c34" />
-      <circle cx="370" cy="269" r="9" fill="#d93c34" />
-      <circle cx="408" cy="399" r="9" fill="#d93c34" />
+      <path d="M82 370 L352 92 L628 246 L358 474 Z" fill="url(#warm)" opacity=".7" />
+      <path d="M82 370 L352 92 L628 246 L358 474 Z" fill="url(#dots)" />
+      <path d="M260 399 L216 337 L169 278 L194 246 L255 292 L247 147 L278 132 L315 269 L325 91 L357 88 L369 270 L397 119 L430 129 L417 289 L458 191 L488 207 L456 337 L404 405 L385 457 L276 445 Z" fill="url(#light)" />
+      <path d="M260 399 L315 269 L369 270 L404 405 L385 457 L276 445 Z" fill="url(#dark)" />
+      <path d="M369 270 L417 289 L456 337 L404 405 Z" fill="url(#hatch)" />
+      <path d="M194 246 L315 269 L369 270 L417 289 L488 207 M315 269 L260 399 L404 405 L369 270" fill="none" stroke="#f65933" stroke-width="3" />
+      <circle cx="315" cy="269" r="9" fill="#d93c34" /><circle cx="369" cy="270" r="9" fill="#d93c34" /><circle cx="404" cy="405" r="9" fill="#d93c34" /><circle cx="417" cy="289" r="9" fill="#9968d8" />
+      <path d="M488 207 L548 172 L578 191 L518 226 Z" fill="url(#dark)" />
+      <path d="M518 226 L578 191 L578 260 L518 296 Z" fill="url(#violet)" />
+      <path d="M578 191 V260 M548 172 V241" stroke="#fcd1a9" stroke-width="3" />
+      <circle cx="518" cy="226" r="13" fill="#111528" />
+      <path d="M518 226 L574 178 L587 188 L536 246 Z" fill="url(#light)" />
+      <path d="M518 226 L568 273 L579 260 L536 214 Z" fill="url(#warm)" />
+      <path d="M574 178 L602 157 M568 273 L600 291" stroke="#111528" stroke-width="12" stroke-linecap="round" />
+      <path d="M456 337 C505 326 519 301 518 264" fill="none" stroke="#9968d8" stroke-width="5" stroke-dasharray="4 9" />
+      <circle cx="548" cy="172" r="10" fill="#fcd1a9" /><circle cx="578" cy="191" r="10" fill="#d93c34" />
     `
   };
 
@@ -570,6 +298,10 @@
     if (!body) {
       return "";
     }
+
+    // Repeat the same surface at carousel seams, while varying it by subject.
+    const textureIndex = Object.keys(artwork).indexOf(kind);
+    const grainFrequency = ["0.65", "0.04 0.5", "0.12", "0.45"][textureIndex % 4];
 
     const scopedBody = body.replace(
       /url\(#([^)]+)\)/g,
@@ -619,6 +351,12 @@
             <stop offset="100%" stop-color="#cda1c9" />
           </radialGradient>
 
+          <linearGradient id="${prefix}-violet" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop stop-color="#28215a" />
+            <stop offset="55%" stop-color="#5f3bb7" />
+            <stop offset="100%" stop-color="#cda1c9" />
+          </linearGradient>
+
           <pattern
             id="${prefix}-dots"
             width="11"
@@ -650,6 +388,32 @@
             />
           </pattern>
 
+          <pattern id="${prefix}-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(32)">
+            <path d="M2 0v12M6 0v12" stroke="#111528" stroke-width="1.5" opacity=".35" />
+          </pattern>
+
+          <pattern id="${prefix}-stipple" width="33" height="29" patternUnits="userSpaceOnUse">
+            <g fill="#28215a" opacity=".5">
+              <circle cx="5" cy="7" r="2.2" /><circle cx="25" cy="18" r="1.2" />
+              <path d="m15 18 4-2 1 4-3 2Zm13-14 3 1-1 4-2-1Z" />
+            </g>
+            <path d="m9 23 2-3 2 2-1 4Zm12-14 2-3 3 2-2 3Z" fill="#f5f2e8" opacity=".55" />
+          </pattern>
+
+          <pattern id="${prefix}-scanlines" width="8" height="10" patternUnits="userSpaceOnUse">
+            <path d="M0 2h8" stroke="#fcd1a9" stroke-width="2" opacity=".35" />
+            <path d="M0 6h8" stroke="#111528" stroke-width="1" opacity=".3" />
+          </pattern>
+
+          <pattern id="${prefix}-contours" width="48" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+            <path d="M-24 7Q-12-3 0 7T24 7T48 7T72 7M-24 21Q-12 11 0 21T24 21T48 21T72 21" fill="none" stroke="#28215a" stroke-width="1.6" opacity=".4" />
+          </pattern>
+
+          <pattern id="${prefix}-weave" width="18" height="18" patternUnits="userSpaceOnUse">
+            <path d="M1 2h7M1 5h7M11 10h7M11 13h7" stroke="#28215a" stroke-width="1.5" opacity=".4" />
+            <path d="M12 0v7M15 0v7M3 10v8M6 10v8" stroke="#fcd1a9" stroke-width="2" opacity=".65" />
+          </pattern>
+
           <filter
             id="${prefix}-grain"
             x="-8%"
@@ -660,10 +424,10 @@
           >
             <feTurbulence
               type="fractalNoise"
-              baseFrequency="0.8"
+              baseFrequency="${grainFrequency}"
               numOctaves="2"
               stitchTiles="stitch"
-              seed="${index + 3}"
+              seed="${textureIndex + 3}"
               result="noise"
             />
 
@@ -715,6 +479,7 @@
   function appendProjectCycle(track, projects) {
     projects.forEach((project) => {
       const clone = project.cloneNode(true);
+      clone.style.backgroundColor = getComputedStyle(project).backgroundColor;
       clone.setAttribute("aria-hidden", "true");
       clone.querySelectorAll("summary").forEach((summary) => {
         summary.tabIndex = -1;
