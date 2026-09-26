@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee8dc">
+  <meta
+    name="description"
+    content="Dahong Luo — machine learning, audio processing, signal processing, computer vision, research, and software engineering."
+  >
+
+  <title>Dahong Luo — Signals, Systems &amp; Learning</title>
+
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Dahong Luo, home">
+      DL<span aria-hidden="true">/</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="text-button header-print" type="button" data-print hidden>
+      Print résumé <span aria-hidden="true">↗</span>
+    </button>
+  </header>
+
+  <noscript>
+    <p class="noscript-note">
+      All résumé content is available without JavaScript. Scroll the project
+      strip horizontally to explore it. Interactive artwork and controls
+      require JavaScript.
+    </p>
+  </noscript>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="hero-scenery" aria-hidden="true">
+        <div class="hero-plane"></div>
+        <div class="hero-orb"></div>
+        <div class="hero-dot-plane"></div>
+
+        <div
+          class="hero-object hero-object--wave"
+          data-art="waveform"
+        ></div>
+
+        <div
+          class="hero-object hero-object--guitar"
+          data-art="guitar"
+        ></div>
+
+        <div
+          class="hero-object hero-object--code"
+          data-art="code"
+        ></div>
+      </div>
+
+      <div class="hero-eyebrow">
+        <p class="eyebrow">Research / Engineering / Experiments</p>
+        <p class="eyebrow hero-coordinate">Sound → Perception → Intelligence</p>
+      </div>
+
+      <h1 class="hero-title" id="hero-name">
+        <span class="sr-only">Dahong Luo</span>
+        <span class="name-line" data-name-line aria-hidden="true">Dahong</span>
+        <span class="name-line" data-name-line aria-hidden="true">Luo</span>
+      </h1>
+
+      <div class="hero-footer">
+        <p class="hero-intro">
+          Building at the intersection of<br>
+          machine learning, sound, and perception.
+        </p>
+
+        <a class="jump-link" href="#projects">
+          Explore the work <span aria-hidden="true">↓</span>
+        </a>
+
+        <div class="hero-motion">
+          <span class="pointer-note">The name follows your cursor.</span>
+          <button
+            class="text-button"
+            id="motion-toggle"
+            type="button"
+            aria-pressed="false"
+            hidden
+          >
+            Pause motion
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section projects-section"
+      id="projects"
+      aria-labelledby="projects-heading"
+      aria-roledescription="carousel"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / Selected builds</p>
+          <h2 id="projects-heading">Ideas, given<br>some shape.</h2>
+        </div>
+
+        <p class="section-description">
+          Eight independent projects and five hackathon builds.
+          A horizontal collection of models, tools, and experiments.
+          Swipe, scroll sideways, or use the controls.
+        </p>
+      </div>
+
+      <div class="reel-toolbar" data-reel-controls hidden>
+        <p class="reel-position">
+          <span id="project-count">01</span>
+          <span class="muted">/ 13</span>
+          <span class="reel-label">Projects &amp; hackathons</span>
+        </p>
+
+        <div class="reel-controls">
+          <button
+            class="text-button"
+            id="reel-play"
+            type="button"
+            aria-pressed="false"
+            aria-controls="project-rail"
+          >
+            Play reel
+          </button>
+
+          <button
+            class="arrow-button"
+            id="reel-prev"
+            type="button"
+            aria-label="Previous project"
+            aria-controls="project-rail"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+
+          <button
+            class="arrow-button"
+            id="reel-next"
+            type="button"
+            aria-label="Next project"
+            aria-controls="project-rail"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="project-rail"
+        id="project-rail"
+        tabindex="0"
+        aria-label="Project reel. Use the left and right arrow keys when this area is focused."
+      >
+        <article class="project">
+          <div class="project-art" data-art="cat" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">01 / Experiment / 03.2025</p>
+            <h3>Cat Diffusion<br>Model</h3>
+            <p class="project-description">
+              A cat-image diffusion experiment built with PyTorch and a U-Net.
+              Noise, structure, and the emergence of a recognizable form.
+            </p>
+            <p class="project-tech">PyTorch / Diffusion / UNet</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="quantum" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">02 / Experiment / 03.2025</p>
+            <h3>Quantum Neural<br>Network</h3>
+            <p class="project-description">
+              A quantum–classical neural-network experiment combining
+              PyTorch, Qiskit feature maps, variational circuits,
+              and autoencoders.
+            </p>
+            <p class="project-tech">
+              PyTorch / Qiskit / ZZFeaturemap / RealAmplitude / Autoencoders
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div
+            class="project-art"
+            data-art="segmentation"
+            aria-hidden="true"
+          ></div>
+
+          <div class="project-copy">
+            <p class="project-index">03 / Experiment / 03.2025</p>
+            <h3>Fine-Tuning<br>SAM2</h3>
+            <p class="project-description">
+              Fine-tuning the Segment Anything Model with PyTorch:
+              an exploration of visual boundaries and image segmentation.
+            </p>
+            <p class="project-tech">PyTorch / Segment Anything Model</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="math" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">04 / Experiment / 12.2024</p>
+            <h3>Mathematical Figure<br>Transcriber VLM</h3>
+            <p class="project-description">
+              A vision-language project for transcribing mathematical
+              figures, using Llama and Unsloth on Google Cloud.
+            </p>
+            <p class="project-tech">PyTorch / Unsloth / Llama / GCP</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="gan" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">05 / Experiment / 10.2024</p>
+            <h3>Embedded<br>Conditional GAN</h3>
+            <p class="project-description">
+              An embedding-conditioned generative adversarial network,
+              exploring how a learned condition can guide generation.
+            </p>
+            <p class="project-tech">PyTorch / TCGAN / Embedding</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="network" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">06 / Experiment / 06.2024</p>
+            <h3>Numpy Neural<br>Network</h3>
+            <p class="project-description">
+              Neural-network and Transformer experiments in NumPy,
+              with automatic differentiation as a building block.
+            </p>
+            <p class="project-tech">NumPy / AutoGrad / Transformer</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="review" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">07 / Experiment / 05.2024</p>
+            <h3>Cyberpunk 2077<br>Steam Review Analysis</h3>
+            <p class="project-description">
+              An analysis of player reviews using language representations
+              and machine-learning tools.
+            </p>
+            <p class="project-tech">PyTorch / pandas / LightGBM / BERT</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="pacman" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">08 / Experiment / 01.2024</p>
+            <h3>Reinforcement<br>Learning Pacman</h3>
+            <p class="project-description">
+              A Pacman agent exploring reinforcement learning
+              and Q-learning in a Pygame environment.
+            </p>
+            <p class="project-tech">
+              PyTorch / Reinforcement Learning / Q-Learning / PyGames
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="mapping" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">09 / IRONSIGHT Hackathon / 02.2026</p>
+            <h3>AnchorVision</h3>
+            <p class="project-subtitle">
+              SLAM-based 3D object mapping from video
+            </p>
+            <p class="project-description">
+              A 4D spatiotemporal mapping pipeline that combines visual SLAM
+              and sparse UWB ranging to build persistent site memory
+              without GPS.
+            </p>
+            <p class="project-tech">
+              ORB-SLAM3 / UWB / YOLO / LiDAR / C++ / ZeroMQ
+            </p>
+
+            <details class="project-details">
+              <summary>Implementation notes</summary>
+              <ul>
+                <li>
+                  Integrated ORB-SLAM3 with sparse Ultra-Wideband ranging
+                  to maintain a globally consistent 3D site memory.
+                </li>
+                <li>
+                  Developed multi-agent alignment using UWB constraints as
+                  a global prior in a Maximum A Posteriori optimization
+                  solver, eliminating drift and enabling map fusion without
+                  visual loop closures or heavy overlap.
+                </li>
+                <li>
+                  Implemented 2D-to-3D semantic lifting by projecting YOLO
+                  detections through ray-casting and LiDAR depth-map fusion,
+                  creating a persistent object index keyed by time
+                  and coordinates.
+                </li>
+                <li>
+                  Built a C++ and ZeroMQ bridge to stream RGB-D and IMU data
+                  from iPhone LiDAR to a backend fusion service with
+                  sub-100 ms latency.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="copilot" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">10 / HackUMBC / 10.2024</p>
+            <p class="project-award">Grand Prize</p>
+            <h3>Agent-Based<br>ELMS Copilot</h3>
+            <p class="project-description">
+              A multi-agent educational assistant for syllabus parsing,
+              course-content questions, and personalized quiz generation.
+            </p>
+            <p class="project-tech">
+              LangGraph / LangChain / Pinecone / PyTorch / Flask / React
+            </p>
+
+            <details class="project-details">
+              <summary>Implementation notes</summary>
+              <ul>
+                <li>
+                  Engineered specialized agents with LangGraph and LangChain
+                  for syllabus parsing, content QA, and automated
+                  quiz generation.
+                </li>
+                <li>
+                  Architected a RAG pipeline using Pinecone vector databases
+                  for low-latency semantic search across heterogeneous
+                  course materials.
+                </li>
+                <li>
+                  Developed a custom question-generation engine using
+                  PyTorch and OpenAI LLMs, fine-tuned to extract pedagogical
+                  concepts from notes and generate tailored assessments.
+                </li>
+                <li>
+                  Improved retrieval using advanced chunking and metadata
+                  filtering to maintain context across complex subjects.
+                </li>
+                <li>
+                  Built a Flask backend and React/Vite frontend with
+                  Tailwind CSS, integrating PyTorch for pedagogical content
+                  generation and student analytics.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="medical" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">11 / Hacklytics / 02.2024</p>
+            <p class="project-award">
+              1st Place — Elevance Healthcare Challenge
+            </p>
+            <h3>Medical Data<br>Compilation System</h3>
+            <p class="project-description">
+              A multilingual medical-document platform connecting
+              document ingestion with natural-language database retrieval.
+            </p>
+            <p class="project-tech">
+              LLMs / SQL / OCR / Translation / Document Parsing
+            </p>
+
+            <details class="project-details">
+              <summary>Implementation notes</summary>
+              <ul>
+                <li>
+                  Developed an upload pipeline that performs OCR,
+                  translation, and document parsing into SQL databases.
+                </li>
+                <li>
+                  Built a retrieval pipeline that converts natural-language
+                  queries into SQL, summarizes results, and suggests diagnoses.
+                </li>
+                <li>
+                  Created a web application for managing and analyzing
+                  medical documents in multiple languages and formats.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="project">
+          <div
+            class="project-art"
+            data-art="forensics"
+            aria-hidden="true"
+          ></div>
+
+          <div class="project-copy">
+            <p class="project-index">12 / HoyaHacks / 02.2024</p>
+            <p class="project-award">
+              1st Place — Best Digital Forensics Related Hack
+            </p>
+            <h3>Crime Event<br>Detector</h3>
+            <p class="project-description">
+              An audio-driven video analysis system that finds critical
+              acoustic events and turns long recordings into timestamped,
+              searchable logs.
+            </p>
+            <p class="project-tech">
+              CNN / YAMNet-inspired Architecture / Audio Processing / MongoDB
+            </p>
+
+            <details class="project-details">
+              <summary>Implementation notes</summary>
+              <ul>
+                <li>
+                  Developed a CNN-based audio segmentation model inspired
+                  by YAMNet to detect events such as gunshots,
+                  car crashes, and screams in lengthy videos.
+                </li>
+                <li>
+                  Curated custom datasets, applied data augmentation,
+                  and systematically tuned hyperparameters to distinguish
+                  target sounds from complex background noise.
+                </li>
+                <li>
+                  Built a pipeline for audio extraction, temporal segmentation,
+                  and timestamped event logs to reduce manual review
+                  in forensic and law-enforcement applications.
+                </li>
+                <li>
+                  Created a full-stack application with video upload,
+                  search, and MongoDB persistence for processed logs
+                  and detection results.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art" data-art="gesture" aria-hidden="true"></div>
+
+          <div class="project-copy">
+            <p class="project-index">13 / Hack@CEWIT / 02.2024</p>
+            <p class="project-award">1st Place — Spark of Genius Prize</p>
+            <h3>Gesture Recognition<br>Control System</h3>
+            <p class="project-description">
+              A multimodal interface connecting hand movement and voice
+              to operating-system controls, a robotic claw, and an
+              expressive air-guitar instrument.
+            </p>
+            <p class="project-tech">
+              OpenCV / Whisper / Hand Tracking / Robotics / Audio
+            </p>
+
+            <details class="project-details">
+              <summary>Implementation notes</summary>
+              <ul>
+                <li>
+                  Engineered real-time OpenCV detection and tracking
+                  to map hand kinematics into operating-system commands
+                  for hands-free navigation.
+                </li>
+                <li>
+                  Integrated OpenAI Whisper for low-latency speech-to-text,
+                  allowing users to alternate between gestures
+                  and voice dictation.
+                </li>
+                <li>
+                  Built a hardware bridge from virtual spatial coordinates
+                  to physical actuation, piloting a custom robotic claw
+                  through real-time hand tracking.
+                </li>
+                <li>
+                  Developed continuous gesture-to-audio mapping based
+                  on hand positions, demonstrating responsiveness through
+                  an air-guitar interface.
+                </li>
+              </ul>
+            </details>
+          </div>
+        </article>
+      </div>
+
+      <div class="reel-meter" aria-hidden="true" data-reel-controls hidden>
+        <span id="reel-progress"></span>
+      </div>
+
+      <p class="sr-only" id="reel-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section
+      class="section document-section"
+      id="research"
+      aria-labelledby="research-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / Research</p>
+          <h2 id="research-heading">Sound. Space.<br>Learning.</h2>
+        </div>
+
+        <p class="section-description">
+          Compact audio models, perception-aware compression,
+          spatial reconstruction, and tools that help researchers
+          work with information.
+        </p>
+      </div>
+
+      <div class="entry-list">
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>10/2025 — Present</p>
+            <p>Student Researcher</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Maryland</h3>
+            <p class="entry-context">Prof. Nirupam Roy · iCoSMoS Lab</p>
+
+            <ul>
+              <li>
+                Developing a compact neural audio codec optimized for
+                low-power microcontrollers, enabling real-time audio
+                compression and reconstruction.
+              </li>
+              <li>
+                Designing a low-power codec using residual finite scalar
+                quantization and an EnCodec + Vocos-style model with
+                <strong>&lt; 1/20 the parameters of SOTA</strong>
+                (~390K vs. 7M+), for emergency voice transmission
+                in low-bandwidth, low-CPU settings:
+                <strong>2.3 kb/s and RTF 0.8 on a Raspberry Pi CPU</strong>.
+              </li>
+              <li>
+                Created automatic training scripts, implemented
+                Weights &amp; Biases logging, and performed ablation studies.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>06/2025 — Present</p>
+            <p>Research Assistant</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Rochester</h3>
+            <p class="entry-context">Prof. Zhiyao Duan’s Group</p>
+
+            <ul>
+              <li>
+                Integrated MP3/OGG psychoacoustic models to improve perceived
+                quality in neural audio systems; analyzed LAME encoder
+                stages and created Python bindings.
+              </li>
+              <li>
+                Bound LAME MP3 and OGG Vorbis psychoacoustic features
+                to Python through the PyTorch C++ interface, combining them
+                with a finite scalar quantizer and Transformer-based
+                flow matching for perception-aware, high-fidelity
+                neural audio compression.
+              </li>
+              <li>
+                Trained a U-Net-based joint audio separation model
+                to distinguish multiple speakers and sources through
+                natural-language queries. Led annotation and augmentation,
+                iterated with PyTorch Lightning and Weights &amp; Biases,
+                and used grid search for hyperparameter tuning.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>04/2025 — 09/2025</p>
+            <p>Research Assistant</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Texas at Austin</h3>
+            <p class="entry-context">
+              Hezhen Hu, Postdoctoral Researcher · VITA Lab
+            </p>
+
+            <ul>
+              <li>
+                Enhanced PGSR-based 3D human reconstruction with
+                a Gaussian Splatting-inspired loss and a faster testing
+                pipeline. Profiled training bottlenecks and
+                <strong>reduced training time by 80%</strong>.
+              </li>
+              <li>
+                Introduced quantitative 3D mesh assessment using
+                point clouds generated from output meshes and ground truth,
+                automating validation and making output-quality tracking
+                more reliable.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>02/2025 — 09/2025</p>
+            <p>Research Assistant</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Maryland</h3>
+            <p class="entry-context">Prof. Leo Zhicheng Liu’s Group</p>
+
+            <ul>
+              <li>
+                Reviewed literature on generative-AI research assistance,
+                collecting and analyzing papers to identify trends
+                and key methodologies.
+              </li>
+              <li>
+                Worked on a RAG-based writing assistant to help researchers
+                write scientific papers.
+              </li>
+              <li>
+                Contributed to a project helping event-sequence data
+                scientists process datasets.
+              </li>
+              <li>
+                Built metadata-driven graph re-ranking that improved
+                retrieval accuracy, and integrated it into an interactive
+                interface for faster evaluation.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>09/2024 — 12/2024</p>
+            <p>Student Researcher</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Maryland</h3>
+            <p class="entry-context">
+              LSTM Sound Event Detection Research · Honors Seminar
+            </p>
+
+            <ul>
+              <li>
+                Conducted an Honors Seminar research project and wrote
+                a paper as first author.
+              </li>
+              <li>
+                Developed an LSTM-based sound event detection model
+                that detects events from waveforms without relying
+                on future data.
+              </li>
+              <li>
+                Conducted an ablation study to better understand
+                the model and improve it efficiently.
+              </li>
+              <li>
+                Achieved real-time inference at
+                <strong>462 ms per 10-second clip</strong> with
+                <strong>~80% accuracy</strong>, compared with
+                non-real-time CNN-LSTM state-of-the-art models.
+              </li>
+              <li>
+                Later extended the system with a pretrained RAVE encoder
+                and the Mamba temporal model, improving accuracy by
+                <strong>10%</strong> while preserving efficiency.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section
+      class="section document-section work-section"
+      id="experience"
+      aria-labelledby="experience-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / Work experience</p>
+          <h2 id="experience-heading">From model<br>to working system.</h2>
+        </div>
+
+        <p class="section-description">
+          Full-stack infrastructure, agentic interfaces,
+          retrieval systems, and speech generation.
+        </p>
+      </div>
+
+      <div class="entry-list">
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>09/2025 — Present</p>
+            <p>Student Software Engineer</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Maryland</h3>
+            <p class="entry-context">Engineering IT</p>
+
+            <ul>
+              <li>
+                Developed a makerspace management platform with Flask
+                REST APIs and React, supporting secure equipment access,
+                safety certification enforcement, and real-time
+                machine-usage tracking.
+              </li>
+              <li>
+                Designed a layered Controller, Service, and DTO backend
+                with normalized schemas and DTO-based contracts
+                for secure, versionable data exchange.
+              </li>
+              <li>
+                Implemented RBAC and service-layer permission checks
+                so that only certified users can operate restricted
+                machinery, with validated endpoints preventing invalid
+                state transitions.
+              </li>
+              <li>
+                Built JWT/session-based authentication and usage-tracking
+                pipelines, protected frontend routes, and structured
+                logging for machine-utilization and user-behavior analytics.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>06/2024 — 08/2024</p>
+            <p>Software Engineering Intern</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>IZAI Corp</h3>
+
+            <ul>
+              <li>
+                Constructed a metadata-driven agentic graph retrieval
+                system with a DeepSeek-based multi-reranker for efficient,
+                effective data retrieval.
+              </li>
+              <li>
+                Contributed to TTS development by fine-tuning the
+                open-source MetaVoice model on ReazonSpeech,
+                including dataset cleaning, augmentation,
+                and training-script development.
+              </li>
+              <li>
+                Investigated 8-bit quantization and performance trade-offs,
+                improving generation speed by <strong>more than 2×</strong>
+                while maintaining quality:
+                <strong>30 seconds of audio generated in 12 seconds</strong>.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>12/2023 — 01/2024</p>
+            <p>Software Engineering Intern</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>InfoDeliver Corp</h3>
+
+            <ul>
+              <li>
+                Developed LLM-based agentic automation using GPT-4 Vision
+                to perceive interface elements and act autonomously.
+              </li>
+              <li>
+                Annotated and created a web UI component dataset,
+                fine-tuned YOLOv7 to achieve <strong>70% accuracy</strong>,
+                and integrated detection into a modular perception,
+                chain-of-thought, and computer-action pipeline.
+              </li>
+              <li>
+                Built a real-time Whisper voice interface for
+                natural-language task control and mid-task adjustments.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section
+      class="section document-section"
+      id="about"
+      aria-labelledby="education-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">04 / Education &amp; toolkit</p>
+          <h2 id="education-heading">A foundation<br>in learning.</h2>
+        </div>
+      </div>
+
+      <div class="entry-list education-list">
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>09/2026 —</p>
+            <p>New York</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>Columbia University</h3>
+            <p>M.S. Electrical Engineering</p>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>08/2023 — 05/2026</p>
+            <p>College Park, Maryland</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Maryland</h3>
+            <p>
+              B.S. · Computer Science major · Mathematics minor
+            </p>
+            <p class="entry-context">GPA 3.90 / 4.0</p>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>04/2023 — 08/2023</p>
+            <p>Tokyo, Japan</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>University of Tokyo</h3>
+            <p>
+              B.S. studies in Natural Sciences · Subsequently transferred
+              to the University of Maryland
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="skills" aria-labelledby="skills-heading">
+        <h3 class="subsection-title" id="skills-heading">Interests &amp; skills</h3>
+
+        <div class="skill-row">
+          <h4>Interests</h4>
+          <p>
+            Audio Processing · Signal Processing · Generative AI ·
+            Large Language Models · Computer Vision ·
+            Natural Language Processing · Quantum Machine Learning
+          </p>
+        </div>
+
+        <div class="skill-row">
+          <h4>Languages</h4>
+          <p>
+            Python (7+ years) · C · C++ · Java · JavaScript · MIPS Assembly
+          </p>
+        </div>
+
+        <div class="skill-row">
+          <h4>Machine learning</h4>
+          <p>
+            PyTorch · TensorFlow · Keras · Qiskit · PennyLane · NumPy ·
+            scikit-learn · JAX · pandas · MATLAB · seaborn · Transformers ·
+            YOLO · Reinforcement Learning · Llama · LangChain · Unsloth
+          </p>
+        </div>
+
+        <div class="skill-row">
+          <h4>Technology stack</h4>
+          <p>
+            Azure · Docker · Git · Flask · REST APIs · React.js · Next.js ·
+            MongoDB · SQL · Hugging Face
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section document-section teaching-section"
+      id="workshops"
+      aria-labelledby="workshops-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">05 / Workshops</p>
+          <h2 id="workshops-heading">Share what<br>you learn.</h2>
+        </div>
+
+        <p class="section-description">
+          Hands-on workshops with the AIML Club
+          at the University of Maryland.
+        </p>
+      </div>
+
+      <div class="entry-list">
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>03/2025</p>
+            <p>Co-Presenter</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>Introduction to LLM and FineTuning</h3>
+            <p class="entry-context">
+              AIML Club · University of Maryland
+            </p>
+
+            <ul>
+              <li>
+                Co-led a hands-on workshop on fine-tuning Llama 3.1 3B
+                with Unsloth on a custom dataset synthesized using
+                Gemini-2.0 Flash, explaining underlying LLM concepts
+                and Transformer architecture.
+              </li>
+              <li>
+                Explained Supervised Fine-Tuning (SFT) and Low-Rank
+                Adaptation (LoRA), connecting the methods with
+                the theory of LLM optimization.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-entry">
+          <div class="entry-meta">
+            <p>10/2024</p>
+            <p>Presenter</p>
+          </div>
+
+          <div class="entry-body">
+            <h3>Introduction to PyTorch</h3>
+            <p class="entry-context">
+              AIML Club · University of Maryland
+            </p>
+
+            <ul>
+              <li>
+                Led a <strong>two-hour hands-on workshop for 40+ participants</strong>
+                on building neural networks in PyTorch.
+              </li>
+              <li>
+                Taught data preprocessing, model architecture,
+                training loops, and fundamental deep-learning concepts.
+              </li>
+              <li>
+                Helped beginners understand backpropagation,
+                loss functions, and optimization techniques.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section
+      class="section document-section"
+      id="study"
+      aria-labelledby="study-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">06 / Independent study</p>
+          <h2 id="study-heading">Read it.<br>Rebuild it.</h2>
+        </div>
+
+        <p class="section-description">
+          Research-work reproductions and a selected reading record.
+          Dates indicate reproduction or reading dates.
+        </p>
+      </div>
+
+      <div class="study-columns">
+        <div>
+          <h3 class="subsection-title">Research work reproduction</h3>
+
+          <ol class="paper-list">
+            <li>
+              <p>
+                <span class="paper-author">Goodfellow et al.</span>
+                Generative Adversarial Nets
+              </p>
+              <time datetime="2024-10">10/2024</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Vaswani et al.</span>
+                Attention Is All You Need
+              </p>
+              <time datetime="2023-09">09/2023</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Li et al.</span>
+                Generalized Focal Loss: Learning Qualified and Distributed
+                Bounding Boxes for Dense Object Detection
+              </p>
+              <time datetime="2024-12">12/2024</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Miyazaki et al.</span>
+                Weakly-Supervised Sound Event Detection With Self-Attention
+              </p>
+              <time datetime="2024-12">12/2024</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Mildenhall et al.</span>
+                NeRF: Representing Scenes as Neural Radiance Fields
+                for View Synthesis
+              </p>
+              <time datetime="2025-01">01/2025</time>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="subsection-title">Readings</h3>
+
+          <ol class="paper-list">
+            <li>
+              <p>
+                <span class="paper-author">Kerbl et al.</span>
+                3D Gaussian Splatting for Real-Time Radiance Field Rendering
+              </p>
+              <time datetime="2025-03">03/2025</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Akyürek et al.</span>
+                The Surprising Effectiveness of Test-Time Training
+                for Abstract Reasoning
+              </p>
+              <time datetime="2025-02">02/2025</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Gong et al.</span>
+                AST: Audio Spectrogram Transformer
+              </p>
+              <time datetime="2024-12">12/2024</time>
+            </li>
+            <li>
+              <p>
+                <span class="paper-author">Dosovitskii et al.</span>
+                An Image Is Worth 16×16 Words:
+                Transformers For Image Recognition At Scale
+              </p>
+              <time datetime="2024-10">10/2024</time>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <p class="eyebrow">07 / Contact</p>
+    <h2 id="contact-heading">Get in touch.</h2>
+
+    <a class="contact-email" href="mailto:dahong@umd.edu">
+      dahong@umd.edu <span aria-hidden="true">↗</span>
+    </a>
+
+    <div class="contact-bottom">
+      <address>
+        College Park, MD 20740<br>
+        <a href="tel:+12405013234">(240) 501-3234</a>
+      </address>
+
+      <div class="contact-links">
+        <a href="https://github.com/dappon4">GitHub / dappon4 ↗</a>
+        <button class="text-button" type="button" data-print hidden>
+          Print / save résumé as PDF ↗
+        </button>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>Dahong Luo / Portfolio &amp; résumé</span>
+      <span>HTML · CSS · JavaScript</span>
+    </div>
+  </footer>
+</body>
+</html>
