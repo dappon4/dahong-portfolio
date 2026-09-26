@@ -764,7 +764,7 @@ summary:focus-visible,
   margin-top: 2rem;
   padding-bottom: 0.15em;
   border-bottom: 1px solid #a79b88;
-  font-size: clamp(1.5rem, 5.5vw, 6rem);
+  font-size: clamp(1.35rem, 4.8vw, 5.25rem);
   line-height: 1.25;
   letter-spacing: -0.045em;
   text-decoration: none;

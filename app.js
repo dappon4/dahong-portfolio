@@ -160,37 +160,25 @@
     `,
 
     forensics: `
-      <path d="M80 119 H626 V370 H80 Z" fill="url(#dark)" />
-      <path d="M103 143 H603 V345 H103 Z" fill="url(#warm)" />
-      <path d="M103 143 H603 V345 H103 Z" fill="url(#scanlines)" opacity=".5" />
-      <path d="M126 289 H176 L199 236 L225 319 L251 192 L279 319 L309 246 L337 291 L370 213 L399 319 L432 259 L460 291 H579" fill="none" stroke="#f5f2e8" stroke-width="10" stroke-linejoin="round" />
-      <path d="M126 289 H579" stroke="#9968d8" stroke-width="3" stroke-dasharray="4 10" />
-      <path d="M126 289 H176 L199 236 L225 319 L251 192" fill="none" stroke="#111528" stroke-width="15" />
-      <circle cx="251" cy="192" r="15" fill="#d93c34" />
-      <path d="M104 401 H603" stroke="#fcd1a9" stroke-width="8" />
-      <path d="M140 401 V424 M213 401 V424 M286 401 V424 M359 401 V424 M432 401 V424 M505 401 V424 M578 401 V424" stroke="#111528" stroke-width="4" />
-      <path d="M251 391 V436" stroke="#d93c34" stroke-width="5" />
-      <circle cx="449" cy="278" r="73" fill="url(#light)" opacity=".86" />
-      <circle cx="449" cy="278" r="52" fill="#111528" opacity=".84" />
-      <path d="M416 279 L429 263 L438 287 L449 252 L458 294 L471 270 L482 279" fill="none" stroke="#fcd1a9" stroke-width="5" stroke-linejoin="round" />
-      <path d="M486 315 L550 379" stroke="#111528" stroke-width="18" stroke-linecap="round" />
-      <circle cx="449" cy="278" r="25" fill="none" stroke="#9968d8" stroke-width="5" />
-      <path d="M126 166 L151 181 L126 196 Z" fill="#f5f2e8" />
+      <path d="m83 159 211-72 253 88-79 204-280 59-127-113Z" fill="url(#dark)" />
+      <path d="m105 193 194-66 216 72-57 156-238 50-111-101Z" fill="url(#warm)" />
+      <path d="m105 193 194-66 216 72-57 156-238 50-111-101Z" fill="url(#scanlines)" opacity=".42" />
+      <path d="m292 127 105 37-72 213-104-44Z" fill="url(#light)" opacity=".9" />
+      <path d="m337 182 65 22-51 116-62-27Z" fill="url(#violet)" />
+      <path d="m402 204 85 23-57 109-66-16Z" fill="#111528" opacity=".82" />
+      <path d="m218 370 74-151 45 17-66 153Z" fill="#f5f2e8" opacity=".8" />
+      <path d="M124 347 215 322m-67 64 94-26m-26 49 91-28" stroke="#9968d8" stroke-width="5" stroke-dasharray="4 12" opacity=".82" />
+      <path d="m485 228 36 9-15 30-32-8Z" fill="#d93c34" />
+      <path d="m507 236 23 6-12 25-21-6Z" fill="#fcd1a9" opacity=".82" />
     `,
 
     codec: `
-      <ellipse cx="357" cy="277" rx="240" ry="181" fill="url(#dots)" />
-      <path d="M65 265h24l17-48 21 99 23-156 23 190 24-94h39 M485 265h25l17-48 21 99 23-156 23 190 24-94h40" fill="none" stroke="#d93c34" stroke-width="10" stroke-linejoin="round" />
-      <g transform="rotate(-9 360 259)">
-        <path d="M274 158v-34m43 34v-34m43 34v-34m43 34v-34m43 34v-34 M274 366v34m43-34v34m43-34v34m43-34v34m43-34v34 M253 195h-34m34 43h-34m34 43h-34m34 43h-34 M467 195h34m-34 43h34m-34 43h34m-34 43h34" stroke="#28215a" stroke-width="13" />
-        <rect x="248" y="154" width="224" height="215" rx="20" fill="url(#dark)" />
-        <rect x="272" y="179" width="176" height="163" rx="9" fill="url(#violet)" />
-        <rect x="272" y="179" width="176" height="163" rx="9" fill="url(#scanlines)" />
-        <path d="M302 263h23l13-34 23 69 17-52h35" fill="none" stroke="#fcd1a9" stroke-width="10" />
-        <circle cx="285" cy="167" r="5" fill="#fcd1a9" />
-      </g>
-      <path d="M304 433h24m18 0h24m18 0h24" stroke="#f65933" stroke-width="17" />
-      <path d="m455 389-12 24h19l-11 24" fill="none" stroke="#5f3bb7" stroke-width="6" stroke-linejoin="round" />
+      <path d="M65 162C151 125 218 125 274 170c41 33 48 71 80 83 32 12 41-32 76-56 51-35 116-26 225 30" fill="none" stroke="url(#warm)" stroke-width="54" stroke-linecap="round" />
+      <path d="M65 366c90 35 157 27 207-23 39-39 51-74 82-80 32-6 45 39 77 62 48 34 116 22 224-40" fill="none" stroke="url(#dark)" stroke-width="65" stroke-linecap="round" />
+      <path d="M77 170C160 139 216 149 262 184c49 38 69 79 104 80 38 1 47-53 91-78 49-29 102-17 181 18" fill="none" stroke="url(#light)" stroke-width="12" stroke-linecap="round" opacity=".8" />
+      <path d="M258 142 325 166 393 149 461 174 431 243 367 261 302 239Z" fill="url(#violet)" />
+      <path d="M302 177 356 194 412 180 390 229 346 239 306 222Z" fill="url(#scanlines)" opacity=".7" />
+      <path d="M90 421c67-25 123-25 168 0m41 0c47-22 99-21 146 0m28 0c51-18 99-16 148 0" fill="none" stroke="#f65933" stroke-width="10" stroke-linecap="round" opacity=".78" />
     `,
 
     psychoacoustic: `
@@ -240,20 +228,12 @@
     `,
 
     "sound-detection": `
-      <rect x="111" y="101" width="493" height="261" rx="18" fill="url(#dark)" />
-      <path d="M149 290v-90m36 122V171m36 152V152m36 162V204m36 124V167m36 161V135m36 193V180m36 145V132m36 196V198m36 124V161m36 159V190m36 122v-81" stroke="#9968d8" stroke-width="16" opacity=".65" />
-      <rect x="345" y="117" width="84" height="229" fill="url(#warm)" opacity=".7" />
-      <rect x="126" y="116" width="463" height="230" fill="url(#scanlines)" />
-      <path d="M70 247h77l20-23 22 48 28-81 25 113 29-66h41l29-35 25 74 24-137 27 175 30-77h43l24-35 22 47h80" fill="none" stroke="#fcd1a9" stroke-width="8" stroke-linejoin="round" />
-      <path d="M402 80v297" stroke="#f65933" stroke-width="4" />
-      <path d="m387 78 15 21 15-21Z" fill="#f65933" />
-      <path d="M176 417h327m-15-10 15 10-15 10" fill="none" stroke="#28215a" stroke-width="5" />
-      <rect x="199" y="391" width="53" height="52" rx="8" fill="url(#violet)" />
-      <rect x="303" y="391" width="53" height="52" rx="8" fill="url(#violet)" />
-      <rect x="407" y="391" width="53" height="52" rx="8" fill="url(#warm)" />
-      <path d="M221 362v29m105-29v29m105-29v29" stroke="#9968d8" stroke-width="3" stroke-dasharray="4 6" />
-      <circle cx="565" cy="417" r="30" fill="url(#light)" />
-      <path d="m551 418 10 10 19-24" fill="none" stroke="#5f3bb7" stroke-width="6" />
+      <path d="M164 280c0-98 79-177 177-177s177 79 177 177-79 177-177 177" fill="none" stroke="url(#dark)" stroke-width="66" stroke-linecap="round" />
+      <path d="M236 280c0-58 47-105 105-105s105 47 105 105-47 105-105 105" fill="none" stroke="url(#light)" stroke-width="42" stroke-linecap="round" />
+      <path d="M315 280c0-15 12-27 27-27s27 12 27 27-12 27-27 27-27-12-27-27Z" fill="url(#warm)" />
+      <path d="M444 152c45 30 72 76 72 128 0 68-42 129-105 153" fill="none" stroke="url(#violet)" stroke-width="19" stroke-linecap="round" />
+      <path d="M516 274c0-42 18-72 50-92" fill="none" stroke="#f65933" stroke-width="13" stroke-linecap="round" />
+      <path d="M91 280h111m311 0h116" stroke="#fcd1a9" stroke-width="6" stroke-dasharray="3 14" stroke-linecap="round" opacity=".72" />
     `,
 
     gesture: `
