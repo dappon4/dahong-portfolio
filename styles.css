@@ -737,7 +737,7 @@ summary:focus-visible,
 /* Contact */
 
 .contact-section {
-  padding: clamp(4rem, 8vw, 8rem) var(--gutter) 1.5rem;
+  padding: clamp(2.5rem, 4vw, 4rem) var(--gutter) 1rem;
   overflow: hidden;
   background: var(--ink);
   color: var(--paper);
@@ -748,7 +748,7 @@ summary:focus-visible,
 }
 
 .contact-section h2 {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   font-size: clamp(3.8rem, 10vw, 11rem);
   font-weight: 800;
   line-height: 1;
@@ -759,9 +759,9 @@ summary:focus-visible,
   display: inline-flex;
   align-items: center;
   max-width: 100%;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
   gap: 2vw;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding-bottom: 0.15em;
   border-bottom: 1px solid #a79b88;
   font-size: clamp(1.35rem, 4.8vw, 5.25rem);
@@ -771,6 +771,7 @@ summary:focus-visible,
 }
 
 .contact-email span {
+  flex-shrink: 0;
   color: var(--coral-light);
 }
 
@@ -779,7 +780,7 @@ summary:focus-visible,
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .contact-bottom address {
@@ -804,8 +805,8 @@ summary:focus-visible,
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 4rem;
-  padding-top: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(238, 232, 220, 0.25);
   color: #b5ae9f;
   font-size: 0.64rem;
@@ -1002,7 +1003,8 @@ summary:focus-visible,
 
   .contact-bottom {
     flex-direction: column;
-    margin-top: 2.5rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 
   .colophon {

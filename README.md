@@ -27,3 +27,4 @@ Serve locally with `python3 -m http.server 8765 --bind 127.0.0.1`.
 With Playwright and Chromium available in the Node environment, run
 `node tests/carousels.cjs` to check notes closing, keyboard focus, pause controls,
 and reduced motion. Run `node --check app.js` for JavaScript syntax.
+Run `node tests/contact.cjs` to check the single-line email and compact contact layout.
