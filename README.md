@@ -18,7 +18,7 @@ A lightweight, responsive static web portfolio built with semantic HTML5, CSS3, 
 
 - **HTML5**: Semantic and accessible markup
 - **CSS3**: Responsive design with CSS variables and flex/grid layouts
-- **JavaScript (ES6+)**: Looping carousels, textured SVG artwork, and print support
+- **JavaScript (ES6+)**: Looping carousels and textured SVG artwork
 - **Hosting**: GitHub Pages
 
 ### Local checks

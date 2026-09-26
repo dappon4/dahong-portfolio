@@ -228,10 +228,6 @@ summary:focus-visible,
   color: var(--coral);
 }
 
-.header-print {
-  white-space: nowrap;
-}
-
 .noscript-note {
   margin: 5rem var(--gutter) 0;
   padding: 1rem 0;
@@ -762,6 +758,8 @@ summary:focus-visible,
 .contact-email {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   gap: 2vw;
   margin-top: 2rem;
   padding-bottom: 0.15em;
@@ -797,8 +795,7 @@ summary:focus-visible,
   gap: 0.65rem;
 }
 
-.contact-links a,
-.contact-links .text-button {
+.contact-links a {
   font-family: var(--mono);
   font-size: 0.77rem;
 }
@@ -823,10 +820,6 @@ summary:focus-visible,
 }
 
 @media (max-width: 1050px) {
-  .header-print {
-    display: none !important;
-  }
-
   .site-header {
     gap: 1.5rem;
   }
@@ -1054,7 +1047,7 @@ summary:focus-visible,
   }
 }
 
-/* Printable, complete résumé */
+/* Print fallback */
 
 @page {
   size: A4;

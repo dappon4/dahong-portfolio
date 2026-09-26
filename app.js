@@ -446,7 +446,6 @@
   const motionButtons = document.querySelectorAll("[data-motion-toggle]");
   const rows = Array.from(document.querySelectorAll(".project-row"));
   let manuallyPaused = false;
-  let previouslyClosedDetails = [];
 
   function motionEnabled() {
     return !motionPreference.matches && !manuallyPaused;
@@ -553,19 +552,4 @@
   });
   motionPreference.addEventListener("change", updateMotionControls);
   updateMotionControls();
-
-  document.querySelectorAll("[data-print]").forEach((button) => {
-    button.hidden = false;
-    button.addEventListener("click", () => window.print());
-  });
-
-  window.addEventListener("beforeprint", () => {
-    previouslyClosedDetails = Array.from(document.querySelectorAll("details:not([open])"));
-    previouslyClosedDetails.forEach((details) => { details.open = true; });
-  });
-
-  window.addEventListener("afterprint", () => {
-    previouslyClosedDetails.forEach((details) => { details.open = false; });
-    previouslyClosedDetails = [];
-  });
 })();
