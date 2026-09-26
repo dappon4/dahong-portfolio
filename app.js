@@ -34,7 +34,7 @@
       />
       <path
         d="M210 84 L304 154 L205 189 Z"
-        fill="#27282c"
+        fill="#111528"
       />
       <path
         d="M416 151 L512 88 L503 278 L367 291 Z"
@@ -42,7 +42,7 @@
       />
       <path
         d="M199 270 L304 154 L367 291 L284 343 Z"
-        fill="#ddbf9b"
+        fill="#fcd1a9"
       />
       <path
         d="M367 291 L503 278 L450 352 L284 343 Z"
@@ -50,7 +50,7 @@
       />
       <path
         d="M343 274 L383 274 L364 296 Z"
-        fill="#28282a"
+        fill="#111528"
       />
     `,
 
@@ -65,7 +65,7 @@
         rx="245"
         ry="94"
         fill="none"
-        stroke="#343438"
+        stroke="#28215a"
         stroke-width="2"
         transform="rotate(-29 362 269)"
       />
@@ -91,13 +91,13 @@
         rx="240"
         ry="91"
         fill="none"
-        stroke="#37353a"
+        stroke="#28215a"
         stroke-width="2"
         transform="rotate(32 362 269)"
       />
       <circle cx="159" cy="151" r="23" fill="url(#dark)" />
       <circle cx="557" cy="371" r="27" fill="url(#light)" />
-      <circle cx="561" cy="162" r="14" fill="#e56b50" />
+      <circle cx="561" cy="162" r="14" fill="#f65933" />
     `,
 
     segmentation: `
@@ -108,7 +108,7 @@
       <path
         d="M155 188 L426 105 L566 318 L295 411 Z"
         fill="url(#mesh)"
-        stroke="#e6d9c0"
+        stroke="#fcd1a9"
         stroke-width="1"
       />
       <path
@@ -131,7 +131,7 @@
         d="M185 145 V99 H245 M480 83 H542 V144
            M580 339 V396 H520 M222 429 H164 V371"
         fill="none"
-        stroke="#d86649"
+        stroke="#d93c34"
         stroke-width="5"
       />
     `,
@@ -157,18 +157,18 @@
       />
       <path
         d="M224 330 L391 162 L347 330 Z"
-        fill="#27282c"
+        fill="#111528"
       />
       <path
         d="M175 271 C250 83 387 437 486 232"
         fill="none"
-        stroke="#b35037"
+        stroke="#d93c34"
         stroke-width="4"
       />
       <text
         x="503"
         y="412"
-        fill="#26272b"
+        fill="#111528"
         font-family="Georgia, serif"
         font-size="122"
       >∑</text>
@@ -182,7 +182,7 @@
       />
       <path
         d="M244 81 L343 258 L235 425 L239 252 Z"
-        fill="#505052"
+        fill="#563d5a"
       />
       <path
         d="M623 157 L476 81 L377 258 L485 425 L629 337 Z"
@@ -195,7 +195,7 @@
       <path
         d="M170 256 H550"
         fill="none"
-        stroke="#e5ccb0"
+        stroke="#fcd1a9"
         stroke-width="3"
         stroke-dasharray="3 10"
       />
@@ -206,7 +206,7 @@
       />
       <path
         d="M425 189 L411 322 L365 264 Z"
-        fill="#d1b490"
+        fill="#fcd1a9"
       />
     `,
 
@@ -228,7 +228,7 @@
            M345 120 L538 348
            M347 412 L536 174"
         fill="none"
-        stroke="#343438"
+        stroke="#28215a"
         stroke-width="2"
         opacity="0.65"
       />
@@ -276,23 +276,23 @@
       />
       <path
         d="M164 268 L192 264 L185 188 L157 192 Z"
-        fill="#ede4d4"
+        fill="#f5f2e8"
       />
       <path
         d="M223 260 L252 256 L241 145 L212 149 Z"
-        fill="#ede4d4"
+        fill="#f5f2e8"
       />
       <path
         d="M284 253 L313 249 L305 177 L276 181 Z"
-        fill="#ede4d4"
+        fill="#f5f2e8"
       />
       <path
         d="M345 245 L374 241 L361 122 L332 126 Z"
-        fill="#27282c"
+        fill="#111528"
       />
       <path
         d="M405 237 L434 233 L425 151 L396 155 Z"
-        fill="#ede4d4"
+        fill="#f5f2e8"
       />
     `,
 
@@ -300,7 +300,7 @@
       <path
         d="M108 115 H570 V396 H168 V180 H503 V333 H235"
         fill="none"
-        stroke="#39383b"
+        stroke="#28215a"
         stroke-width="25"
         stroke-linejoin="miter"
         opacity="0.18"
@@ -319,9 +319,9 @@
            A190 190 0 0 0 178 165 Z"
         fill="url(#light)"
       />
-      <circle cx="471" cy="258" r="16" fill="#29292d" />
-      <circle cx="536" cy="258" r="16" fill="#29292d" />
-      <circle cx="601" cy="258" r="16" fill="#29292d" />
+      <circle cx="471" cy="258" r="16" fill="#111528" />
+      <circle cx="536" cy="258" r="16" fill="#111528" />
+      <circle cx="601" cy="258" r="16" fill="#111528" />
     `,
 
     mapping: `
@@ -343,7 +343,7 @@
       />
       <path
         d="M252 319 L350 264 V350 L252 402 Z"
-        fill="#be805e"
+        fill="#f9843e"
       />
       <path
         d="M332 150 L423 99 L512 149 L423 201 Z"
@@ -363,19 +363,19 @@
         rx="276"
         ry="124"
         fill="none"
-        stroke="#c55d43"
+        stroke="#d93c34"
         stroke-width="2"
         stroke-dasharray="6 9"
       />
       <path
         d="M109 302 L423 99 L607 332 M109 302 L607 332"
         fill="none"
-        stroke="#33343a"
+        stroke="#28215a"
         stroke-width="1.5"
       />
-      <circle cx="109" cy="302" r="12" fill="#29292d" />
-      <circle cx="607" cy="332" r="12" fill="#29292d" />
-      <circle cx="423" cy="99" r="12" fill="#e77858" />
+      <circle cx="109" cy="302" r="12" fill="#111528" />
+      <circle cx="607" cy="332" r="12" fill="#111528" />
+      <circle cx="423" cy="99" r="12" fill="#f65933" />
     `,
 
     copilot: `
@@ -401,13 +401,13 @@
         d="M161 186 L290 228 M164 223 L295 265
            M168 260 L297 302"
         fill="none"
-        stroke="#9c8167"
+        stroke="#5f3bb7"
         stroke-width="5"
       />
       <path
         d="M255 86 L365 49 L473 89"
         fill="none"
-        stroke="#2c2d31"
+        stroke="#111528"
         stroke-width="2"
       />
       <circle cx="255" cy="86" r="20" fill="url(#warm)" />
@@ -435,18 +435,18 @@
       <path
         d="M298 147 H352 V205 H410 V259 H352
            V317 H298 V259 H240 V205 H298 Z"
-        fill="#292b30"
+        fill="#111528"
         transform="rotate(-15 325 232)"
       />
       <path
         d="M153 394 L342 449 L582 400"
         fill="none"
-        stroke="#c56148"
+        stroke="#f65933"
         stroke-width="3"
       />
-      <circle cx="153" cy="394" r="12" fill="#292b30" />
-      <circle cx="342" cy="449" r="12" fill="#292b30" />
-      <circle cx="582" cy="400" r="12" fill="#292b30" />
+      <circle cx="153" cy="394" r="12" fill="#111528" />
+      <circle cx="342" cy="449" r="12" fill="#111528" />
+      <circle cx="582" cy="400" r="12" fill="#111528" />
     `,
 
     forensics: `
@@ -471,11 +471,56 @@
       <path
         d="M283 84 V453"
         fill="none"
-        stroke="#f3e6cb"
+        stroke="#fcd1a9"
         stroke-width="2"
         stroke-dasharray="5 8"
       />
-      <circle cx="283" cy="84" r="11" fill="#c8553c" />
+      <circle cx="283" cy="84" r="11" fill="#d93c34" />
+    `,
+
+    codec: `
+      <path d="M92 370 L362 104 L628 237 L356 468 Z" fill="url(#dark)" />
+      <path d="M128 342 L362 126 L586 240 L353 440 Z" fill="url(#mesh)" />
+      <path d="M166 307 L362 151 L546 244 L351 407 Z" fill="url(#light)" opacity=".8" />
+      <path d="M190 318 C249 269 277 352 330 307 S423 244 493 286" fill="none" stroke="#5f3bb7" stroke-width="14" />
+      <path d="M210 209 L210 391 M274 165 L274 353 M338 139 L338 318 M402 171 L402 349 M466 203 L466 377" stroke="#d93c34" stroke-width="7" opacity=".8" />
+      <circle cx="362" cy="126" r="19" fill="#9968d8" /><circle cx="353" cy="440" r="15" fill="#fcd1a9" />
+    `,
+
+    psychoacoustic: `
+      <circle cx="363" cy="261" r="184" fill="url(#warm)" opacity=".8" />
+      <path d="M91 274 C188 95 245 444 344 260 S507 112 629 274" fill="none" stroke="#111528" stroke-width="18" />
+      <path d="M91 274 C188 444 245 95 344 260 S507 444 629 274" fill="none" stroke="#5f3bb7" stroke-width="9" />
+      <path d="M113 274 H613" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="8 14" />
+      <circle cx="344" cy="260" r="32" fill="#9968d8" /><circle cx="344" cy="260" r="12" fill="#111528" />
+      <path d="M172 169 L251 130 M475 392 L554 353" stroke="#d93c34" stroke-width="12" stroke-linecap="round" />
+    `,
+
+    reconstruction: `
+      <path d="M116 384 L361 106 L603 384 L359 467 Z" fill="url(#dots)" />
+      <path d="M360 90 L455 188 L422 328 L359 408 L295 328 L265 188 Z" fill="url(#light)" />
+      <path d="M360 90 L455 188 L360 216 Z M360 216 L422 328 L359 408 Z" fill="url(#dark)" />
+      <path d="M265 188 L360 216 L295 328 Z" fill="#5f3bb7" opacity=".8" />
+      <path d="M239 190 L360 90 L481 190 M239 190 L295 328 L359 408 L422 328 L481 190" fill="none" stroke="#9968d8" stroke-width="4" stroke-dasharray="5 9" />
+      <circle cx="360" cy="90" r="12" fill="#d93c34" /><circle cx="295" cy="328" r="12" fill="#fcd1a9" /><circle cx="422" cy="328" r="12" fill="#fcd1a9" />
+    `,
+
+    "rag-writing": `
+      <path d="M107 362 L365 106 L615 247 L357 458 Z" fill="url(#light)" />
+      <path d="M144 340 L365 126 L575 246 L355 425 Z" fill="url(#mesh)" />
+      <path d="M202 318 L366 166 L514 249 L351 384 Z" fill="#111528" />
+      <path d="M228 282 H406 M228 310 H467 M228 338 H386" stroke="#fcd1a9" stroke-width="8" stroke-linecap="round" />
+      <path d="M494 141 L553 174 L514 210 L455 177 Z" fill="#5f3bb7" />
+      <path d="M494 141 L455 177 L443 231 L482 195 Z" fill="#9968d8" />
+      <circle cx="178" cy="191" r="22" fill="#d93c34" /><circle cx="565" cy="351" r="28" fill="#9968d8" />
+    `,
+
+    "sound-detection": `
+      <circle cx="358" cy="256" r="190" fill="url(#warm)" opacity=".7" />
+      <path d="M78 286 H139 L170 208 L205 342 L242 154 L282 382 L323 112 L366 400 L408 174 L447 338 L482 227 L517 286 H638" fill="none" stroke="#111528" stroke-width="16" stroke-linejoin="round" />
+      <path d="M102 286 H618" stroke="#9968d8" stroke-width="4" stroke-dasharray="4 12" />
+      <path d="M323 96 V421" stroke="#fcd1a9" stroke-width="3" stroke-dasharray="7 10" />
+      <circle cx="323" cy="112" r="17" fill="#d93c34" /><circle cx="447" cy="338" r="13" fill="#5f3bb7" />
     `,
 
     gesture: `
@@ -509,12 +554,12 @@
         d="M195 244 L318 270 L370 269 L418 288 L480 190
            M318 270 L280 403 L408 399 L370 269"
         fill="none"
-        stroke="#d27b55"
+        stroke="#f65933"
         stroke-width="3"
       />
-      <circle cx="318" cy="270" r="9" fill="#d76648" />
-      <circle cx="370" cy="269" r="9" fill="#d76648" />
-      <circle cx="408" cy="399" r="9" fill="#d76648" />
+      <circle cx="318" cy="270" r="9" fill="#d93c34" />
+      <circle cx="370" cy="269" r="9" fill="#d93c34" />
+      <circle cx="408" cy="399" r="9" fill="#d93c34" />
     `
   };
 
@@ -546,9 +591,9 @@
             x2="85%"
             y2="5%"
           >
-            <stop offset="0%" stop-color="#dec2a1" />
-            <stop offset="52%" stop-color="#d4977f" />
-            <stop offset="100%" stop-color="#be766b" />
+            <stop offset="0%" stop-color="#fcd1a9" />
+            <stop offset="52%" stop-color="#f65933" />
+            <stop offset="100%" stop-color="#d93c34" />
           </linearGradient>
 
           <linearGradient
@@ -558,9 +603,9 @@
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stop-color="#24262c" />
-            <stop offset="60%" stop-color="#38393c" />
-            <stop offset="100%" stop-color="#9c8870" />
+            <stop offset="0%" stop-color="#111528" />
+            <stop offset="60%" stop-color="#28215a" />
+            <stop offset="100%" stop-color="#5f3bb7" />
           </linearGradient>
 
           <radialGradient
@@ -569,9 +614,9 @@
             cy="20%"
             r="90%"
           >
-            <stop offset="0%" stop-color="#f2e7d8" />
-            <stop offset="55%" stop-color="#ddceb7" />
-            <stop offset="100%" stop-color="#baa391" />
+            <stop offset="0%" stop-color="#f5f2e8" />
+            <stop offset="55%" stop-color="#fcd1a9" />
+            <stop offset="100%" stop-color="#cda1c9" />
           </radialGradient>
 
           <pattern
@@ -584,7 +629,7 @@
               cx="2"
               cy="2"
               r="1.15"
-              fill="#303036"
+              fill="#28215a"
               opacity="0.55"
             />
           </pattern>
@@ -599,7 +644,7 @@
             <path
               d="M19 0 H0 V19"
               fill="none"
-              stroke="#393738"
+              stroke="#28215a"
               stroke-width="0.85"
               opacity="0.55"
             />
@@ -659,21 +704,15 @@
 
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   const motionButton = document.getElementById("motion-toggle");
-  const hero = document.querySelector(".hero");
   const rows = Array.from(document.querySelectorAll(".project-row"));
   let manuallyPaused = false;
-  let pointerFrame = 0;
-  let pointerX = 0;
   let previouslyClosedDetails = [];
 
   function motionEnabled() {
     return !motionPreference.matches && !manuallyPaused;
   }
 
-  // The second copy fills the row as the first moves out of view.
-  const projectLoops = rows.map((row) => {
-    const track = row.querySelector(".project-track");
-    const projects = Array.from(track.children);
+  function appendProjectCycle(track, projects) {
     projects.forEach((project) => {
       const clone = project.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
@@ -682,15 +721,33 @@
       });
       track.appendChild(clone);
     });
+  }
+
+  const projectLoops = rows.map((row) => {
+    const track = row.querySelector(".project-track");
+    const projects = Array.from(track.children);
+    appendProjectCycle(track, projects);
     return {
       row,
       track,
+      projects,
       firstProject: projects[0],
       firstClone: track.children[projects.length],
       reverse: track.classList.contains("project-track--reverse"),
       remainder: 0
     };
   });
+
+  function fillProjectRow(loop) {
+    const cycle = loop.firstClone.offsetLeft - loop.firstProject.offsetLeft;
+    if (!cycle) return;
+    while (loop.track.scrollWidth < loop.row.clientWidth + cycle) {
+      appendProjectCycle(loop.track, loop.projects);
+    }
+  }
+
+  projectLoops.forEach(fillProjectRow);
+  window.addEventListener("resize", () => projectLoops.forEach(fillProjectRow));
 
   function wrapProjectScroll(loop) {
     const cycle = loop.firstClone.offsetLeft - loop.firstProject.offsetLeft;
@@ -734,32 +791,13 @@
     });
   });
 
-  function resetParallax() {
-    if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
-    pointerFrame = 0;
-    hero.style.setProperty("--mx", "0px");
-  }
-
-  hero.addEventListener("pointermove", (event) => {
-    if (event.pointerType !== "mouse" || !motionEnabled()) return;
-    pointerX = event.clientX;
-    if (pointerFrame) return;
-    pointerFrame = window.requestAnimationFrame(() => {
-      pointerFrame = 0;
-      const bounds = hero.getBoundingClientRect();
-      hero.style.setProperty("--mx", `${((pointerX - bounds.left) / bounds.width - 0.5) * 48}px`);
-    });
-  });
-  hero.addEventListener("pointerleave", resetParallax);
-
   function updateMotionControls() {
     const enabled = motionEnabled();
     motionButton.disabled = motionPreference.matches;
     motionButton.setAttribute("aria-pressed", String(!enabled));
     motionButton.textContent = motionPreference.matches
       ? "Reduced motion"
-      : enabled ? "Pause motion" : "Enable motion";
-    if (!enabled) resetParallax();
+      : enabled ? "Pause carousels" : "Enable carousels";
   }
 
   motionButton.hidden = false;
@@ -770,17 +808,12 @@
   motionPreference.addEventListener("change", updateMotionControls);
   updateMotionControls();
 
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) resetParallax();
-  });
-
   document.querySelectorAll("[data-print]").forEach((button) => {
     button.hidden = false;
     button.addEventListener("click", () => window.print());
   });
 
   window.addEventListener("beforeprint", () => {
-    resetParallax();
     previouslyClosedDetails = Array.from(document.querySelectorAll("details:not([open])"));
     previouslyClosedDetails.forEach((details) => { details.open = true; });
   });

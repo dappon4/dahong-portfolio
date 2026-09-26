@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee8dc">
+  <meta name="theme-color" content="#f5f2e8">
   <meta
     name="description"
     content="Dahong Luo — machine learning, audio processing, signal processing, computer vision, research, and software engineering."
@@ -11,8 +11,8 @@
 
   <title>Dahong Luo — Signals, Systems &amp; Learning</title>
 
-  <link rel="stylesheet" href="./styles.css?v=3">
-  <script src="./app.js?v=3" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=4">
+  <script src="./app.js?v=4" defer></script>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-name">
       <div class="hero-scenery" aria-hidden="true">
-        <img src="./hero-art.svg?v=3" alt="" draggable="false">
+        <img src="./hero.png" alt="" draggable="false">
       </div>
 
       <div class="hero-eyebrow">
@@ -69,7 +69,6 @@
         </a>
 
         <div class="hero-motion">
-          <span class="pointer-note">Move your cursor to explore the artwork.</span>
           <button
             class="text-button"
             id="motion-toggle"
@@ -77,7 +76,7 @@
             aria-pressed="false"
             hidden
           >
-            Pause motion
+            Pause carousels
           </button>
         </div>
       </div>
@@ -476,177 +475,259 @@
         </p>
       </div>
 
-      <div class="entry-list">
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>10/2025 — Present</p>
-            <p>Student Researcher</p>
+      <div class="project-rows research-rows">
+        <div
+          class="project-row"
+          role="region"
+          tabindex="0"
+          aria-label="Research projects, first row"
+        >
+          <div class="project-track">
+            <article class="project research-project">
+              <div
+                class="project-art"
+                data-art="codec"
+                role="img"
+                aria-label="Abstract neural audio codec artwork"
+              ></div>
+              <div class="project-copy">
+                <p class="project-index">
+                  10/2025 — Present / Student Researcher
+                </p>
+                <h3>Neural Audio Codec</h3>
+                <p class="entry-context">
+                  University of Maryland<br />Prof. Nirupam Roy · iCoSMoS Lab
+                </p>
+                <p class="project-description">
+                  A compact neural codec for real-time emergency voice
+                  transmission on low-power hardware.
+                </p>
+                <details class="project-details">
+                  <summary>Research notes</summary>
+                  <ul>
+                    <li>
+                      Developing a compact neural audio codec optimized for
+                      low-power microcontrollers, enabling real-time audio
+                      compression and reconstruction.
+                    </li>
+                    <li>
+                      Designing a low-power codec using residual finite scalar
+                      quantization and an EnCodec + Vocos-style model with
+                      <strong>&lt; 1/20 the parameters of SOTA</strong>
+                      (~390K vs. 7M+), for emergency voice transmission in
+                      low-bandwidth, low-CPU settings:
+                      <strong
+                        >2.3 kb/s and RTF 0.8 on a Raspberry Pi CPU</strong
+                      >.
+                    </li>
+                    <li>
+                      Created automatic training scripts, implemented Weights
+                      &amp; Biases logging, and performed ablation studies.
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </article>
+
+            <article class="project research-project">
+              <div
+                class="project-art"
+                data-art="psychoacoustic"
+                role="img"
+                aria-label="Abstract psychoacoustic separation artwork"
+              ></div>
+              <div class="project-copy">
+                <p class="project-index">
+                  06/2025 — Present / Research Assistant
+                </p>
+                <h3>Perception-Aware Audio</h3>
+                <p class="entry-context">
+                  University of Rochester<br />Prof. Zhiyao Duan’s Group
+                </p>
+                <p class="project-description">
+                  Psychoacoustic compression and query-guided source
+                  separation for higher-fidelity neural audio.
+                </p>
+                <details class="project-details">
+                  <summary>Research notes</summary>
+                  <ul>
+                    <li>
+                      Integrated MP3/OGG psychoacoustic models to improve
+                      perceived quality in neural audio systems; analyzed LAME
+                      encoder stages and created Python bindings.
+                    </li>
+                    <li>
+                      Bound LAME MP3 and OGG Vorbis psychoacoustic features to
+                      Python through the PyTorch C++ interface, combining them
+                      with a finite scalar quantizer and Transformer-based
+                      flow matching for perception-aware, high-fidelity neural
+                      audio compression.
+                    </li>
+                    <li>
+                      Trained a U-Net-based joint audio separation model to
+                      distinguish multiple speakers and sources through
+                      natural-language queries. Led annotation and
+                      augmentation, iterated with PyTorch Lightning and
+                      Weights &amp; Biases, and used grid search for
+                      hyperparameter tuning.
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </article>
+
+            <article class="project research-project">
+              <div
+                class="project-art"
+                data-art="reconstruction"
+                role="img"
+                aria-label="Abstract 3D human reconstruction artwork"
+              ></div>
+              <div class="project-copy">
+                <p class="project-index">
+                  04/2025 — 09/2025 / Research Assistant
+                </p>
+                <h3>3D Human Reconstruction</h3>
+                <p class="entry-context">
+                  University of Texas at Austin<br />
+                  Hezhen Hu, Postdoctoral Researcher · VITA Lab
+                </p>
+
+                <p class="project-description">
+                  Faster Gaussian-splatting reconstruction with measurable 3D
+                  mesh quality assessment.
+                </p>
+                <details class="project-details">
+                  <summary>Research notes</summary>
+                  <ul>
+                    <li>
+                      Enhanced PGSR-based 3D human reconstruction with a
+                      Gaussian Splatting-inspired loss and a faster testing
+                      pipeline. Profiled training bottlenecks and
+                      <strong>reduced training time by 80%</strong>.
+                    </li>
+                    <li>
+                      Introduced quantitative 3D mesh assessment using point
+                      clouds generated from output meshes and ground truth,
+                      automating validation and making output-quality tracking
+                      more reliable.
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </article>
           </div>
+        </div>
 
-          <div class="entry-body">
-            <h3>University of Maryland</h3>
-            <p class="entry-context">Prof. Nirupam Roy · iCoSMoS Lab</p>
+        <div
+          class="project-row"
+          role="region"
+          tabindex="0"
+          aria-label="Research projects, second row"
+        >
+          <div class="project-track project-track--reverse">
+            <article class="project research-project">
+              <div
+                class="project-art"
+                data-art="rag-writing"
+                role="img"
+                aria-label="Abstract retrieval augmented writing artwork"
+              ></div>
+              <div class="project-copy">
+                <p class="project-index">
+                  02/2025 — 09/2025 / Research Assistant
+                </p>
+                <h3>Research Writing Assistant</h3>
+                <p class="entry-context">
+                  University of Maryland<br />Prof. Leo Zhicheng Liu’s Group
+                </p>
 
-            <ul>
-              <li>
-                Developing a compact neural audio codec optimized for
-                low-power microcontrollers, enabling real-time audio
-                compression and reconstruction.
-              </li>
-              <li>
-                Designing a low-power codec using residual finite scalar
-                quantization and an EnCodec + Vocos-style model with
-                <strong>&lt; 1/20 the parameters of SOTA</strong>
-                (~390K vs. 7M+), for emergency voice transmission
-                in low-bandwidth, low-CPU settings:
-                <strong>2.3 kb/s and RTF 0.8 on a Raspberry Pi CPU</strong>.
-              </li>
-              <li>
-                Created automatic training scripts, implemented
-                Weights &amp; Biases logging, and performed ablation studies.
-              </li>
-            </ul>
+                <p class="project-description">
+                  A retrieval-augmented workspace for literature review,
+                  scientific writing, and dataset exploration.
+                </p>
+                <details class="project-details">
+                  <summary>Research notes</summary>
+                  <ul>
+                    <li>
+                      Reviewed literature on generative-AI research
+                      assistance, collecting and analyzing papers to identify
+                      trends and key methodologies.
+                    </li>
+                    <li>
+                      Worked on a RAG-based writing assistant to help
+                      researchers write scientific papers.
+                    </li>
+                    <li>
+                      Contributed to a project helping event-sequence data
+                      scientists process datasets.
+                    </li>
+                    <li>
+                      Built metadata-driven graph re-ranking that improved
+                      retrieval accuracy, and integrated it into an
+                      interactive interface for faster evaluation.
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </article>
+
+            <article class="project research-project">
+              <div
+                class="project-art"
+                data-art="sound-detection"
+                role="img"
+                aria-label="Abstract LSTM sound event detection artwork"
+              ></div>
+              <div class="project-copy">
+                <p class="project-index">
+                  09/2024 — 12/2024 / Student Researcher
+                </p>
+                <h3>Sound Event Detection</h3>
+                <p class="entry-context">
+                  University of Maryland<br />
+                  LSTM Sound Event Detection Research · Honors Seminar
+                </p>
+
+                <p class="project-description">
+                  An efficient causal LSTM detector for real-time acoustic
+                  event recognition from waveforms.
+                </p>
+                <details class="project-details">
+                  <summary>Research notes</summary>
+                  <ul>
+                    <li>
+                      Conducted an Honors Seminar research project and wrote a
+                      paper as first author.
+                    </li>
+                    <li>
+                      Developed an LSTM-based sound event detection model that
+                      detects events from waveforms without relying on future
+                      data.
+                    </li>
+                    <li>
+                      Conducted an ablation study to better understand the
+                      model and improve it efficiently.
+                    </li>
+                    <li>
+                      Achieved real-time inference at
+                      <strong>462 ms per 10-second clip</strong> with
+                      <strong>~80% accuracy</strong>, compared with
+                      non-real-time CNN-LSTM state-of-the-art models.
+                    </li>
+                    <li>
+                      Later extended the system with a pretrained RAVE encoder
+                      and the Mamba temporal model, improving accuracy by
+                      <strong>10%</strong> while preserving efficiency.
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </article>
           </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>06/2025 — Present</p>
-            <p>Research Assistant</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Rochester</h3>
-            <p class="entry-context">Prof. Zhiyao Duan’s Group</p>
-
-            <ul>
-              <li>
-                Integrated MP3/OGG psychoacoustic models to improve perceived
-                quality in neural audio systems; analyzed LAME encoder
-                stages and created Python bindings.
-              </li>
-              <li>
-                Bound LAME MP3 and OGG Vorbis psychoacoustic features
-                to Python through the PyTorch C++ interface, combining them
-                with a finite scalar quantizer and Transformer-based
-                flow matching for perception-aware, high-fidelity
-                neural audio compression.
-              </li>
-              <li>
-                Trained a U-Net-based joint audio separation model
-                to distinguish multiple speakers and sources through
-                natural-language queries. Led annotation and augmentation,
-                iterated with PyTorch Lightning and Weights &amp; Biases,
-                and used grid search for hyperparameter tuning.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>04/2025 — 09/2025</p>
-            <p>Research Assistant</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Texas at Austin</h3>
-            <p class="entry-context">
-              Hezhen Hu, Postdoctoral Researcher · VITA Lab
-            </p>
-
-            <ul>
-              <li>
-                Enhanced PGSR-based 3D human reconstruction with
-                a Gaussian Splatting-inspired loss and a faster testing
-                pipeline. Profiled training bottlenecks and
-                <strong>reduced training time by 80%</strong>.
-              </li>
-              <li>
-                Introduced quantitative 3D mesh assessment using
-                point clouds generated from output meshes and ground truth,
-                automating validation and making output-quality tracking
-                more reliable.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>02/2025 — 09/2025</p>
-            <p>Research Assistant</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Maryland</h3>
-            <p class="entry-context">Prof. Leo Zhicheng Liu’s Group</p>
-
-            <ul>
-              <li>
-                Reviewed literature on generative-AI research assistance,
-                collecting and analyzing papers to identify trends
-                and key methodologies.
-              </li>
-              <li>
-                Worked on a RAG-based writing assistant to help researchers
-                write scientific papers.
-              </li>
-              <li>
-                Contributed to a project helping event-sequence data
-                scientists process datasets.
-              </li>
-              <li>
-                Built metadata-driven graph re-ranking that improved
-                retrieval accuracy, and integrated it into an interactive
-                interface for faster evaluation.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>09/2024 — 12/2024</p>
-            <p>Student Researcher</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Maryland</h3>
-            <p class="entry-context">
-              LSTM Sound Event Detection Research · Honors Seminar
-            </p>
-
-            <ul>
-              <li>
-                Conducted an Honors Seminar research project and wrote
-                a paper as first author.
-              </li>
-              <li>
-                Developed an LSTM-based sound event detection model
-                that detects events from waveforms without relying
-                on future data.
-              </li>
-              <li>
-                Conducted an ablation study to better understand
-                the model and improve it efficiently.
-              </li>
-              <li>
-                Achieved real-time inference at
-                <strong>462 ms per 10-second clip</strong> with
-                <strong>~80% accuracy</strong>, compared with
-                non-real-time CNN-LSTM state-of-the-art models.
-              </li>
-              <li>
-                Later extended the system with a pretrained RAVE encoder
-                and the Mamba temporal model, improving accuracy by
-                <strong>10%</strong> while preserving efficiency.
-              </li>
-            </ul>
-          </div>
-        </article>
+        </div>
       </div>
-    </section>
+      </section>
 
     <section
       class="section document-section work-section"

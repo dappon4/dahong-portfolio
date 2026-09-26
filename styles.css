@@ -3,15 +3,15 @@
 :root {
   color-scheme: light;
 
-  --paper: #eee8dc;
-  --paper-light: #f5f0e6;
-  --paper-deep: #e3dacb;
-  --ink: #26272b;
-  --muted: #666158;
-  --coral: #b9675b;
-  --coral-light: #d49682;
-  --sand: #ddc19c;
-  --line: rgba(38, 39, 43, 0.2);
+  --paper: #f5f2e8;
+  --paper-light: #fbf8f0;
+  --paper-deep: #eadfd8;
+  --ink: #111528;
+  --muted: #563d5a;
+  --coral: #d93c34;
+  --coral-light: #f65933;
+  --sand: #fcd1a9;
+  --line: rgba(17, 21, 40, 0.2);
 
   --gutter: clamp(1.25rem, 5vw, 6rem);
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -177,7 +177,7 @@ summary:focus-visible,
   min-height: 4.75rem;
   padding: 0.75rem var(--gutter);
   border-bottom: 1px solid var(--line);
-  background: rgba(238, 232, 220, 0.88);
+  background: rgba(245, 242, 232, 0.88);
   backdrop-filter: blur(16px);
 }
 
@@ -242,7 +242,6 @@ summary:focus-visible,
 /* Landing composition */
 
 .hero {
-  --mx: 0px;
   position: relative;
   isolation: isolate;
   display: grid;
@@ -250,7 +249,7 @@ summary:focus-visible,
   min-height: 100svh;
   padding: 7rem var(--gutter) 2rem;
   overflow: hidden;
-  background: #f7f5ee;
+  background: var(--paper-light);
 }
 
 .hero-scenery {
@@ -263,20 +262,18 @@ summary:focus-visible,
 
 .hero-scenery img {
   position: absolute;
-  inset: 0 auto 0 -3rem;
-  width: calc(100% + 6rem);
+  inset: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: translate3d(calc(var(--mx) * -1), 0, 0) scale(1.04);
-  transition: transform 280ms ease-out;
 }
 
 .hero-scenery::after {
   position: absolute;
   inset: 65% 0 0;
   content: "";
-  background: linear-gradient(transparent, rgba(8, 11, 30, 0.55));
+  background: linear-gradient(transparent, rgba(17, 21, 40, 0.55));
 }
 
 .hero-eyebrow,
@@ -311,17 +308,14 @@ summary:focus-visible,
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
-  color: #eee5d9;
+  color: var(--paper);
   background:
-    radial-gradient(circle, rgba(39, 33, 55, 0.43) 0 0.8px, transparent 1px) 0 0 / 4px 4px,
-    linear-gradient(135deg, #f4ede2, #e7d2c7 55%, #cab9d0);
+    radial-gradient(circle, rgba(252, 209, 169, 0.9) 0 0.8px, transparent 1.1px) 0 0 / 4px 4px,
+    linear-gradient(90deg, #111528 0%, #28215a 37%, #f5f2e8 57%, #fcd1a9 100%);
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #252438;
-  paint-order: stroke fill;
-  filter: drop-shadow(5px 6px 0 #5d536e) drop-shadow(0 14px 20px rgba(14, 15, 29, 0.45));
-  transform: translate3d(calc(var(--mx) * 0.35), 0, 0);
-  transition: transform 280ms ease-out;
+  filter: drop-shadow(0 10px 16px rgba(17, 21, 40, 0.32));
 }
 
 .hero-footer {
@@ -329,7 +323,7 @@ summary:focus-visible,
   grid-template-columns: 1fr auto 1fr;
   align-items: end;
   gap: 2rem;
-  color: #fff3dc;
+  color: #f5f2e8;
   text-shadow: 0 2px 8px #0b1022;
 }
 
@@ -359,14 +353,7 @@ summary:focus-visible,
   align-items: flex-end;
   gap: 0.3rem;
   padding: 0.45rem 0.7rem;
-  background: rgba(8, 12, 30, 0.6);
-}
-
-.pointer-note {
-  color: inherit;
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  opacity: 0.85;
+  background: rgba(17, 21, 40, 0.65);
 }
 
 /* Shared editorial layout */
@@ -454,11 +441,11 @@ summary:focus-visible,
 }
 
 .project:nth-child(3n + 2) {
-  background: #e7dfd1;
+  background: #efe3db;
 }
 
 .project:nth-child(3n + 3) {
-  background: #f1e8d9;
+  background: #f8ebde;
 }
 
 .project-art {
@@ -514,7 +501,7 @@ summary:focus-visible,
 
 .project-award {
   margin-bottom: 1rem;
-  color: #985047;
+  color: var(--coral);
   font-family: var(--mono);
   font-size: 0.73rem;
   line-height: 1.6;
@@ -544,6 +531,29 @@ summary:focus-visible,
 
 .project-details li + li {
   margin-top: 0.8rem;
+}
+
+.research-rows {
+  margin-inline: calc(var(--gutter) * -1);
+  border-top: 1px solid var(--ink);
+}
+
+.research-project .project-index {
+  margin-bottom: 0.9rem;
+  line-height: 1.55;
+}
+
+.research-project .entry-context {
+  margin-top: 0.55rem;
+}
+
+.research-project .project-details {
+  margin-top: 1.25rem;
+}
+
+.research-project .project-details ul {
+  font-size: 0.86rem;
+  line-height: 1.5;
 }
 
 /* Résumé: continuous rows, not cards */
@@ -869,7 +879,6 @@ summary:focus-visible,
 
   .hero-title {
     font-size: 13vw;
-    -webkit-text-stroke-width: 1px;
   }
 
   .hero-eyebrow .eyebrow {
@@ -888,10 +897,6 @@ summary:focus-visible,
   .jump-link {
     gap: 0.7rem;
     font-size: 0.73rem;
-  }
-
-  .pointer-note {
-    display: none;
   }
 
   .hero-motion {
@@ -995,12 +1000,6 @@ summary:focus-visible,
   .colophon {
     flex-direction: column;
     gap: 0.3rem;
-  }
-}
-
-@media (hover: none) {
-  .pointer-note {
-    display: none;
   }
 }
 
@@ -1131,6 +1130,10 @@ summary:focus-visible,
     display: block;
     margin: 0 0 4mm;
     break-after: avoid;
+  }
+
+  .research-rows {
+    margin-inline: 0;
   }
 
   .section-heading .eyebrow,
