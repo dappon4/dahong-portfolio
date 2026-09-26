@@ -26,18 +26,11 @@
     `,
 
     quantum: `
-      <circle cx="360" cy="208" r="135" fill="url(#violet)" />
-      <ellipse cx="360" cy="208" rx="135" ry="43" fill="none" stroke="#fcd1a9" stroke-width="5" />
-      <ellipse cx="360" cy="208" rx="43" ry="135" fill="none" stroke="#111528" stroke-width="4" />
-      <path d="M360 73 V343 M225 208 H495" fill="none" stroke="#f5f2e8" stroke-width="2" opacity=".7" />
-      <path d="M360 208 L443 121" stroke="#f65933" stroke-width="8" stroke-linecap="round" />
-      <circle cx="443" cy="121" r="13" fill="#fcd1a9" />
-      <circle cx="360" cy="208" r="17" fill="#111528" />
-      <path d="M179 389H541M179 443H541" stroke="#28215a" stroke-width="4" />
-      <g fill="url(#light)" stroke="#5f3bb7" stroke-width="4"><rect x="223" y="369" width="45" height="40"/><rect x="412" y="423" width="45" height="40"/></g>
-      <path d="M342 389v54" stroke="#d93c34" stroke-width="5" />
-      <circle cx="342" cy="389" r="9" fill="#d93c34"/><circle cx="342" cy="443" r="16" fill="none" stroke="#5f3bb7" stroke-width="4"/>
-      <path d="M188 359 H257 M463 359 H532" stroke="#9968d8" stroke-width="4" stroke-dasharray="2 11" />
+      <path d="M111 296C187 231 224 136 331 103c72-22 126 11 107 62-26 70-109 72-130 145-22 76 39 97 95 66 74-41 122-16 106 42-16 58-94 76-165 52-116-39-179-103-233-174Z" fill="url(#warm)" />
+      <path d="M609 296C533 231 496 136 389 103c-72-22-126 11-107 62 26 70 109 72 130 145 22 76-39 97-95 66-74-41-122-16-106 42 16 58 94 76 165 52 116-39 179-103 233-174Z" fill="url(#violet)" />
+      <path d="M112 296C212 239 250 173 331 144M608 296C508 239 470 173 389 144M174 351c73-28 129-31 180-3M546 351c-73-28-129-31-180-3" fill="none" stroke="#f5f2e8" stroke-width="6" opacity=".72" stroke-linecap="round" />
+      <path d="M360 105C324 155 329 211 360 261s36 106 0 156" fill="none" stroke="#111528" stroke-width="8" opacity=".72" />
+      <path d="M210 409c57-31 101-27 150 4s93 35 150 4" fill="none" stroke="#d93c34" stroke-width="7" stroke-dasharray="4 13" stroke-linecap="round" />
     `,
 
     segmentation: `
@@ -94,31 +87,23 @@
     `,
 
     review: `
-      <path d="M92 132 L414 74 L446 289 L161 340 Z" fill="url(#warm)" />
-      <path d="M92 132 L414 74 L446 289 L161 340 Z" fill="url(#stipple)" opacity=".7" />
-      <path d="M149 177 H389 M155 205 H349" stroke="#f5f2e8" stroke-width="7" />
-      <path d="M162 247 C205 214 244 286 285 250 C320 220 352 270 402 232" fill="none" stroke="#9968d8" stroke-width="7" />
-      <path d="M442 188 C474 157 534 161 560 197 L605 259 C626 290 608 332 571 342 L504 359 C469 368 436 348 430 313 L419 244 C416 222 424 202 442 188 Z" fill="url(#dark)" />
-      <path d="M462 244 H489 V271 H516 V298 H489 V325 H462 V298 H435 V271 H462 Z" fill="#fcd1a9" />
-      <circle cx="548" cy="247" r="13" fill="#f65933" /><circle cx="578" cy="276" r="13" fill="#9968d8" />
-      <path d="M507 215 C532 198 560 204 574 224" fill="none" stroke="#f5f2e8" stroke-width="5" />
-      <path d="M505 374 C541 347 568 390 600 367" fill="none" stroke="#d93c34" stroke-width="6" />
-      <path d="M111 385 H396" stroke="#28215a" stroke-width="5" stroke-dasharray="2 11" />
+      <path d="M102 155 321 104 356 292 212 324 162 374 165 334 123 343Z" fill="url(#warm)" />
+      <path d="M618 155 399 104 364 292 508 324 558 374 555 334 597 343Z" fill="url(#violet)" />
+      <path d="M102 155 321 104 356 292 212 324 162 374 165 334 123 343Z" fill="url(#stipple)" opacity=".35" />
+      <path d="M618 155 399 104 364 292 508 324 558 374 555 334 597 343Z" fill="url(#contours)" opacity=".32" />
+      <path d="m333 93 54 18-13 243-54-18Z" fill="url(#dark)" />
+      <path d="m346 130 26 9-8 164-26-9Z" fill="url(#light)" opacity=".72" />
+      <path d="M157 197 279 168M166 231 296 200M563 197 441 168M554 231 424 200" stroke="#f5f2e8" stroke-width="8" stroke-linecap="round" opacity=".88" />
+      <circle cx="275" cy="285" r="10" fill="#f5f2e8" /><circle cx="445" cy="285" r="10" fill="#111528" />
+      <path d="M302 402c26-23 49-23 72 0s46 23 72 0" fill="none" stroke="#d93c34" stroke-width="7" stroke-dasharray="3 11" stroke-linecap="round" />
     `,
 
     pacman: `
-      <path d="M105 118 H603 V398 H145 V174 H514 V337 H254 V225 H424" fill="none" stroke="#111528" stroke-width="34" stroke-linejoin="round" opacity=".88" />
-      <path d="M92 371 L360 455 L640 301 L372 218 Z" fill="url(#light)" />
-      <path d="M352 267 L503 151 A184 184 0 1 0 503 383 Z" fill="url(#warm)" />
-      <path d="M352 267 L503 151 A184 184 0 0 0 183 175 Z" fill="#f5f2e8" />
-      <path d="M352 267 L503 151 M352 267 L503 383" stroke="#111528" stroke-width="8" />
-      <path d="M111 331 L438 125 L616 292 L378 470 Z" fill="url(#hatch)" opacity=".2" />
-      <path d="M126 130 H235 M126 130 V208 M235 130 V208 M514 130 H585 V208" fill="none" stroke="#9968d8" stroke-width="5" />
-      <path d="M163 368 C220 337 277 398 331 365 S440 334 505 365" fill="none" stroke="#9968d8" stroke-width="5" stroke-dasharray="4 12" />
-      <circle cx="155" cy="130" r="11" fill="#fcd1a9" /><circle cx="268" cy="130" r="11" fill="#fcd1a9" /><circle cx="579" cy="130" r="11" fill="#fcd1a9" />
-      <circle cx="190" cy="368" r="9" fill="#111528" /><circle cx="253" cy="377" r="9" fill="#111528" /><circle cx="317" cy="376" r="9" fill="#111528" /><circle cx="448" cy="353" r="9" fill="#111528" /><circle cx="512" cy="365" r="9" fill="#111528" /><circle cx="566" cy="337" r="9" fill="#111528" />
-      <path d="M515 256 C548 222 585 244 574 277 C565 304 532 303 515 280 Z" fill="url(#violet)" />
-      <circle cx="544" cy="256" r="5" fill="#f5f2e8" /><circle cx="565" cy="258" r="5" fill="#f5f2e8" />
+      <path d="M326 262 483 170A169 169 0 1 0 483 354Z" fill="url(#warm)" />
+      <path d="M326 262 483 170A169 169 0 1 0 483 354Z" fill="url(#stipple)" opacity=".34" />
+      <path d="M515 148h82v72h-54v72h-72" fill="none" stroke="url(#dark)" stroke-width="22" stroke-linejoin="round" />
+      <path d="M535 350h22v22h-22zm51 0h22v22h-22zm51 0h22v22h-22z" fill="#fcd1a9" />
+      <path d="M111 402h102v-58h84" fill="none" stroke="#111528" stroke-width="18" stroke-linejoin="round" />
     `,
 
     mapping: `
@@ -272,22 +257,13 @@
     `,
 
     gesture: `
-      <path d="M82 370 L352 92 L628 246 L358 474 Z" fill="url(#warm)" opacity=".7" />
-      <path d="M82 370 L352 92 L628 246 L358 474 Z" fill="url(#dots)" />
-      <path d="M260 399 L216 337 L169 278 L194 246 L255 292 L247 147 L278 132 L315 269 L325 91 L357 88 L369 270 L397 119 L430 129 L417 289 L458 191 L488 207 L456 337 L404 405 L385 457 L276 445 Z" fill="url(#light)" />
-      <path d="M260 399 L315 269 L369 270 L404 405 L385 457 L276 445 Z" fill="url(#dark)" />
-      <path d="M369 270 L417 289 L456 337 L404 405 Z" fill="url(#hatch)" />
-      <path d="M194 246 L315 269 L369 270 L417 289 L488 207 M315 269 L260 399 L404 405 L369 270" fill="none" stroke="#f65933" stroke-width="3" />
-      <circle cx="315" cy="269" r="9" fill="#d93c34" /><circle cx="369" cy="270" r="9" fill="#d93c34" /><circle cx="404" cy="405" r="9" fill="#d93c34" /><circle cx="417" cy="289" r="9" fill="#9968d8" />
-      <path d="M488 207 L548 172 L578 191 L518 226 Z" fill="url(#dark)" />
-      <path d="M518 226 L578 191 L578 260 L518 296 Z" fill="url(#violet)" />
-      <path d="M578 191 V260 M548 172 V241" stroke="#fcd1a9" stroke-width="3" />
-      <circle cx="518" cy="226" r="13" fill="#111528" />
-      <path d="M518 226 L574 178 L587 188 L536 246 Z" fill="url(#light)" />
-      <path d="M518 226 L568 273 L579 260 L536 214 Z" fill="url(#warm)" />
-      <path d="M574 178 L602 157 M568 273 L600 291" stroke="#111528" stroke-width="12" stroke-linecap="round" />
-      <path d="M456 337 C505 326 519 301 518 264" fill="none" stroke="#9968d8" stroke-width="5" stroke-dasharray="4 9" />
-      <circle cx="548" cy="172" r="10" fill="#fcd1a9" /><circle cx="578" cy="191" r="10" fill="#d93c34" />
+      <path d="M166 382c-27-71 8-140 65-165l-10-91c-3-26 35-37 47-13l33 67 0-111c0-26 38-29 42-3l17 113 19-83c6-26 43-17 38 9l-15 88 26-44c14-24 48-4 34 21l-39 73c-14 26-10 63-27 91-30 49-85 78-140 74Z" fill="url(#light)" />
+      <path d="M166 382c-27-71 8-140 65-165l-10-91c-3-26 35-37 47-13l33 67 0-111c0-26 38-29 42-3l17 113 19-83c6-26 43-17 38 9l-15 88 26-44c14-24 48-4 34 21l-39 73c-14 26-10 63-27 91-30 49-85 78-140 74Z" fill="url(#stipple)" opacity=".48" />
+      <path d="M273 232c35 13 69 13 104 0" fill="none" stroke="#d93c34" stroke-width="8" stroke-linecap="round" />
+      <circle cx="326" cy="232" r="14" fill="#111528" />
+      <path d="M456 210c57 0 104 47 104 104s-47 104-104 104" fill="none" stroke="url(#violet)" stroke-width="23" stroke-linecap="round" />
+      <path d="M456 210c57 0 104 47 104 104" fill="none" stroke="#fcd1a9" stroke-width="5" stroke-dasharray="3 13" />
+      <circle cx="456" cy="210" r="13" fill="#f65933" />
     `
   };
 
@@ -467,7 +443,7 @@
   }
 
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const motionButton = document.getElementById("motion-toggle");
+  const motionButtons = document.querySelectorAll("[data-motion-toggle]");
   const rows = Array.from(document.querySelectorAll(".project-row"));
   let manuallyPaused = false;
   let previouslyClosedDetails = [];
@@ -529,7 +505,8 @@
     projectLoops.forEach((loop) => {
       const elapsed = Math.min(100, timestamp - (loop.lastTime ?? timestamp));
       loop.lastTime = timestamp;
-      if (loop.row.matches(":hover, :focus-within") || !motionEnabled() || document.hidden) return;
+      // Pointer focus survives closing notes; only keyboard focus should keep pausing.
+      if (loop.row.matches(":focus-visible") || loop.row.querySelector(":focus-visible, details[open]") || !motionEnabled() || document.hidden) return;
       loop.remainder += (loop.reverse ? -1 : 1) * elapsed / 1000 * 22;
       const step = Math.trunc(loop.remainder);
       if (!step) return;
@@ -558,17 +535,21 @@
 
   function updateMotionControls() {
     const enabled = motionEnabled();
-    motionButton.disabled = motionPreference.matches;
-    motionButton.setAttribute("aria-pressed", String(!enabled));
-    motionButton.textContent = motionPreference.matches
-      ? "Reduced motion"
-      : enabled ? "Pause carousels" : "Enable carousels";
+    motionButtons.forEach((button) => {
+      button.disabled = motionPreference.matches;
+      button.setAttribute("aria-pressed", String(!enabled));
+      button.textContent = motionPreference.matches
+        ? "Reduced motion"
+        : enabled ? "Pause motion" : "Resume motion";
+    });
   }
 
-  motionButton.hidden = false;
-  motionButton.addEventListener("click", () => {
-    manuallyPaused = !manuallyPaused;
-    updateMotionControls();
+  motionButtons.forEach((button) => {
+    button.hidden = false;
+    button.addEventListener("click", () => {
+      manuallyPaused = !manuallyPaused;
+      updateMotionControls();
+    });
   });
   motionPreference.addEventListener("change", updateMotionControls);
   updateMotionControls();

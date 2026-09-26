@@ -12,12 +12,18 @@ A lightweight, responsive static web portfolio built with semantic HTML5, CSS3, 
 - **Projects**: Core engineering and ML projects
 - **Research**: Research publications and focus areas
 - **Experience**: Industry and academic experience
-- **About**: Background, skills, and interests
-- **Workshops & Study**: Continuous learning and workshops
+- **Education**: Horizontal timeline, skills, and interests
 
 ## Tech Stack
 
 - **HTML5**: Semantic and accessible markup
 - **CSS3**: Responsive design with CSS variables and flex/grid layouts
-- **JavaScript (ES6+)**: Interactive filtering, smooth navigation, and dark/light mode support
+- **JavaScript (ES6+)**: Looping carousels, textured SVG artwork, and print support
 - **Hosting**: GitHub Pages
+
+### Local checks
+
+Serve locally with `python3 -m http.server 8765 --bind 127.0.0.1`.
+With Playwright and Chromium available in the Node environment, run
+`node tests/carousels.cjs` to check notes closing, keyboard focus, pause controls,
+and reduced motion. Run `node --check app.js` for JavaScript syntax.

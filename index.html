@@ -11,8 +11,8 @@
 
   <title>Dahong Luo — Signals, Systems &amp; Learning</title>
 
-  <link rel="stylesheet" href="./styles.css?v=7">
-  <script src="./app.js?v=5" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=8">
+  <script src="./app.js?v=8" defer></script>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#experience">Experience</a>
-      <a href="#about">About</a>
+      <a href="#about">Education</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -83,18 +83,6 @@
         <a class="jump-link" href="#projects">
           Explore the work <span aria-hidden="true">↓</span>
         </a>
-
-        <div class="hero-motion">
-          <button
-            class="text-button"
-            id="motion-toggle"
-            type="button"
-            aria-pressed="false"
-            hidden
-          >
-            Pause carousels
-          </button>
-        </div>
       </div>
     </section>
 
@@ -106,15 +94,17 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">01 / Selected builds</p>
-          <h2 id="projects-heading">Ideas, given<br>some shape.</h2>
+          <h2 id="projects-heading">PROJECTS</h2>
         </div>
 
-        <p class="section-description">
-          Eight independent projects and five hackathon builds.
-          Two continuously moving rows of models, tools, and experiments.
-          Hover, focus, or use reduced motion to pause; scroll sideways to
-          explore every project.
-        </p>
+        <div>
+          <p class="section-description">
+            Eight independent projects and five hackathon builds.
+            Two continuously moving rows. Open notes or use keyboard focus
+            to pause; scroll sideways to explore every project.
+          </p>
+          <button class="text-button carousel-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>Pause motion</button>
+        </div>
       </div>
 
       <div class="project-rows">
@@ -481,14 +471,17 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">02 / Research</p>
-          <h2 id="research-heading">Sound. Space.<br>Learning.</h2>
+          <h2 id="research-heading">RESEARCH</h2>
         </div>
 
-        <p class="section-description">
-          Compact audio models, perception-aware compression,
-          spatial reconstruction, and tools that help researchers
-          work with information.
-        </p>
+        <div>
+          <p class="section-description">
+            Compact audio models, perception-aware compression,
+            spatial reconstruction, and tools that help researchers
+            work with information.
+          </p>
+          <button class="text-button carousel-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>Pause motion</button>
+        </div>
       </div>
 
       <div class="project-rows research-rows">
@@ -743,7 +736,7 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">03 / Work experience</p>
-          <h2 id="experience-heading">From model<br>to working system.</h2>
+          <h2 id="experience-heading">EXPERIENCE</h2>
         </div>
 
         <p class="section-description">
@@ -859,52 +852,71 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">04 / Education &amp; toolkit</p>
-          <h2 id="education-heading">A foundation<br>in learning.</h2>
+          <h2 id="education-heading">EDUCATION</h2>
         </div>
       </div>
 
-      <div class="entry-list education-list">
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>09/2026 —</p>
-            <p>New York</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>Columbia University</h3>
-            <p>M.S. Electrical Engineering</p>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>08/2023 — 05/2026</p>
-            <p>College Park, Maryland</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Maryland</h3>
-            <p>
-              B.S. · Computer Science major · Mathematics minor
-            </p>
-            <p class="entry-context">GPA 3.90 / 4.0</p>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>04/2023 — 08/2023</p>
-            <p>Tokyo, Japan</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>University of Tokyo</h3>
-            <p>
-              B.S. studies in Natural Sciences · Subsequently transferred
-              to the University of Maryland
-            </p>
-          </div>
-        </article>
+      <p class="education-direction eyebrow">2023 → 2026 / Tokyo → Maryland → New York</p>
+      <div class="education-timeline" role="region" tabindex="0" aria-label="Education timeline, chronological from left to right. Scroll horizontally to explore.">
+        <div class="education-journey">
+          <svg class="education-art" viewBox="0 0 1200 280" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="education-ribbon" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#fcd1a9"/><stop offset=".4" stop-color="#d93c34"/><stop offset=".7" stop-color="#9968d8"/><stop offset="1" stop-color="#28215a"/>
+              </linearGradient>
+              <linearGradient id="education-fold" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#28215a"/><stop offset=".6" stop-color="#9968d8"/><stop offset="1" stop-color="#cda1c9"/>
+              </linearGradient>
+              <pattern id="education-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
+                <path d="M0 0v8" stroke="#f5f2e8" stroke-width="2" opacity=".5"/>
+              </pattern>
+              <filter id="education-grain" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="3" seed="11" result="noise"/>
+                <feColorMatrix in="noise" type="saturate" values="0"/>
+                <feComposite in2="SourceGraphic" operator="in" result="grain"/>
+                <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+              </filter>
+            </defs>
+            <g filter="url(#education-grain)">
+              <!-- A continuous folded ribbon grows from a seed into an open passage. -->
+              <path d="M135 169C300 76 417 252 592 169S891 204 1074 80l-10 57C882 262 765 124 601 219S307 128 156 210Z" fill="url(#education-ribbon)" opacity=".65"/>
+              <path d="m100 166 107-112 88 146-96 50Z" fill="#f65933"/>
+              <path d="m100 166 107-112-8 196Z" fill="#fcd1a9"/>
+              <path d="m207 54 88 146-96 50Z" fill="url(#education-fold)"/>
+              <path d="m100 166 107-112-8 196Z" fill="url(#education-hatch)"/>
+              <path d="m470 160 96-106 34 181-70 23Z" fill="#28215a"/>
+              <path d="m566 54 79 41-45 140Z" fill="url(#education-fold)"/>
+              <path d="m600 235 45-140 96 72-71 78Z" fill="#fcd1a9"/>
+              <path d="m645 95 96 72-71 78Z" fill="url(#education-hatch)"/>
+              <path d="m909 223 18-157 155-33-19 157-48 22 12-124-58 13-13 135Z" fill="url(#education-fold)"/>
+              <path d="m927 66 34-25 154-33-33 25Z" fill="#fcd1a9"/>
+              <path d="m1082 33 33-25-19 157-33 25Z" fill="#111528"/>
+              <path d="m909 223 18-157 42 35-13 135Z" fill="url(#education-hatch)"/>
+              <path d="m980 240 73-23 60 11-78 30Z" fill="#f65933"/>
+            </g>
+          </svg>
+          <ol class="education-stages">
+            <li>
+              <p class="education-date"><time datetime="2023-04">04/2023</time> — <time datetime="2023-08">08/2023</time></p>
+              <h3>University of Tokyo</h3>
+              <p class="education-location">Tokyo, Japan</p>
+              <p>B.S. studies in Natural Sciences · Subsequently transferred to the University of Maryland</p>
+            </li>
+            <li>
+              <p class="education-date"><time datetime="2023-08">08/2023</time> — <time datetime="2026-05">05/2026</time></p>
+              <h3>University of Maryland</h3>
+              <p class="education-location">College Park, Maryland</p>
+              <p>B.S. · Computer Science major · Mathematics minor</p>
+              <p class="entry-context">GPA 3.90 / 4.0</p>
+            </li>
+            <li>
+              <p class="education-date"><time datetime="2026-09">09/2026</time> —</p>
+              <h3>Columbia University</h3>
+              <p class="education-location">New York</p>
+              <p>M.S. Electrical Engineering</p>
+            </li>
+          </ol>
+        </div>
       </div>
 
       <div class="skills" aria-labelledby="skills-heading">
@@ -945,188 +957,11 @@
       </div>
     </section>
 
-    <section
-      class="section document-section teaching-section"
-      id="workshops"
-      aria-labelledby="workshops-heading"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">05 / Workshops</p>
-          <h2 id="workshops-heading">Share what<br>you learn.</h2>
-        </div>
-
-        <p class="section-description">
-          Hands-on workshops with the AIML Club
-          at the University of Maryland.
-        </p>
-      </div>
-
-      <div class="entry-list">
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>03/2025</p>
-            <p>Co-Presenter</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>Introduction to LLM and FineTuning</h3>
-            <p class="entry-context">
-              AIML Club · University of Maryland
-            </p>
-
-            <ul>
-              <li>
-                Co-led a hands-on workshop on fine-tuning Llama 3.1 3B
-                with Unsloth on a custom dataset synthesized using
-                Gemini-2.0 Flash, explaining underlying LLM concepts
-                and Transformer architecture.
-              </li>
-              <li>
-                Explained Supervised Fine-Tuning (SFT) and Low-Rank
-                Adaptation (LoRA), connecting the methods with
-                the theory of LLM optimization.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="cv-entry">
-          <div class="entry-meta">
-            <p>10/2024</p>
-            <p>Presenter</p>
-          </div>
-
-          <div class="entry-body">
-            <h3>Introduction to PyTorch</h3>
-            <p class="entry-context">
-              AIML Club · University of Maryland
-            </p>
-
-            <ul>
-              <li>
-                Led a <strong>two-hour hands-on workshop for 40+ participants</strong>
-                on building neural networks in PyTorch.
-              </li>
-              <li>
-                Taught data preprocessing, model architecture,
-                training loops, and fundamental deep-learning concepts.
-              </li>
-              <li>
-                Helped beginners understand backpropagation,
-                loss functions, and optimization techniques.
-              </li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section
-      class="section document-section"
-      id="study"
-      aria-labelledby="study-heading"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">06 / Independent study</p>
-          <h2 id="study-heading">Read it.<br>Rebuild it.</h2>
-        </div>
-
-        <p class="section-description">
-          Research-work reproductions and a selected reading record.
-          Dates indicate reproduction or reading dates.
-        </p>
-      </div>
-
-      <div class="study-columns">
-        <div>
-          <h3 class="subsection-title">Research work reproduction</h3>
-
-          <ol class="paper-list">
-            <li>
-              <p>
-                <span class="paper-author">Goodfellow et al.</span>
-                Generative Adversarial Nets
-              </p>
-              <time datetime="2024-10">10/2024</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Vaswani et al.</span>
-                Attention Is All You Need
-              </p>
-              <time datetime="2023-09">09/2023</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Li et al.</span>
-                Generalized Focal Loss: Learning Qualified and Distributed
-                Bounding Boxes for Dense Object Detection
-              </p>
-              <time datetime="2024-12">12/2024</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Miyazaki et al.</span>
-                Weakly-Supervised Sound Event Detection With Self-Attention
-              </p>
-              <time datetime="2024-12">12/2024</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Mildenhall et al.</span>
-                NeRF: Representing Scenes as Neural Radiance Fields
-                for View Synthesis
-              </p>
-              <time datetime="2025-01">01/2025</time>
-            </li>
-          </ol>
-        </div>
-
-        <div>
-          <h3 class="subsection-title">Readings</h3>
-
-          <ol class="paper-list">
-            <li>
-              <p>
-                <span class="paper-author">Kerbl et al.</span>
-                3D Gaussian Splatting for Real-Time Radiance Field Rendering
-              </p>
-              <time datetime="2025-03">03/2025</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Akyürek et al.</span>
-                The Surprising Effectiveness of Test-Time Training
-                for Abstract Reasoning
-              </p>
-              <time datetime="2025-02">02/2025</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Gong et al.</span>
-                AST: Audio Spectrogram Transformer
-              </p>
-              <time datetime="2024-12">12/2024</time>
-            </li>
-            <li>
-              <p>
-                <span class="paper-author">Dosovitskii et al.</span>
-                An Image Is Worth 16×16 Words:
-                Transformers For Image Recognition At Scale
-              </p>
-              <time datetime="2024-10">10/2024</time>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="contact-section" id="contact" aria-labelledby="contact-heading">
-    <p class="eyebrow">07 / Contact</p>
-    <h2 id="contact-heading">Get in touch.</h2>
+    <p class="eyebrow">05 / Get in touch</p>
+    <h2 id="contact-heading">CONTACT</h2>
 
     <a class="contact-email" href="mailto:dahong@umd.edu">
       dahong@umd.edu <span aria-hidden="true">↗</span>
