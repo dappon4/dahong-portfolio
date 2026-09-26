@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-label="Abstract music and technology collage">
+  <defs>
+    <linearGradient id="hot" x1=".85" y1="0" x2=".1" y2="1" objectBoundingBox="true">
+      <stop stop-color="#f52934"/>
+      <stop offset=".46" stop-color="#ff5140"/>
+      <stop offset="1" stop-color="#ffbd71"/>
+    </linearGradient>
+    <linearGradient id="orb" x1=".14" y1=".08" x2=".82" y2=".95" objectBoundingBox="true">
+      <stop stop-color="#ff443b"/>
+      <stop offset=".62" stop-color="#ff7350"/>
+      <stop offset="1" stop-color="#ffcf95"/>
+    </linearGradient>
+    <linearGradient id="sun" x1=".35" y1="0" x2=".55" y2="1" objectBoundingBox="true">
+      <stop stop-color="#fff3d7"/>
+      <stop offset=".45" stop-color="#ffe0af"/>
+      <stop offset="1" stop-color="#ff795a"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="1" x2="1" y2=".1" objectBoundingBox="true">
+      <stop stop-color="#070e1b"/>
+      <stop offset=".55" stop-color="#17132e"/>
+      <stop offset="1" stop-color="#8f3df0"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1=".55" x2="1" y2=".3" objectBoundingBox="true">
+      <stop stop-color="#101329"/>
+      <stop offset=".45" stop-color="#211244"/>
+      <stop offset=".78" stop-color="#6e28cc"/>
+      <stop offset="1" stop-color="#b972ff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1=".18" y1=".45" x2=".89" y2=".25" objectBoundingBox="true">
+      <stop stop-color="#090f21"/>
+      <stop offset=".43" stop-color="#181637"/>
+      <stop offset=".72" stop-color="#7f42d1"/>
+      <stop offset="1" stop-color="#f7d9f1"/>
+    </linearGradient>
+    <linearGradient id="headphone" x1=".1" y1=".2" x2=".9" y2=".8" objectBoundingBox="true">
+      <stop stop-color="#ffe8df"/>
+      <stop offset=".55" stop-color="#a759ef"/>
+      <stop offset="1" stop-color="#371382"/>
+    </linearGradient>
+    <pattern id="dots" width="29" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="9" r="4" fill="#6330be"/>
+    </pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".53" numOctaves="3" seed="8" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="3" intercept="-1"/>
+        <feFuncG type="linear" slope="3" intercept="-1"/>
+        <feFuncB type="linear" slope="3" intercept="-1"/>
+        <feFuncA type="linear" slope=".35"/>
+      </feComponentTransfer>
+    </filter>
+    <clipPath id="art-clip"><rect width="1536" height="1024"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#art-clip)">
+    <rect width="1536" height="1024" fill="#f9f7ee"/>
+    <path d="M572 15 1363 297 1092 845 140 875Z" fill="url(#hot)"/>
+    <circle cx="1025" cy="266" r="183" fill="url(#sun)"/>
+    <circle cx="433" cy="471" r="227" fill="url(#orb)"/>
+    <path d="M1320 420h147v190h-147z" fill="url(#dots)"/>
+
+    <!-- The waveform and the guitar echo the reference's two central silhouettes. -->
+    <g fill="none" stroke="url(#purple)" stroke-width="17" stroke-linecap="round">
+      <path d="M118 470v0 M145 469v0 M172 463v16 M200 455v33 M227 436v67 M257 416v108 M283 441v57 M309 443v54 M337 393v153 M367 365v208 M396 411v115 M426 436v64 M459 459v23 M493 440v61 M526 461v19"/>
+    </g>
+
+    <path d="M334 609 382 591 643 622 636 842 314 847Z" fill="#080e1b"/>
+    <path d="M382 591 645 622 636 822 382 798Z" fill="url(#purple)"/>
+    <g fill="#ffefdf"><circle cx="410" cy="624" r="8"/><circle cx="445" cy="626" r="7"/><circle cx="478" cy="627" r="7"/><circle cx="509" cy="630" r="6"/></g>
+
+    <path d="M1225 444c94 0 168 76 168 172s-75 173-168 173c-94 0-169-77-169-173s75-172 169-172Z" fill="#0c1222"/>
+    <path d="M1149 635c30-34 67-52 105-49 58 4 108 52 121 117l-51 15c-10-40-38-66-70-67-24-1-49 11-70 35Z" fill="url(#headphone)"/>
+    <path d="M1169 664c17-22 36-35 54-40 43-11 92 24 104 83l-44 17c-8-41-27-68-49-70-14-2-28 9-42 26Z" fill="#0b1020"/>
+
+    <path d="M777 374h296c15 0 26 11 26 26v203H749V403c0-16 12-29 28-29Z" fill="url(#ink)"/>
+    <path d="M750 609h368v23H750z" fill="#0b1020"/>
+    <path d="M814 634 1039 646 1074 809 836 805Z" fill="url(#purple)"/>
+    <path d="M780 807h336v62H766Z" fill="#0b1020"/>
+
+    <path d="M757 131c23 0 43 19 43 42 0 24-19 43-42 43h-2L676 501c-7 26-5 42 10 46 13 3 26-9 43-17 22-10 37 6 32 27-5 23-27 39-39 62-11 21-9 39 4 65 22 47 16 91-17 120-34 31-88 29-143 13-71-20-103-47-100-99 2-43 24-70 56-109 30-36 44-62 36-89-7-27-10-45 6-59 16-14 36-13 54-3l104-265a44 44 0 0 1-7-22c0-24 19-43 42-43Z" fill="url(#purple)"/>
+    <path d="M758 132c23 0 41 19 41 42 0 23-18 42-41 42-15 0-26-8-34-18l-101 265-13-5 107-270a43 43 0 0 1-2-14c0-23 19-42 43-42Z" fill="#0b1125" opacity=".48"/>
+
+    <path d="M790 739c49-46 104-52 166-34 82 24 155 84 251 160H769Z" fill="url(#hot)"/>
+    <path d="M958 701c42-26 93-13 150 18 55 30 88 70 116 134l-157 50-109-103Z" fill="url(#sun)"/>
+    <ellipse cx="1217" cy="812" rx="67" ry="66" fill="url(#purple)"/>
+    <path d="M1414 723c40 0 60 45 60 91 0 51-29 90-70 90s-70-39-70-90c0-48 31-91 80-91Z" fill="url(#purple)"/>
+    <path d="M1396 724c-41 3-67 46-67 92 0 43 21 75 52 86-6-29-7-64-1-97 7-37 17-61 16-81Z" fill="#080e1b"/>
+
+    <path d="M0 926c221-85 356-144 531-147 140-3 270 7 413 45 230 61 359 64 592 112v88H0Z" fill="url(#ground)"/>
+    <path d="M772 929c119 17 193 52 266 95H623Z" fill="#a068e7" opacity=".45"/>
+    <rect width="1536" height="1024" filter="url(#grain)" style="mix-blend-mode:multiply"/>
+  </g>
+</svg>

@@ -39,32 +39,14 @@
   <noscript>
     <p class="noscript-note">
       All résumé content is available without JavaScript. Scroll the project
-      strip horizontally to explore it. Interactive artwork and controls
-      require JavaScript.
+      rows horizontally to explore them.
     </p>
   </noscript>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-name">
       <div class="hero-scenery" aria-hidden="true">
-        <div class="hero-plane"></div>
-        <div class="hero-orb"></div>
-        <div class="hero-dot-plane"></div>
-
-        <div
-          class="hero-object hero-object--wave"
-          data-art="waveform"
-        ></div>
-
-        <div
-          class="hero-object hero-object--guitar"
-          data-art="guitar"
-        ></div>
-
-        <div
-          class="hero-object hero-object--code"
-          data-art="code"
-        ></div>
+        <img src="./hero-art.svg" alt="" draggable="false">
       </div>
 
       <div class="hero-eyebrow">
@@ -73,9 +55,7 @@
       </div>
 
       <h1 class="hero-title" id="hero-name">
-        <span class="sr-only">Dahong Luo</span>
-        <span class="name-line" data-name-line aria-hidden="true">Dahong</span>
-        <span class="name-line" data-name-line aria-hidden="true">Luo</span>
+        Dahong Luo
       </h1>
 
       <div class="hero-footer">
@@ -89,7 +69,7 @@
         </a>
 
         <div class="hero-motion">
-          <span class="pointer-note">The name follows your cursor.</span>
+          <span class="pointer-note">Move your cursor to explore the artwork.</span>
           <button
             class="text-button"
             id="motion-toggle"
@@ -107,7 +87,6 @@
       class="section projects-section"
       id="projects"
       aria-labelledby="projects-heading"
-      aria-roledescription="carousel"
     >
       <div class="section-heading">
         <div>
@@ -117,57 +96,15 @@
 
         <p class="section-description">
           Eight independent projects and five hackathon builds.
-          A horizontal collection of models, tools, and experiments.
-          Swipe, scroll sideways, or use the controls.
+          Two continuously moving rows of models, tools, and experiments.
+          Hover, focus, or use reduced motion to pause; scroll sideways to
+          explore every project.
         </p>
       </div>
 
-      <div class="reel-toolbar" data-reel-controls hidden>
-        <p class="reel-position">
-          <span id="project-count">01</span>
-          <span class="muted">/ 13</span>
-          <span class="reel-label">Projects &amp; hackathons</span>
-        </p>
-
-        <div class="reel-controls">
-          <button
-            class="text-button"
-            id="reel-play"
-            type="button"
-            aria-pressed="false"
-            aria-controls="project-rail"
-          >
-            Play reel
-          </button>
-
-          <button
-            class="arrow-button"
-            id="reel-prev"
-            type="button"
-            aria-label="Previous project"
-            aria-controls="project-rail"
-          >
-            <span aria-hidden="true">←</span>
-          </button>
-
-          <button
-            class="arrow-button"
-            id="reel-next"
-            type="button"
-            aria-label="Next project"
-            aria-controls="project-rail"
-          >
-            <span aria-hidden="true">→</span>
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="project-rail"
-        id="project-rail"
-        tabindex="0"
-        aria-label="Project reel. Use the left and right arrow keys when this area is focused."
-      >
+      <div class="project-rows">
+      <div class="project-row" role="region" tabindex="0" aria-label="Projects 1 through 7. Use horizontal scrolling to explore.">
+        <div class="project-track project-track--forward">
         <article class="project">
           <div class="project-art" data-art="cat" aria-hidden="true"></div>
 
@@ -181,7 +118,6 @@
             <p class="project-tech">PyTorch / Diffusion / UNet</p>
           </div>
         </article>
-
         <article class="project">
           <div class="project-art" data-art="quantum" aria-hidden="true"></div>
 
@@ -273,6 +209,10 @@
           </div>
         </article>
 
+      </div>
+      </div>
+      <div class="project-row" role="region" tabindex="0" aria-label="Projects 8 through 13. Use horizontal scrolling to explore.">
+        <div class="project-track project-track--reverse">
         <article class="project">
           <div class="project-art" data-art="pacman" aria-hidden="true"></div>
 
@@ -514,12 +454,8 @@
           </div>
         </article>
       </div>
-
-      <div class="reel-meter" aria-hidden="true" data-reel-controls hidden>
-        <span id="reel-progress"></span>
       </div>
-
-      <p class="sr-only" id="reel-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <section

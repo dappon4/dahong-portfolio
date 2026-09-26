@@ -12,114 +12,6 @@
    */
 
   const artwork = {
-    waveform: `
-      <path
-        d="M48 225 L466 100 L679 299 L219 458 Z"
-        fill="url(#warm)"
-        opacity="0.72"
-      />
-      <path
-        d="M74 302 L124 295 L149 222 L179 353 L211 166
-           L241 394 L275 109 L309 415 L343 148 L376 366
-           L412 204 L440 326 L476 252 L511 289 L620 285
-           L620 340 L510 344 L478 316 L446 390 L414 268
-           L378 429 L345 210 L310 478 L276 174 L242 459
-           L210 230 L180 416 L148 286 L127 358 L74 365 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M103 245 L465 151 L631 319 L260 432 Z"
-        fill="url(#mesh)"
-        opacity="0.45"
-      />
-      <path
-        d="M70 395 L606 395"
-        fill="none"
-        stroke="#efe5d3"
-        stroke-width="2"
-        stroke-dasharray="3 10"
-      />
-    `,
-
-    guitar: `
-      <path
-        d="M180 343 L315 99 L608 235 L488 456 Z"
-        fill="url(#dots)"
-      />
-      <path
-        d="M306 280 L298 238 L350 210 L377 252
-           L410 268 L462 220 L500 236 L454 303
-           L445 368 L393 421 L336 445 L251 413
-           L217 355 L240 307 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M251 413 L306 280 L352 310 L336 445 Z"
-        fill="#1f2228"
-      />
-      <path
-        d="M352 310 L454 303 L445 368 L393 421 L336 445 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M332 302 L359 316 L493 94 L466 78 Z"
-        fill="#292a2d"
-      />
-      <path
-        d="M458 94 L475 43 L508 34 L520 70 L491 114 Z"
-        fill="url(#light)"
-      />
-      <path
-        d="M352 310 L454 303 L445 368 L393 421 L336 445 Z"
-        fill="url(#mesh)"
-      />
-      <path
-        d="M286 391 L493 58 M297 395 L499 63 M307 399 L505 68"
-        fill="none"
-        stroke="#eee4cc"
-        stroke-width="2.2"
-        opacity="0.8"
-      />
-      <path
-        d="M275 381 L323 404 L335 382 L288 361 Z"
-        fill="#eee4cc"
-      />
-    `,
-
-    code: `
-      <path
-        d="M114 119 L512 66 L636 360 L232 454 Z"
-        fill="url(#light)"
-        opacity="0.78"
-      />
-      <path
-        d="M160 99 L549 155 L574 416 L185 360 Z"
-        fill="url(#dots)"
-      />
-      <path
-        d="M263 140 L125 248 L243 372 L275 330
-           L195 248 L295 178 Z"
-        fill="url(#dark)"
-      />
-      <path
-        d="M439 139 L579 248 L459 372 L427 330
-           L508 248 L408 177 Z"
-        fill="url(#warm)"
-      />
-      <path
-        d="M382 105 L422 121 L325 390 L282 378 Z"
-        fill="#26272b"
-      />
-      <text
-        x="210"
-        y="437"
-        fill="#4c4540"
-        font-family="monospace"
-        font-size="23"
-        transform="rotate(-7 210 437)"
-      >z = encode(x)</text>
-    `,
-
     cat: `
       <circle cx="414" cy="241" r="190" fill="url(#warm)" />
       <path
@@ -765,538 +657,102 @@
     `;
   }
 
-  document.querySelectorAll("[data-art]").forEach((element, index) => {
-    element.innerHTML = createArtwork(element.dataset.art, index);
-  });
-
-  /*
-   * Motion preferences and shared controls.
-   */
-
-  const motionPreference = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
-
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   const motionButton = document.getElementById("motion-toggle");
   const hero = document.querySelector(".hero");
-  const rail = document.getElementById("project-rail");
-  const slides = Array.from(rail.querySelectorAll(".project"));
-
-  const playButton = document.getElementById("reel-play");
-  const previousButton = document.getElementById("reel-prev");
-  const nextButton = document.getElementById("reel-next");
-
-  const counter = document.getElementById("project-count");
-  const progress = document.getElementById("reel-progress");
-  const status = document.getElementById("reel-status");
-
+  const rows = Array.from(document.querySelectorAll(".project-row"));
   let manuallyPaused = false;
-  let activeSlide = 0;
-  let playing = false;
-  let autoplayTimer = 0;
-  let carouselVisible = false;
-  let railHovered = false;
-  let scrollFrame = 0;
-  let printing = false;
-  let printedSlide = 0;
+  let pointerFrame = 0;
+  let pointerX = 0;
   let previouslyClosedDetails = [];
 
   function motionEnabled() {
     return !motionPreference.matches && !manuallyPaused;
   }
 
-  document.querySelectorAll("[data-reel-controls]").forEach((element) => {
-    element.hidden = false;
-  });
-
-  motionButton.hidden = false;
-
-  slides.forEach((slide, index) => {
-    slide.setAttribute("role", "group");
-    slide.setAttribute("aria-roledescription", "slide");
-    slide.setAttribute(
-      "aria-label",
-      `${index + 1} of ${slides.length}`
-    );
-  });
-
-  /*
-   * Mouse-responsive name.
-   *
-   * Measurements use untransformed layout offsets, avoiding feedback
-   * loops when a letter moves toward the cursor.
-   */
-
-  document.querySelectorAll("[data-name-line]").forEach((line) => {
-    const text = line.textContent.trim();
-    const fragment = document.createDocumentFragment();
-
-    for (const character of text) {
-      const letter = document.createElement("span");
-
-      letter.className = "name-letter";
-      letter.textContent = character;
-      fragment.appendChild(letter);
-    }
-
-    line.replaceChildren(fragment);
-  });
-
-  const letters = Array.from(document.querySelectorAll(".name-letter"));
-
-  let letterPositions = [];
-  let pointer = null;
-  let pointerFrame = 0;
-
-  function measureName() {
-    letterPositions = letters.map((letter) => {
-      const parent = letter.offsetParent;
-      const bounds = parent.getBoundingClientRect();
-
-      return {
-        element: letter,
-        x:
-          bounds.left +
-          window.scrollX +
-          letter.offsetLeft +
-          letter.offsetWidth / 2,
-        y:
-          bounds.top +
-          window.scrollY +
-          letter.offsetTop +
-          letter.offsetHeight / 2
-      };
+  // The second copy fills the row as the first moves out of view.
+  document.querySelectorAll(".project-track").forEach((track) => {
+    Array.from(track.children).forEach((project) => {
+      const clone = project.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.querySelectorAll("summary").forEach((summary) => {
+        summary.tabIndex = -1;
+      });
+      track.appendChild(clone);
     });
-  }
+    track.classList.add("is-looping");
+  });
 
-  function resetName() {
-    pointer = null;
+  document.querySelectorAll("[data-art]").forEach((element, index) => {
+    element.innerHTML = createArtwork(element.dataset.art, index);
+  });
 
-    if (pointerFrame) {
-      window.cancelAnimationFrame(pointerFrame);
-      pointerFrame = 0;
-    }
-
-    letters.forEach((letter) => {
-      letter.style.transform = "";
+  rows.forEach((row) => {
+    row.addEventListener("keydown", (event) => {
+      if (event.target !== row || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      event.preventDefault();
+      row.scrollBy({
+        left: event.key === "ArrowRight" ? 300 : -300,
+        behavior: motionEnabled() ? "smooth" : "auto"
+      });
     });
+  });
 
-    hero.style.setProperty("--mx", "0px");
-    hero.style.setProperty("--my", "0px");
-  }
-
-  function updateName() {
+  function resetParallax() {
+    if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
     pointerFrame = 0;
-
-    if (!pointer || !motionEnabled()) {
-      return;
-    }
-
-    const radius = Math.min(300, window.innerWidth * 0.33);
-
-    letterPositions.forEach(({ element, x, y }) => {
-      const dx = pointer.pageX - x;
-      const dy = pointer.pageY - y;
-      const distance = Math.hypot(dx, dy);
-      const influence = Math.max(0, 1 - distance / radius);
-
-      const shiftX = dx * influence * 0.28;
-      const shiftY = dy * influence * 0.28;
-      const rotation = dx * influence * 0.055;
-      const scale = 1 + influence * 0.045;
-
-      element.style.transform = `
-        translate3d(${shiftX}px, ${shiftY}px, 0)
-        rotate(${rotation}deg)
-        scale(${scale})
-      `;
-    });
-
-    const bounds = hero.getBoundingClientRect();
-
-    const normalizedX =
-      (pointer.clientX - bounds.left) / bounds.width - 0.5;
-
-    const normalizedY =
-      (pointer.clientY - bounds.top) / bounds.height - 0.5;
-
-    hero.style.setProperty("--mx", `${normalizedX * 36}px`);
-    hero.style.setProperty("--my", `${normalizedY * 36}px`);
+    hero.style.setProperty("--mx", "0px");
   }
-
-  hero.addEventListener("pointerenter", measureName);
 
   hero.addEventListener("pointermove", (event) => {
-    if (event.pointerType !== "mouse" || !motionEnabled()) {
-      return;
-    }
-
-    pointer = {
-      pageX: event.pageX,
-      pageY: event.pageY,
-      clientX: event.clientX,
-      clientY: event.clientY
-    };
-
-    if (!pointerFrame) {
-      pointerFrame = window.requestAnimationFrame(updateName);
-    }
-  });
-
-  hero.addEventListener("pointerleave", resetName);
-
-  /*
-   * Native scroll-snap carousel.
-   *
-   * No cloned slides or wheel hijacking.
-   * Manual controls wrap around; automatic cycling is opt-in.
-   */
-
-  function updateCounter(index, announce = false) {
-    activeSlide = index;
-    counter.textContent = String(index + 1).padStart(2, "0");
-
-    progress.style.transform =
-      `scaleX(${(index + 1) / slides.length})`;
-
-    if (announce) {
-      const title = slides[index]
-        .querySelector("h3")
-        .innerText.replace(/\s+/g, " ")
-        .trim();
-
-      status.textContent =
-        `Project ${index + 1} of ${slides.length}: ${title}`;
-    }
-  }
-
-  function scheduleAutoplay() {
-    window.clearTimeout(autoplayTimer);
-
-    const currentDetailsOpen =
-      slides[activeSlide].querySelector("details[open]");
-
-    if (
-      !playing ||
-      !motionEnabled() ||
-      !carouselVisible ||
-      document.hidden ||
-      railHovered ||
-      rail.contains(document.activeElement) ||
-      currentDetailsOpen ||
-      printing
-    ) {
-      return;
-    }
-
-    autoplayTimer = window.setTimeout(() => {
-      goToSlide(activeSlide + 1, false);
-      scheduleAutoplay();
-    }, 8500);
-  }
-
-  function setPlayback(enabled) {
-    playing = Boolean(enabled && motionEnabled());
-
-    playButton.textContent = playing ? "Pause reel" : "Play reel";
-    playButton.setAttribute("aria-pressed", String(playing));
-
-    scheduleAutoplay();
-  }
-
-  function goToSlide(requestedIndex, manual = true) {
-    if (manual) {
-      setPlayback(false);
-    }
-
-    const wrapped =
-      requestedIndex < 0 || requestedIndex >= slides.length;
-
-    const index =
-      ((requestedIndex % slides.length) + slides.length) % slides.length;
-
-    updateCounter(index, manual);
-
-    /*
-     * At the end of the collection, wrap immediately rather than
-     * animating through every intervening slide.
-     */
-    rail.scrollTo({
-      left: slides[index].offsetLeft,
-      behavior: motionEnabled() && !wrapped ? "smooth" : "auto"
-    });
-  }
-
-  previousButton.addEventListener("click", () => {
-    goToSlide(activeSlide - 1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    goToSlide(activeSlide + 1);
-  });
-
-  playButton.addEventListener("click", () => {
-    setPlayback(!playing);
-  });
-
-  rail.addEventListener("keydown", (event) => {
-    if (event.target !== rail) {
-      return;
-    }
-
-    switch (event.key) {
-      case "ArrowLeft":
-        event.preventDefault();
-        goToSlide(activeSlide - 1);
-        break;
-
-      case "ArrowRight":
-        event.preventDefault();
-        goToSlide(activeSlide + 1);
-        break;
-
-      case "Home":
-        event.preventDefault();
-        goToSlide(0);
-        break;
-
-      case "End":
-        event.preventDefault();
-        goToSlide(slides.length - 1);
-        break;
-
-      default:
-        break;
-    }
-  });
-
-  rail.addEventListener(
-    "scroll",
-    () => {
-      if (scrollFrame || printing) {
-        return;
-      }
-
-      scrollFrame = window.requestAnimationFrame(() => {
-        scrollFrame = 0;
-
-        let nearestIndex = 0;
-        let nearestDistance = Infinity;
-
-        slides.forEach((slide, index) => {
-          const distance = Math.abs(
-            slide.offsetLeft - rail.scrollLeft
-          );
-
-          if (distance < nearestDistance) {
-            nearestDistance = distance;
-            nearestIndex = index;
-          }
-        });
-
-        updateCounter(nearestIndex);
-      });
-    },
-    { passive: true }
-  );
-
-  rail.addEventListener("pointerenter", (event) => {
-    if (event.pointerType === "mouse") {
-      railHovered = true;
-      scheduleAutoplay();
-    }
-  });
-
-  rail.addEventListener("pointerleave", () => {
-    railHovered = false;
-    scheduleAutoplay();
-  });
-
-  rail.addEventListener("pointerdown", () => {
-    setPlayback(false);
-  });
-
-  rail.addEventListener(
-    "wheel",
-    () => {
-      setPlayback(false);
-    },
-    { passive: true }
-  );
-
-  rail.addEventListener("focusin", () => {
-    setPlayback(false);
-  });
-
-  rail.querySelectorAll("details").forEach((details) => {
-    details.addEventListener("toggle", () => {
-      if (details.open) {
-        setPlayback(false);
-      }
+    if (event.pointerType !== "mouse" || !motionEnabled()) return;
+    pointerX = event.clientX;
+    if (pointerFrame) return;
+    pointerFrame = window.requestAnimationFrame(() => {
+      pointerFrame = 0;
+      const bounds = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", `${((pointerX - bounds.left) / bounds.width - 0.5) * 48}px`);
     });
   });
-
-  /*
-   * Pause work outside the viewport and in background tabs.
-   */
-
-  if ("IntersectionObserver" in window) {
-    const carouselObserver = new IntersectionObserver(
-      (entries) => {
-        carouselVisible = entries[0].isIntersecting;
-        scheduleAutoplay();
-      },
-      { threshold: 0.15 }
-    );
-
-    carouselObserver.observe(rail);
-
-    const heroObserver = new IntersectionObserver(
-      (entries) => {
-        const visible = entries[0].isIntersecting;
-
-        hero.classList.toggle("is-offscreen", !visible);
-
-        if (!visible) {
-          resetName();
-        }
-      },
-      { threshold: 0 }
-    );
-
-    heroObserver.observe(hero);
-  } else {
-    carouselVisible = true;
-  }
-
-  document.addEventListener("visibilitychange", () => {
-    document.body.classList.toggle("tab-hidden", document.hidden);
-
-    if (document.hidden) {
-      resetName();
-    }
-
-    scheduleAutoplay();
-  });
+  hero.addEventListener("pointerleave", resetParallax);
 
   function updateMotionControls() {
     const enabled = motionEnabled();
-
     document.body.classList.toggle("motion-paused", !enabled);
-    motionButton.setAttribute("aria-pressed", String(!enabled));
     motionButton.disabled = motionPreference.matches;
-    playButton.disabled = !enabled;
-
-    if (motionPreference.matches) {
-      motionButton.textContent = "Reduced motion";
-      motionButton.title =
-        "Your operating system requests reduced motion.";
-    } else {
-      motionButton.textContent = enabled
-        ? "Pause motion"
-        : "Enable motion";
-
-      motionButton.title = "";
-    }
-
-    playButton.title = enabled
-      ? "Automatically advance every 8.5 seconds."
-      : "Enable motion to use automatic cycling.";
-
-    if (!enabled) {
-      setPlayback(false);
-      resetName();
-    }
+    motionButton.setAttribute("aria-pressed", String(!enabled));
+    motionButton.textContent = motionPreference.matches
+      ? "Reduced motion"
+      : enabled ? "Pause motion" : "Enable motion";
+    if (!enabled) resetParallax();
   }
 
+  motionButton.hidden = false;
   motionButton.addEventListener("click", () => {
     manuallyPaused = !manuallyPaused;
     updateMotionControls();
   });
-
   motionPreference.addEventListener("change", updateMotionControls);
+  updateMotionControls();
 
-  /*
-   * Printing expands all implementation notes and stacks the slides.
-   * Browser "Save as PDF" therefore includes the entire résumé.
-   */
+  document.addEventListener("visibilitychange", () => {
+    document.body.classList.toggle("tab-hidden", document.hidden);
+    if (document.hidden) resetParallax();
+  });
 
   document.querySelectorAll("[data-print]").forEach((button) => {
     button.hidden = false;
-
-    button.addEventListener("click", () => {
-      window.print();
-    });
+    button.addEventListener("click", () => window.print());
   });
 
   window.addEventListener("beforeprint", () => {
-    if (printing) {
-      return;
-    }
-
-    printing = true;
-    printedSlide = activeSlide;
-    setPlayback(false);
-    resetName();
-
-    previouslyClosedDetails = Array.from(
-      document.querySelectorAll("details:not([open])")
-    );
-
-    previouslyClosedDetails.forEach((details) => {
-      details.open = true;
-    });
+    resetParallax();
+    previouslyClosedDetails = Array.from(document.querySelectorAll("details:not([open])"));
+    previouslyClosedDetails.forEach((details) => { details.open = true; });
   });
 
   window.addEventListener("afterprint", () => {
-    previouslyClosedDetails.forEach((details) => {
-      details.open = false;
-    });
-
+    previouslyClosedDetails.forEach((details) => { details.open = false; });
     previouslyClosedDetails = [];
-    printing = false;
-
-    window.requestAnimationFrame(() => {
-      updateCounter(printedSlide);
-
-      rail.scrollTo({
-        left: slides[printedSlide].offsetLeft,
-        behavior: "auto"
-      });
-
-      measureName();
-    });
   });
-
-  /*
-   * Keep the current slide aligned after orientation or viewport changes.
-   */
-
-  let resizeTimer = 0;
-
-  window.addEventListener("resize", () => {
-    window.clearTimeout(resizeTimer);
-
-    resizeTimer = window.setTimeout(() => {
-      if (printing) {
-        return;
-      }
-
-      measureName();
-
-      rail.scrollTo({
-        left: slides[activeSlide].offsetLeft,
-        behavior: "auto"
-      });
-    }, 150);
-  });
-
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(measureName);
-  } else {
-    measureName();
-  }
-
-  updateCounter(0);
-  updateMotionControls();
 })();
