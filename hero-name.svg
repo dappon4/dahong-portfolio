@@ -3,11 +3,11 @@
   <view id="dahong" viewBox="0 0 828 128" />
   <view id="luo" viewBox="876 0 408 128" />
   <defs>
-    <linearGradient id="ink" x1="0" y1="1" x2="1" y2="0">
-      <stop stop-color="#111528" /><stop offset=".6" stop-color="#28215a" /><stop offset="1" stop-color="#5f3bb7" />
+    <linearGradient id="amethyst" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#9968d8" /><stop offset=".6" stop-color="#b98de5" /><stop offset="1" stop-color="#dac8f0" />
     </linearGradient>
     <linearGradient id="violet" x1="0" y1="1" x2="1" y2="0">
-      <stop stop-color="#28215a" /><stop offset=".55" stop-color="#5f3bb7" /><stop offset="1" stop-color="#9968d8" />
+      <stop stop-color="#8052c5" /><stop offset=".55" stop-color="#ad81df" /><stop offset="1" stop-color="#d5b4ec" />
     </linearGradient>
     <linearGradient id="lilac" x1="0" y1="1" x2="1" y2="0">
       <stop stop-color="#5f3bb7" /><stop offset=".52" stop-color="#9968d8" /><stop offset="1" stop-color="#cda1c9" />
@@ -62,9 +62,9 @@
       <feTurbulence type="fractalNoise" baseFrequency=".68" numOctaves="3" seed="17" stitchTiles="stitch" result="noise" />
       <feColorMatrix in="noise" type="saturate" values="0" result="gray" />
       <feComponentTransfer in="gray" result="soft">
-        <feFuncR type="linear" slope=".32" intercept=".68" />
-        <feFuncG type="linear" slope=".32" intercept=".68" />
-        <feFuncB type="linear" slope=".32" intercept=".68" />
+        <feFuncR type="linear" slope=".24" intercept=".8" />
+        <feFuncG type="linear" slope=".24" intercept=".8" />
+        <feFuncB type="linear" slope=".24" intercept=".8" />
       </feComponentTransfer>
       <feComposite in="soft" in2="SourceGraphic" operator="in" result="grain" />
       <feBlend in="SourceGraphic" in2="grain" mode="multiply" />
@@ -82,7 +82,7 @@
 
   <g filter="url(#paper)">
     <g data-character="D" clip-path="url(#shape-d)">
-      <path d="M0 0h128v128H0Z" fill="url(#ink)" />
+      <path d="M0 0h128v128H0Z" fill="url(#amethyst)" />
       <path d="M0 0h64v64Z" fill="url(#peach)" />
       <path d="M0 64h64L0 128Z" fill="url(#ivory)" />
       <path d="M64 64h64v64H64Z" fill="url(#violet)" />
@@ -91,7 +91,7 @@
     <g data-character="A" transform="translate(140)" clip-path="url(#shape-a)">
       <path d="M0 0h128v128H0Z" fill="url(#violet)" />
       <path d="M64 0h64v64H64Z" fill="url(#lilac)" />
-      <path d="M0 64h64v64H0Z" fill="url(#ink)" />
+      <path d="M0 64h64v64H0Z" fill="url(#amethyst)" />
       <path d="M64 64h64v64H64Z" fill="url(#peach)" />
       <path d="M0 0h128v128H0Z" fill="url(#halftone)" />
     </g>

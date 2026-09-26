@@ -307,10 +307,25 @@ summary:focus-visible,
   pointer-events: none;
 }
 
+.hero-title::before {
+  position: absolute;
+  z-index: -1;
+  inset: -5rem -18vw;
+  content: "";
+  background: radial-gradient(
+    ellipse,
+    rgba(17, 21, 40, 0.72) 20%,
+    rgba(17, 21, 40, 0.38) 55%,
+    transparent 76%
+  );
+  filter: blur(24px);
+}
+
 .hero-name-art {
   display: block;
   height: auto;
-  filter: drop-shadow(0 8px 14px rgba(17, 21, 40, 0.2));
+  filter: drop-shadow(0 4px 6px rgba(17, 21, 40, 0.5))
+    drop-shadow(0 14px 20px rgba(17, 21, 40, 0.35));
 }
 
 .hero-name-art--first {
@@ -1081,6 +1096,7 @@ summary:focus-visible,
   .skip-link,
   .noscript-note,
   .hero-scenery,
+  .hero-title::before,
   .hero-eyebrow,
   .hero-motion,
   .jump-link,
