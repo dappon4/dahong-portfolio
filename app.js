@@ -546,9 +546,9 @@
             x2="85%"
             y2="5%"
           >
-            <stop offset="0%" stop-color="#efc88d" />
-            <stop offset="52%" stop-color="#ee936b" />
-            <stop offset="100%" stop-color="#e76756" />
+            <stop offset="0%" stop-color="#dec2a1" />
+            <stop offset="52%" stop-color="#d4977f" />
+            <stop offset="100%" stop-color="#be766b" />
           </linearGradient>
 
           <linearGradient
@@ -569,9 +569,9 @@
             cy="20%"
             r="90%"
           >
-            <stop offset="0%" stop-color="#fff1d4" />
-            <stop offset="55%" stop-color="#e9d5b3" />
-            <stop offset="100%" stop-color="#c3a180" />
+            <stop offset="0%" stop-color="#f2e7d8" />
+            <stop offset="55%" stop-color="#ddceb7" />
+            <stop offset="100%" stop-color="#baa391" />
           </radialGradient>
 
           <pattern
@@ -671,8 +671,10 @@
   }
 
   // The second copy fills the row as the first moves out of view.
-  document.querySelectorAll(".project-track").forEach((track) => {
-    Array.from(track.children).forEach((project) => {
+  const projectLoops = rows.map((row) => {
+    const track = row.querySelector(".project-track");
+    const projects = Array.from(track.children);
+    projects.forEach((project) => {
       const clone = project.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
       clone.querySelectorAll("summary").forEach((summary) => {
@@ -680,8 +682,42 @@
       });
       track.appendChild(clone);
     });
-    track.classList.add("is-looping");
+    return {
+      row,
+      track,
+      firstProject: projects[0],
+      firstClone: track.children[projects.length],
+      reverse: track.classList.contains("project-track--reverse"),
+      remainder: 0
+    };
   });
+
+  function wrapProjectScroll(loop) {
+    const cycle = loop.firstClone.offsetLeft - loop.firstProject.offsetLeft;
+    if (!cycle) return;
+    if (loop.row.scrollLeft >= cycle) loop.row.scrollLeft = loop.row.scrollLeft - cycle + 1;
+    else if (loop.row.scrollLeft <= 0) loop.row.scrollLeft = cycle - 1;
+  }
+
+  projectLoops.forEach((loop) => {
+    loop.row.addEventListener("scroll", () => wrapProjectScroll(loop), { passive: true });
+  });
+
+  function moveProjectRows(timestamp) {
+    projectLoops.forEach((loop) => {
+      const elapsed = Math.min(100, timestamp - (loop.lastTime ?? timestamp));
+      loop.lastTime = timestamp;
+      if (loop.row.matches(":hover, :focus-within") || !motionEnabled() || document.hidden) return;
+      loop.remainder += (loop.reverse ? -1 : 1) * elapsed / 1000 * 22;
+      const step = Math.trunc(loop.remainder);
+      if (!step) return;
+      loop.row.scrollLeft += step;
+      loop.remainder -= step;
+      wrapProjectScroll(loop);
+    });
+    window.requestAnimationFrame(moveProjectRows);
+  }
+  window.requestAnimationFrame(moveProjectRows);
 
   document.querySelectorAll("[data-art]").forEach((element, index) => {
     element.innerHTML = createArtwork(element.dataset.art, index);
@@ -718,7 +754,6 @@
 
   function updateMotionControls() {
     const enabled = motionEnabled();
-    document.body.classList.toggle("motion-paused", !enabled);
     motionButton.disabled = motionPreference.matches;
     motionButton.setAttribute("aria-pressed", String(!enabled));
     motionButton.textContent = motionPreference.matches
@@ -736,7 +771,6 @@
   updateMotionControls();
 
   document.addEventListener("visibilitychange", () => {
-    document.body.classList.toggle("tab-hidden", document.hidden);
     if (document.hidden) resetParallax();
   });
 
