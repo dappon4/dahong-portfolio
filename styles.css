@@ -91,8 +91,7 @@ button {
 }
 
 button,
-a,
-summary {
+a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -107,7 +106,6 @@ button:disabled {
 
 button:focus-visible,
 a:focus-visible,
-summary:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--coral);
   outline-offset: 6px;
@@ -335,7 +333,7 @@ summary:focus-visible,
 
 .hero-footer {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: end;
   gap: 2rem;
   color: #f5f2e8;
@@ -350,6 +348,7 @@ summary:focus-visible,
 
 .jump-link {
   display: inline-flex;
+  justify-self: center;
   align-items: center;
   gap: 2rem;
   font-size: 0.85rem;
@@ -526,16 +525,6 @@ summary:focus-visible,
   border-top: 1px solid var(--line);
 }
 
-.project-details summary {
-  width: fit-content;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.project-details summary::marker {
-  color: var(--coral);
-}
-
 .project-details ul {
   margin: 1.2rem 0 0;
   padding-left: 1.1rem;
@@ -567,6 +556,80 @@ summary:focus-visible,
 .research-project .project-details ul {
   font-size: 0.86rem;
   line-height: 1.5;
+}
+
+.project.is-interactive {
+  cursor: pointer;
+}
+
+.project.is-interactive .project-details {
+  display: none;
+}
+
+.project-open {
+  margin-top: 1.4rem;
+}
+
+body:has(.project-dialog[open]) {
+  overflow: hidden;
+}
+
+.project-dialog {
+  width: min(1120px, calc(100% - 2rem));
+  max-height: 88svh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+  color: var(--ink);
+  box-shadow: 0 24px 100px rgba(17, 21, 40, 0.35);
+}
+
+.project-dialog::backdrop {
+  background: rgba(17, 21, 40, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.dialog-controls {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1.25rem;
+  background: var(--paper-light);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-dialog-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-dialog-art {
+  position: sticky;
+  top: 4.5rem;
+}
+
+.project-dialog-copy {
+  min-width: 0;
+}
+
+.project-dialog-copy h3 {
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.project-dialog-copy .project-description,
+.project-dialog-copy .project-details ul {
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 /* Résumé: continuous rows, not cards */
@@ -908,7 +971,20 @@ summary:focus-visible,
   }
 
   .hero-footer {
+    grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .project-dialog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .project-dialog-art {
+    position: static;
+    max-width: 18rem;
+    margin-inline: auto;
   }
 
   .hero-intro {
@@ -1076,6 +1152,8 @@ summary:focus-visible,
   .hero-title::before,
   .hero-eyebrow,
   .carousel-toggle,
+  .project-open,
+  .project-dialog,
   .education-art,
   .education-direction,
   .jump-link,
@@ -1249,8 +1327,8 @@ summary:focus-visible,
     border: 0;
   }
 
-  .project-details summary {
-    display: none;
+  .project.is-interactive .project-details {
+    display: block;
   }
 
   .project-details ul {

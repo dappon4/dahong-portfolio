@@ -173,12 +173,15 @@
     `,
 
     codec: `
-      <path d="M65 162C151 125 218 125 274 170c41 33 48 71 80 83 32 12 41-32 76-56 51-35 116-26 225 30" fill="none" stroke="url(#warm)" stroke-width="54" stroke-linecap="round" />
-      <path d="M65 366c90 35 157 27 207-23 39-39 51-74 82-80 32-6 45 39 77 62 48 34 116 22 224-40" fill="none" stroke="url(#dark)" stroke-width="65" stroke-linecap="round" />
-      <path d="M77 170C160 139 216 149 262 184c49 38 69 79 104 80 38 1 47-53 91-78 49-29 102-17 181 18" fill="none" stroke="url(#light)" stroke-width="12" stroke-linecap="round" opacity=".8" />
-      <path d="M258 142 325 166 393 149 461 174 431 243 367 261 302 239Z" fill="url(#violet)" />
-      <path d="M302 177 356 194 412 180 390 229 346 239 306 222Z" fill="url(#scanlines)" opacity=".7" />
-      <path d="M90 421c67-25 123-25 168 0m41 0c47-22 99-21 146 0m28 0c51-18 99-16 148 0" fill="none" stroke="#f65933" stroke-width="10" stroke-linecap="round" opacity=".78" />
+      <path d="M60 264 C108 194 137 194 185 264 S262 334 304 264" fill="none" stroke="url(#warm)" stroke-width="30" stroke-linecap="round" />
+      <path d="M60 264 C108 194 137 194 185 264 S262 334 304 264" fill="none" stroke="#f5f2e8" stroke-width="7" stroke-linecap="round" opacity=".8" />
+      <path d="M304 264 H337 M469 264 H502" stroke="#111528" stroke-width="12" stroke-linecap="round" />
+      <path d="M337 157 H469 V371 H337 Z" fill="url(#dark)" />
+      <path d="M355 180 H451 V348 H355 Z" fill="url(#violet)" opacity=".82" />
+      <path d="M369 205 H437 M369 245 H421 M369 285 H437 M369 325 H409" stroke="#fcd1a9" stroke-width="10" stroke-linecap="round" />
+      <path d="M502 264 C545 214 573 214 616 264 S685 314 700 264" fill="none" stroke="url(#light)" stroke-width="30" stroke-linecap="round" />
+      <path d="M502 264 C545 214 573 214 616 264 S685 314 700 264" fill="none" stroke="#5f3bb7" stroke-width="7" stroke-linecap="round" opacity=".85" />
+      <g fill="#f65933"><circle cx="362" cy="136" r="8"/><circle cx="392" cy="136" r="8"/><circle cx="422" cy="136" r="8"/></g>
     `,
 
     psychoacoustic: `
@@ -228,12 +231,14 @@
     `,
 
     "sound-detection": `
-      <path d="M164 280c0-98 79-177 177-177s177 79 177 177-79 177-177 177" fill="none" stroke="url(#dark)" stroke-width="66" stroke-linecap="round" />
-      <path d="M236 280c0-58 47-105 105-105s105 47 105 105-47 105-105 105" fill="none" stroke="url(#light)" stroke-width="42" stroke-linecap="round" />
-      <path d="M315 280c0-15 12-27 27-27s27 12 27 27-12 27-27 27-27-12-27-27Z" fill="url(#warm)" />
-      <path d="M444 152c45 30 72 76 72 128 0 68-42 129-105 153" fill="none" stroke="url(#violet)" stroke-width="19" stroke-linecap="round" />
-      <path d="M516 274c0-42 18-72 50-92" fill="none" stroke="#f65933" stroke-width="13" stroke-linecap="round" />
-      <path d="M91 280h111m311 0h116" stroke="#fcd1a9" stroke-width="6" stroke-dasharray="3 14" stroke-linecap="round" opacity=".72" />
+      <path d="M72 292 H648" stroke="#111528" stroke-width="5" opacity=".72" />
+      <path d="M72 292 C108 292 112 226 144 226 S177 355 210 355 243 180 277 180 310 292 343 292 374 236 407 236 440 327 473 327 510 205 548 205 582 292 648 292" fill="none" stroke="url(#light)" stroke-width="34" stroke-linecap="round" />
+      <path d="M72 292 C108 292 112 226 144 226 S177 355 210 355 243 180 277 180 310 292 343 292 374 236 407 236 440 327 473 327 510 205 548 205 582 292 648 292" fill="none" stroke="#5f3bb7" stroke-width="7" stroke-linecap="round" />
+      <rect x="236" y="126" width="96" height="332" rx="10" fill="url(#warm)" opacity=".9" />
+      <path d="M252 160 V424 M276 160 V424 M300 160 V424" stroke="#f5f2e8" stroke-width="4" stroke-dasharray="4 14" opacity=".75" />
+      <path d="M247 112 H321 M247 472 H321" stroke="#111528" stroke-width="8" stroke-linecap="round" />
+      <path d="M378 397 H516 L540 421 L516 445 H378 Z" fill="url(#dark)" />
+      <circle cx="402" cy="421" r="10" fill="#fcd1a9" /><circle cx="432" cy="421" r="10" fill="#f65933" /><circle cx="462" cy="421" r="10" fill="#9968d8" />
     `,
 
     gesture: `
@@ -422,6 +427,62 @@
     `;
   }
 
+  const projectDialog = document.getElementById("project-dialog");
+  const dialogArt = projectDialog.querySelector(".project-dialog-art");
+  const dialogCopy = projectDialog.querySelector(".project-dialog-copy");
+  const originalProjects = Array.from(document.querySelectorAll(".project"));
+
+  originalProjects.forEach((project, index) => {
+    project.dataset.projectId = index;
+    project.classList.add("is-interactive");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "text-button project-open";
+    button.textContent = "View details ↗";
+    button.setAttribute("aria-haspopup", "dialog");
+    button.setAttribute("aria-controls", "project-dialog");
+    button.setAttribute("aria-label", `View details for ${project.querySelector("h3").innerText.replace(/\s+/g, " ").trim()}`);
+    project.querySelector(".project-copy").appendChild(button);
+  });
+
+  function openProject(project) {
+    // Cloned carousel cards share one canonical source of detail content.
+    const source = originalProjects[Number(project.dataset.projectId)];
+    const copy = source.querySelector(".project-copy").cloneNode(true);
+    copy.querySelector(".project-open").remove();
+    copy.querySelector("h3").id = "project-dialog-title";
+    if (!copy.querySelector(".project-details")) {
+      const details = document.createElement("div");
+      details.className = "project-details";
+      const list = document.createElement("ul");
+      copy.querySelectorAll(".project-description, .project-tech").forEach((paragraph) => {
+        const item = document.createElement("li");
+        item.innerHTML = paragraph.innerHTML;
+        list.appendChild(item);
+        paragraph.remove();
+      });
+      details.appendChild(list);
+      copy.appendChild(details);
+    }
+    dialogCopy.replaceChildren(...copy.children);
+    dialogArt.innerHTML = createArtwork(source.querySelector("[data-art]").dataset.art, "dialog");
+    dialogArt.style.backgroundColor = getComputedStyle(project).backgroundColor;
+    const opener = project.hasAttribute("aria-hidden")
+      ? project.closest(".project-row")
+      : project.querySelector(".project-open");
+    opener.focus({ preventScroll: true });
+    projectDialog.showModal();
+    projectDialog.scrollTop = 0;
+  }
+
+  projectDialog.addEventListener("click", (event) => {
+    if (event.target !== projectDialog) return;
+    const bounds = projectDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+      projectDialog.close();
+    }
+  });
+
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   const motionButtons = document.querySelectorAll("[data-motion-toggle]");
   const rows = Array.from(document.querySelectorAll(".project-row"));
@@ -436,8 +497,8 @@
       const clone = project.cloneNode(true);
       clone.style.backgroundColor = getComputedStyle(project).backgroundColor;
       clone.setAttribute("aria-hidden", "true");
-      clone.querySelectorAll("summary").forEach((summary) => {
-        summary.tabIndex = -1;
+      clone.querySelectorAll("button, a, [tabindex]").forEach((element) => {
+        element.tabIndex = -1;
       });
       track.appendChild(clone);
     });
@@ -484,8 +545,8 @@
     projectLoops.forEach((loop) => {
       const elapsed = Math.min(100, timestamp - (loop.lastTime ?? timestamp));
       loop.lastTime = timestamp;
-      // Pointer focus survives closing notes; only keyboard focus should keep pausing.
-      if (loop.row.matches(":focus-visible") || loop.row.querySelector(":focus-visible, details[open]") || !motionEnabled() || document.hidden) return;
+      // Closing a pointer-opened dialog must not leave a row permanently paused.
+      if (projectDialog.open || loop.row.matches(":focus-visible") || loop.row.querySelector(":focus-visible") || !motionEnabled() || document.hidden) return;
       loop.remainder += (loop.reverse ? -1 : 1) * elapsed / 1000 * 22;
       const step = Math.trunc(loop.remainder);
       if (!step) return;
@@ -502,6 +563,11 @@
   });
 
   rows.forEach((row) => {
+    row.addEventListener("click", (event) => {
+      const project = event.target.closest(".project");
+      if (!project || event.target.closest("a") || window.getSelection()?.toString()) return;
+      openProject(project);
+    });
     row.addEventListener("keydown", (event) => {
       if (event.target !== row || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
       event.preventDefault();
