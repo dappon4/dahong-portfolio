@@ -386,14 +386,6 @@ a:focus-visible,
   letter-spacing: -0.065em;
 }
 
-.section-description {
-  max-width: 25rem;
-  padding-bottom: 0.3rem;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
 .carousel-toggle {
   margin-top: 1rem;
   color: var(--muted);
@@ -897,10 +889,6 @@ body:has(.project-dialog[open]) {
     gap: 2rem;
   }
 
-  .section-description {
-    max-width: 20rem;
-  }
-
   .project {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     min-height: 36rem;
@@ -999,11 +987,6 @@ body:has(.project-dialog[open]) {
   .section-heading {
     flex-direction: column;
     margin-bottom: 2.5rem;
-  }
-
-  .section-description {
-    max-width: 38rem;
-    font-size: 0.95rem;
   }
 
   .section-heading .eyebrow {
@@ -1250,13 +1233,6 @@ body:has(.project-dialog[open]) {
     margin: 0;
     font-size: 23pt;
     line-height: 1.05;
-  }
-
-  .section-description {
-    max-width: none;
-    margin-top: 2mm;
-    padding: 0;
-    font-size: 9pt;
   }
 
   .project-rows,

@@ -173,15 +173,12 @@
     `,
 
     codec: `
-      <path d="M60 264 C108 194 137 194 185 264 S262 334 304 264" fill="none" stroke="url(#warm)" stroke-width="30" stroke-linecap="round" />
-      <path d="M60 264 C108 194 137 194 185 264 S262 334 304 264" fill="none" stroke="#f5f2e8" stroke-width="7" stroke-linecap="round" opacity=".8" />
-      <path d="M304 264 H337 M469 264 H502" stroke="#111528" stroke-width="12" stroke-linecap="round" />
-      <path d="M337 157 H469 V371 H337 Z" fill="url(#dark)" />
-      <path d="M355 180 H451 V348 H355 Z" fill="url(#violet)" opacity=".82" />
-      <path d="M369 205 H437 M369 245 H421 M369 285 H437 M369 325 H409" stroke="#fcd1a9" stroke-width="10" stroke-linecap="round" />
-      <path d="M502 264 C545 214 573 214 616 264 S685 314 700 264" fill="none" stroke="url(#light)" stroke-width="30" stroke-linecap="round" />
-      <path d="M502 264 C545 214 573 214 616 264 S685 314 700 264" fill="none" stroke="#5f3bb7" stroke-width="7" stroke-linecap="round" opacity=".85" />
-      <g fill="#f65933"><circle cx="362" cy="136" r="8"/><circle cx="392" cy="136" r="8"/><circle cx="422" cy="136" r="8"/></g>
+      <path d="M76 172C148 63 236 89 265 186S294 247 330 253L330 285C265 289 255 391 181 420 120 444 73 397 82 354 170 389 219 343 226 279 234 204 178 140 76 172Z" fill="url(#warm)" />
+      <path d="M76 172C148 63 236 89 265 186S294 247 330 253L330 285C265 289 255 391 181 420 120 444 73 397 82 354 170 389 219 343 226 279 234 204 178 140 76 172Z" fill="url(#contours)" opacity=".65" />
+      <path d="M390 253C454 246 466 141 539 113 600 89 647 137 638 180 550 146 501 191 494 255 486 330 542 394 644 362 572 471 484 445 455 348S425 291 390 285Z" fill="url(#violet)" />
+      <path d="M494 255C486 330 542 394 644 362 582 390 531 354 522 295 514 241 554 197 638 180 550 146 501 191 494 255Z" fill="url(#light)" />
+      <path d="M494 255C486 330 542 394 644 362 582 390 531 354 522 295 514 241 554 197 638 180 550 146 501 191 494 255Z" fill="url(#hatch)" opacity=".55" />
+      <path d="m324 233 23-8-9 78-23 8Zm32-10 23-8-9 78-23 8Zm32-10 23-8-9 78-23 8Z" fill="url(#dark)" />
     `,
 
     psychoacoustic: `
@@ -231,14 +228,13 @@
     `,
 
     "sound-detection": `
-      <path d="M72 292 H648" stroke="#111528" stroke-width="5" opacity=".72" />
-      <path d="M72 292 C108 292 112 226 144 226 S177 355 210 355 243 180 277 180 310 292 343 292 374 236 407 236 440 327 473 327 510 205 548 205 582 292 648 292" fill="none" stroke="url(#light)" stroke-width="34" stroke-linecap="round" />
-      <path d="M72 292 C108 292 112 226 144 226 S177 355 210 355 243 180 277 180 310 292 343 292 374 236 407 236 440 327 473 327 510 205 548 205 582 292 648 292" fill="none" stroke="#5f3bb7" stroke-width="7" stroke-linecap="round" />
-      <rect x="236" y="126" width="96" height="332" rx="10" fill="url(#warm)" opacity=".9" />
-      <path d="M252 160 V424 M276 160 V424 M300 160 V424" stroke="#f5f2e8" stroke-width="4" stroke-dasharray="4 14" opacity=".75" />
-      <path d="M247 112 H321 M247 472 H321" stroke="#111528" stroke-width="8" stroke-linecap="round" />
-      <path d="M378 397 H516 L540 421 L516 445 H378 Z" fill="url(#dark)" />
-      <circle cx="402" cy="421" r="10" fill="#fcd1a9" /><circle cx="432" cy="421" r="10" fill="#f65933" /><circle cx="462" cy="421" r="10" fill="#9968d8" />
+      <path d="M453 109C318 23 121 96 102 261 82 429 276 486 423 406 279 451 143 387 158 270 172 159 316 96 453 109Z" fill="url(#dark)" />
+      <path d="M453 109C318 23 121 96 102 261 82 429 276 486 423 406 279 451 143 387 158 270 172 159 316 96 453 109Z" fill="url(#stipple)" opacity=".5" />
+      <path d="M434 165C329 127 207 174 196 267 184 362 285 415 398 365 308 380 238 336 250 269 262 208 346 170 434 165Z" fill="url(#light)" />
+      <path d="M434 165C329 127 207 174 196 267 184 362 285 415 398 365 308 380 238 336 250 269 262 208 346 170 434 165Z" fill="url(#contours)" opacity=".65" />
+      <path d="M303 293C360 280 381 228 411 239S447 313 490 289 558 225 616 243C565 253 544 336 489 345S421 286 403 281 348 314 303 293Z" fill="url(#violet)" />
+      <path d="M440 191 504 117 555 205 491 292Z" fill="url(#warm)" />
+      <path d="M440 191 504 117 491 292Z" fill="url(#light)" opacity=".7" />
     `,
 
     gesture: `
